@@ -12,7 +12,6 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
 
 
 @interface ViewController ()
-
 @end
 
 
@@ -23,15 +22,24 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     if (@available(iOS 13.0, *)) {
-           [self observeAppleSignInState];
-           [self setupUI];
-       }
+       [self observeAppleSignInState];
+       [self setupUI];
+    }
+    //self.navController = [[UINavigationController alloc] initWithRootViewController:self.view];
      
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
   // [self perfomExistingAccountSetupFlows];
+}
+- (IBAction)simulateLogin:(id)sender {
+    UIViewController *one = [[UIViewController alloc] init];
+
+    [one.view setBackgroundColor:[UIColor yellowColor]];
+    [one setTitle:@"One"];
+
+    [self.navigationController pushViewController:one animated:YES];
 }
 
 - (void)observeAppleSignInState {

@@ -15,6 +15,7 @@ extern NSString* const setCurrentIdentifier;
 
 
 @property (nonatomic, strong) UITextView *appleIDLoginInfoTextView;
+@property (weak, nonatomic) IBOutlet UIButton *testButton;
 
 
 @end
