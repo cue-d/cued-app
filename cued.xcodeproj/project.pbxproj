@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,6 +56,7 @@
 		A89B213323D29514008B787D /* cuedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cuedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A89B213723D29514008B787D /* cuedUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cuedUITests.m; sourceTree = "<group>"; };
 		A89B213923D29514008B787D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A89B214523D2959D008B787D /* cued.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cued.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +107,7 @@
 		A89B210C23D2950E008B787D /* cued */ = {
 			isa = PBXGroup;
 			children = (
+				A89B214523D2959D008B787D /* cued.entitlements */,
 				A89B210D23D2950E008B787D /* AppDelegate.h */,
 				A89B210E23D2950E008B787D /* AppDelegate.m */,
 				A89B211023D2950E008B787D /* SceneDelegate.h */,
@@ -219,7 +221,7 @@
 				};
 			};
 			buildConfigurationList = A89B210523D2950E008B787D /* Build configuration list for PBXProject "cued" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -443,15 +445,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = cued/cued.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H67CHZN825;
+				DEVELOPMENT_TEAM = D42ALWPB5K;
 				INFOPLIST_FILE = cued/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.justinpezzack.cued;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cued-app.cued";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -460,15 +465,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = cued/cued.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H67CHZN825;
+				DEVELOPMENT_TEAM = D42ALWPB5K;
 				INFOPLIST_FILE = cued/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.justinpezzack.cued;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cued-app.cued";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
