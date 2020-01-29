@@ -25,22 +25,13 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
        [self observeAppleSignInState];
        [self setupUI];
     }
-    //self.navController = [[UINavigationController alloc] initWithRootViewController:self.view];
-     
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self.navigationController.navigationBar setHidden:YES];
   // [self perfomExistingAccountSetupFlows];
-}
-- (IBAction)simulateLogin:(id)sender {
-    UIViewController *one = [[UIViewController alloc] init];
-
-    [one.view setBackgroundColor:[UIColor yellowColor]];
-    [one setTitle:@"One"];
-
-    [self.navigationController pushViewController:one animated:YES];
-}
+}   
 
 - (void)observeAppleSignInState {
     if (@available(iOS 13.0, *)) {
@@ -80,30 +71,34 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
     }
 }
 
+- (IBAction)temporaryFakeLogin:(id)sender {
+    UITableViewController * tvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainScreen"];
+    [self.navigationController pushViewController:tvc animated:YES];
+}
+
 - (void)setupUI {
     // Sign In With Apple
-    appleIDLoginInfoTextView = [[UITextView alloc] initWithFrame:CGRectMake(.0, 40.0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) * 0.4) textContainer:nil];
-    appleIDLoginInfoTextView.font = [UIFont systemFontOfSize:32.0];
-    [self.view addSubview:appleIDLoginInfoTextView];
-    
-
-    if (@available(iOS 13.0, *)) {
-        // Sign In With Apple Button
-        ASAuthorizationAppleIDButton *appleIDButton = [ASAuthorizationAppleIDButton new];
-            
-        appleIDButton.frame =  CGRectMake(.0, .0, CGRectGetWidth(self.view.frame) - 40.0, 100.0);
-        CGPoint origin = CGPointMake(20.0, CGRectGetMidY(self.view.frame));
-        CGRect frame = appleIDButton.frame;
-        frame.origin = origin;
-        appleIDButton.frame = frame;
-        appleIDButton.cornerRadius = CGRectGetHeight(appleIDButton.frame) * 0.25;
-        [self.view addSubview:appleIDButton];
-        [appleIDButton addTarget:self action:@selector(handleAuthrization:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    
-    NSMutableString *mStr = [NSMutableString string];
-    [mStr appendString:@"Sign In With Apple \n"];
-    appleIDLoginInfoTextView.text = [mStr copy];
+//    appleIDLoginInfoTextView = [[UITextView alloc] initWithFrame:CGRectMake(.0, 40.0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) * 0.4) textContainer:nil];
+//    appleIDLoginInfoTextView.font = [UIFont systemFontOfSize:32.0];
+//    [self.view addSubview:appleIDLoginInfoTextView];
+//
+//
+//    if (@available(iOS 13.0, *)) {
+//        // Sign In With Apple Button
+//        ASAuthorizationAppleIDButton *appleIDButton = [ASAuthorizationAppleIDButton new];
+//        appleIDButton.frame =  CGRectMake(.0, .0, CGRectGetWidth(self.view.frame) - 40.0, 100.0);
+//        CGPoint origin = CGPointMake(20.0, CGRectGetMidY(self.view.frame));
+//        CGRect frame = appleIDButton.frame;
+//        frame.origin = origin;
+//        appleIDButton.frame = frame;
+//        appleIDButton.cornerRadius = CGRectGetHeight(appleIDButton.frame) * 0.25;
+//        [self.view addSubview:appleIDButton];
+//        [appleIDButton addTarget:self action:@selector(handleAuthrization:) forControlEvents:UIControlEventTouchUpInside];
+//    }
+//
+//    NSMutableString *mStr = [NSMutableString string];
+//    [mStr appendString:@"Sign In With Apple \n"];
+//    appleIDLoginInfoTextView.text = [mStr copy];
 }
 
 #pragma mark - Actions
@@ -216,6 +211,7 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
 }
  
 //! Tells the delegate from which window it should present content to the user.
+// This is what runs after the succesful callback from the ASAuthroizationController Occurs
  - (ASPresentationAnchor)presentationAnchorForAuthorizationController:(ASAuthorizationController *)controller  API_AVAILABLE(ios(13.0)){
     
     NSLog(@"window：%s", __FUNCTION__);
