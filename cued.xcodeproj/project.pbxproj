@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A802B13523E655EB0057BF2E /* ChooseCueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A802B13323E655EA0057BF2E /* ChooseCueViewController.m */; };
+		A802B13623E655EB0057BF2E /* ChooseCueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A802B13423E655EA0057BF2E /* ChooseCueViewController.xib */; };
+		A802B13A23E666E60057BF2E /* ChooseRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A802B13823E666E50057BF2E /* ChooseRewardViewController.m */; };
+		A802B13B23E666E60057BF2E /* ChooseRewardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A802B13923E666E60057BF2E /* ChooseRewardViewController.xib */; };
+		A802B13F23E6684A0057BF2E /* CueRoutineRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A802B13D23E668490057BF2E /* CueRoutineRewardViewController.m */; };
+		A802B14023E6684A0057BF2E /* CueRoutineRewardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A802B13E23E6684A0057BF2E /* CueRoutineRewardViewController.xib */; };
+		A802B15423E682550057BF2E /* ConfirmHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A802B15223E682550057BF2E /* ConfirmHabitViewController.m */; };
+		A802B15523E682550057BF2E /* ConfirmHabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A802B15323E682550057BF2E /* ConfirmHabitViewController.xib */; };
+		A82F370423E64890006ED2BB /* ChooseHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82F370223E64890006ED2BB /* ChooseHabitViewController.m */; };
+		A82F370523E64890006ED2BB /* ChooseHabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82F370323E64890006ED2BB /* ChooseHabitViewController.xib */; };
 		A89B210F23D2950E008B787D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A89B210E23D2950E008B787D /* AppDelegate.m */; };
 		A89B211223D2950E008B787D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A89B211123D2950E008B787D /* SceneDelegate.m */; };
 		A89B211523D2950E008B787D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89B211423D2950E008B787D /* ViewController.m */; };
@@ -37,6 +47,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A802B13223E655EA0057BF2E /* ChooseCueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseCueViewController.h; sourceTree = "<group>"; };
+		A802B13323E655EA0057BF2E /* ChooseCueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseCueViewController.m; sourceTree = "<group>"; };
+		A802B13423E655EA0057BF2E /* ChooseCueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCueViewController.xib; sourceTree = "<group>"; };
+		A802B13723E666E50057BF2E /* ChooseRewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseRewardViewController.h; sourceTree = "<group>"; };
+		A802B13823E666E50057BF2E /* ChooseRewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseRewardViewController.m; sourceTree = "<group>"; };
+		A802B13923E666E60057BF2E /* ChooseRewardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseRewardViewController.xib; sourceTree = "<group>"; };
+		A802B13C23E668490057BF2E /* CueRoutineRewardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CueRoutineRewardViewController.h; sourceTree = "<group>"; };
+		A802B13D23E668490057BF2E /* CueRoutineRewardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CueRoutineRewardViewController.m; sourceTree = "<group>"; };
+		A802B13E23E6684A0057BF2E /* CueRoutineRewardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CueRoutineRewardViewController.xib; sourceTree = "<group>"; };
+		A802B15123E682550057BF2E /* ConfirmHabitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfirmHabitViewController.h; sourceTree = "<group>"; };
+		A802B15223E682550057BF2E /* ConfirmHabitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfirmHabitViewController.m; sourceTree = "<group>"; };
+		A802B15323E682550057BF2E /* ConfirmHabitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmHabitViewController.xib; sourceTree = "<group>"; };
+		A82F370123E64890006ED2BB /* ChooseHabitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseHabitViewController.h; sourceTree = "<group>"; };
+		A82F370223E64890006ED2BB /* ChooseHabitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseHabitViewController.m; sourceTree = "<group>"; };
+		A82F370323E64890006ED2BB /* ChooseHabitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseHabitViewController.xib; sourceTree = "<group>"; };
 		A89B210A23D2950E008B787D /* cued.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cued.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A89B210D23D2950E008B787D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A89B210E23D2950E008B787D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -84,6 +109,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A802B14123E6697B0057BF2E /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		A82F36FF23E64837006ED2BB /* views */ = {
+			isa = PBXGroup;
+			children = (
+				A89B211323D2950E008B787D /* ViewController.h */,
+				A89B211423D2950E008B787D /* ViewController.m */,
+				A82F370023E6483F006ED2BB /* NewHabitViews */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		A82F370023E6483F006ED2BB /* NewHabitViews */ = {
+			isa = PBXGroup;
+			children = (
+				A802B13723E666E50057BF2E /* ChooseRewardViewController.h */,
+				A802B13823E666E50057BF2E /* ChooseRewardViewController.m */,
+				A802B13923E666E60057BF2E /* ChooseRewardViewController.xib */,
+				A802B15123E682550057BF2E /* ConfirmHabitViewController.h */,
+				A802B15223E682550057BF2E /* ConfirmHabitViewController.m */,
+				A802B15323E682550057BF2E /* ConfirmHabitViewController.xib */,
+				A802B13C23E668490057BF2E /* CueRoutineRewardViewController.h */,
+				A802B13D23E668490057BF2E /* CueRoutineRewardViewController.m */,
+				A802B13E23E6684A0057BF2E /* CueRoutineRewardViewController.xib */,
+				A82F370123E64890006ED2BB /* ChooseHabitViewController.h */,
+				A82F370223E64890006ED2BB /* ChooseHabitViewController.m */,
+				A82F370323E64890006ED2BB /* ChooseHabitViewController.xib */,
+				A802B13223E655EA0057BF2E /* ChooseCueViewController.h */,
+				A802B13323E655EA0057BF2E /* ChooseCueViewController.m */,
+				A802B13423E655EA0057BF2E /* ChooseCueViewController.xib */,
+			);
+			path = NewHabitViews;
+			sourceTree = "<group>";
+		};
 		A89B210123D2950E008B787D = {
 			isa = PBXGroup;
 			children = (
@@ -110,10 +174,10 @@
 				A89B214523D2959D008B787D /* cued.entitlements */,
 				A89B210D23D2950E008B787D /* AppDelegate.h */,
 				A89B210E23D2950E008B787D /* AppDelegate.m */,
+				A802B14123E6697B0057BF2E /* models */,
 				A89B211023D2950E008B787D /* SceneDelegate.h */,
 				A89B211123D2950E008B787D /* SceneDelegate.m */,
-				A89B211323D2950E008B787D /* ViewController.h */,
-				A89B211423D2950E008B787D /* ViewController.m */,
+				A82F36FF23E64837006ED2BB /* views */,
 				A89B211623D2950E008B787D /* Main.storyboard */,
 				A89B211C23D29514008B787D /* Assets.xcassets */,
 				A89B211E23D29514008B787D /* LaunchScreen.storyboard */,
@@ -209,6 +273,7 @@
 				TargetAttributes = {
 					A89B210923D2950E008B787D = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					A89B212723D29514008B787D = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -245,9 +310,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A802B14023E6684A0057BF2E /* CueRoutineRewardViewController.xib in Resources */,
 				A89B212023D29514008B787D /* LaunchScreen.storyboard in Resources */,
 				A89B211D23D29514008B787D /* Assets.xcassets in Resources */,
+				A802B13B23E666E60057BF2E /* ChooseRewardViewController.xib in Resources */,
+				A802B15523E682550057BF2E /* ConfirmHabitViewController.xib in Resources */,
 				A89B211823D2950E008B787D /* Main.storyboard in Resources */,
+				A802B13623E655EB0057BF2E /* ChooseCueViewController.xib in Resources */,
+				A82F370523E64890006ED2BB /* ChooseHabitViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +342,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A802B13F23E6684A0057BF2E /* CueRoutineRewardViewController.m in Sources */,
 				A89B212323D29514008B787D /* main.m in Sources */,
+				A802B13523E655EB0057BF2E /* ChooseCueViewController.m in Sources */,
+				A802B13A23E666E60057BF2E /* ChooseRewardViewController.m in Sources */,
+				A802B15423E682550057BF2E /* ConfirmHabitViewController.m in Sources */,
 				A89B211523D2950E008B787D /* ViewController.m in Sources */,
 				A89B210F23D2950E008B787D /* AppDelegate.m in Sources */,
+				A82F370423E64890006ED2BB /* ChooseHabitViewController.m in Sources */,
 				A89B211B23D2950E008B787D /* cued.xcdatamodeld in Sources */,
 				A89B211223D2950E008B787D /* SceneDelegate.m in Sources */,
 			);
@@ -445,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = cued/cued.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -457,6 +533,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cued-app.cued";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "cued/cued-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -465,6 +544,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = cued/cued.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -477,6 +557,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cued-app.cued";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "cued/cued-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

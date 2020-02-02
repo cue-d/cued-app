@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="firstViewController">
+            <connections>
+                <outlet property="textField" destination="OaM-ha-X6o" id="w5T-JB-YsH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kw7-EA-j2b">
+                    <rect key="frame" x="24.5" y="238" width="365.5" height="113"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="113" id="GPZ-Hl-IBL"/>
+                    </constraints>
+                    <string key="text">What reward does 
+this habit provide?</string>
+                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="35"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Helps my anxiety..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OaM-ha-X6o">
+                    <rect key="frame" x="82" y="359" width="250" height="34"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="mwG-hr-YhE"/>
+                        <constraint firstAttribute="height" constant="34" id="x8E-Lg-IeJ"/>
+                    </constraints>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" returnKeyType="continue"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="kw7-EA-j2b" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="194" id="Pe0-ui-nfn"/>
+                <constraint firstItem="OaM-ha-X6o" firstAttribute="top" secondItem="kw7-EA-j2b" secondAttribute="bottom" constant="8" id="Y9Q-Nj-Fz9"/>
+                <constraint firstItem="OaM-ha-X6o" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="cn5-DO-g4e"/>
+                <constraint firstItem="OaM-ha-X6o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ij8-nD-7FR"/>
+                <constraint firstItem="kw7-EA-j2b" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="qB8-Pf-z3w"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
+        </view>
+    </objects>
+</document>

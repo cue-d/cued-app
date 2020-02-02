@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ChooseHabitViewController.h"
 
 NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
 
@@ -64,7 +65,7 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
         // A delegate that the authorization controller informs about the success or failure of an authorization attempt.
         authorizationController.delegate = self;
         // A delegate that provides a display context in which the system can present an authorization interface to the user.
-        authorizationController.presentationContextProvider = self;
+        authorizationController.presentationContextProvider = self;   
         
         // starts the authorization flows named during controller initialization.
         [authorizationController performRequests];
@@ -72,8 +73,13 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
 }
 
 - (IBAction)temporaryFakeLogin:(id)sender {
-    UITableViewController * tvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainScreen"];
-    [self.navigationController pushViewController:tvc animated:YES];
+    if (YES) {
+        ChooseHabitViewController * fc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
+        [self.navigationController pushViewController:fc animated:YES];
+    } else {
+        UITableViewController * tvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainScreen"];
+        [self.navigationController pushViewController:tvc animated:YES];
+    }
 }
 
 - (void)setupUI {
