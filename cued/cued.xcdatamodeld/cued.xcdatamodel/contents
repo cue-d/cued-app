@@ -13,7 +13,7 @@
         <attribute name="user_id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="User" positionX="-18275.74609375" positionY="-3108.41015625" width="128" height="103"/>
         <element name="Habit" positionX="-18279" positionY="-3105" width="128" height="103"/>
+        <element name="User" positionX="-18275.74609375" positionY="-3108.41015625" width="128" height="103"/>
     </elements>
 </model>

@@ -31,6 +31,10 @@
 		A89F8B6923E78594000F50AC /* HabitTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89F8B6723E78594000F50AC /* HabitTableViewController.xib */; };
 		A89F8B6D23E7889C000F50AC /* HabitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89F8B6B23E7889C000F50AC /* HabitTableViewCell.m */; };
 		A89F8B6E23E7889C000F50AC /* HabitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89F8B6C23E7889C000F50AC /* HabitTableViewCell.xib */; };
+		A89F8B7723E7C58C000F50AC /* Habit+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A89F8B7123E7C58C000F50AC /* Habit+CoreDataClass.m */; };
+		A89F8B7823E7C58C000F50AC /* Habit+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A89F8B7223E7C58C000F50AC /* Habit+CoreDataProperties.m */; };
+		A89F8B7923E7C58C000F50AC /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A89F8B7523E7C58C000F50AC /* User+CoreDataClass.m */; };
+		A89F8B7A23E7C58C000F50AC /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A89F8B7623E7C58C000F50AC /* User+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +96,14 @@
 		A89F8B6A23E7889C000F50AC /* HabitTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HabitTableViewCell.h; sourceTree = "<group>"; };
 		A89F8B6B23E7889C000F50AC /* HabitTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HabitTableViewCell.m; sourceTree = "<group>"; };
 		A89F8B6C23E7889C000F50AC /* HabitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitTableViewCell.xib; sourceTree = "<group>"; };
+		A89F8B6F23E7C58C000F50AC /* Habit+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Habit+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A89F8B7023E7C58C000F50AC /* Habit+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Habit+CoreDataClass.h"; sourceTree = "<group>"; };
+		A89F8B7123E7C58C000F50AC /* Habit+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Habit+CoreDataClass.m"; sourceTree = "<group>"; };
+		A89F8B7223E7C58C000F50AC /* Habit+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Habit+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A89F8B7323E7C58C000F50AC /* User+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A89F8B7423E7C58C000F50AC /* User+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataClass.h"; sourceTree = "<group>"; };
+		A89F8B7523E7C58C000F50AC /* User+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataClass.m"; sourceTree = "<group>"; };
+		A89F8B7623E7C58C000F50AC /* User+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +134,14 @@
 		A802B14123E6697B0057BF2E /* models */ = {
 			isa = PBXGroup;
 			children = (
+				A89F8B6F23E7C58C000F50AC /* Habit+CoreDataProperties.h */,
+				A89F8B7023E7C58C000F50AC /* Habit+CoreDataClass.h */,
+				A89F8B7123E7C58C000F50AC /* Habit+CoreDataClass.m */,
+				A89F8B7223E7C58C000F50AC /* Habit+CoreDataProperties.m */,
+				A89F8B7323E7C58C000F50AC /* User+CoreDataProperties.h */,
+				A89F8B7423E7C58C000F50AC /* User+CoreDataClass.h */,
+				A89F8B7523E7C58C000F50AC /* User+CoreDataClass.m */,
+				A89F8B7623E7C58C000F50AC /* User+CoreDataProperties.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -376,9 +396,13 @@
 				A89B211523D2950E008B787D /* ViewController.m in Sources */,
 				A89B210F23D2950E008B787D /* AppDelegate.m in Sources */,
 				A89F8B6823E78594000F50AC /* HabitTableViewController.m in Sources */,
+				A89F8B7823E7C58C000F50AC /* Habit+CoreDataProperties.m in Sources */,
+				A89F8B7923E7C58C000F50AC /* User+CoreDataClass.m in Sources */,
 				A82F370423E64890006ED2BB /* ChooseHabitViewController.m in Sources */,
 				A89B211B23D2950E008B787D /* cued.xcdatamodeld in Sources */,
+				A89F8B7723E7C58C000F50AC /* Habit+CoreDataClass.m in Sources */,
 				A89F8B6D23E7889C000F50AC /* HabitTableViewCell.m in Sources */,
+				A89F8B7A23E7C58C000F50AC /* User+CoreDataProperties.m in Sources */,
 				A89B211223D2950E008B787D /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
