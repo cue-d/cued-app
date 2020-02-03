@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ChooseHabitViewController.h"
+#import "HabitTableViewController.h"
 
 NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
 
@@ -26,6 +27,7 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
        [self observeAppleSignInState];
        [self setupUI];
     }
+    [self.navigationController.navigationBar setHidden:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -73,11 +75,12 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
 }
 
 - (IBAction)temporaryFakeLogin:(id)sender {
-    if (YES) {
-        ChooseHabitViewController * fc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
-        [self.navigationController pushViewController:fc animated:YES];
+    BOOL firstTimeSignup = YES;
+    if (firstTimeSignup) {
+        ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     } else {
-        UITableViewController * tvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainScreen"];
+        UITableViewController * tvc = [[HabitTableViewController alloc]initWithNibName:@"HabitTableViewController" bundle:nil];
         [self.navigationController pushViewController:tvc animated:YES];
     }
 }

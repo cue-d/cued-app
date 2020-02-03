@@ -7,6 +7,7 @@
 //
 
 #import "ConfirmHabitViewController.h"
+#import "HabitTableViewController.h"
 
 @interface ConfirmHabitViewController ()
 
@@ -20,7 +21,9 @@
 }
 
 - (IBAction)saveHabit:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    HabitTableViewController * tvc = [[HabitTableViewController alloc] initWithNibName:@"HabitTableViewController" bundle:nil];
+    [self.navigationController pushViewController:tvc animated:YES];
 }
 
 /*
