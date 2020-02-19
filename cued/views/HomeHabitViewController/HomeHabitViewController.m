@@ -7,6 +7,7 @@
 //
 
 #import "HomeHabitViewController.h"
+#import "UserInfoViewController.h"
 
 @interface HomeHabitViewController ()
 
@@ -26,6 +27,10 @@
     // pass habitTableView a reference to self
     
     // Do any additional setup after loading the view from its nib.
+}
+- (IBAction)userImageButtonWasPressed:(id)sender {
+     UserInfoViewController * vc = [[UserInfoViewController alloc]initWithNibName:@"UserInfoViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

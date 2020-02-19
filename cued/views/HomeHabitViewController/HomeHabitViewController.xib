@@ -11,8 +11,9 @@
             <connections>
                 <outlet property="AddHabitButton" destination="B4A-AP-rV0" id="n44-JT-JKH"/>
                 <outlet property="HabitSearchBar" destination="kYX-2y-WNC" id="oW6-qT-Uae"/>
+                <outlet property="habitSearchBar" destination="kYX-2y-WNC" id="FnK-fn-dde"/>
                 <outlet property="habitTableView" destination="MM8-gI-gfg" id="OoR-P8-pAr"/>
-                <outlet property="profilePhoto" destination="GgU-MI-k27" id="bHe-tD-7jT"/>
+                <outlet property="userProfileButton" destination="FP7-Bb-nMf" id="Kad-jO-9qe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -65,31 +66,32 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="book.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="GgU-MI-k27">
-                    <rect key="frame" x="20" y="48.5" width="55" height="48"/>
-                </imageView>
                 <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translatesAutoresizingMaskIntoConstraints="NO" id="kYX-2y-WNC">
                     <rect key="frame" x="10" y="106" width="394" height="44"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FP7-Bb-nMf">
+                    <rect key="frame" x="31" y="60" width="42" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Image"/>
+                    <connections>
+                        <action selector="userImageButtonWasPressed:" destination="-1" eventType="touchUpInside" id="Zig-ey-s9l"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="kBr-IO-V1K" firstAttribute="centerY" secondItem="B4A-AP-rV0" secondAttribute="centerY" id="6Lh-J7-CZa"/>
                 <constraint firstItem="MM8-gI-gfg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="8P1-Z7-vw8"/>
                 <constraint firstItem="MM8-gI-gfg" firstAttribute="centerX" secondItem="kYX-2y-WNC" secondAttribute="centerX" id="BsL-ZW-88r"/>
-                <constraint firstItem="kBr-IO-V1K" firstAttribute="firstBaseline" secondItem="GgU-MI-k27" secondAttribute="firstBaseline" id="H3q-mH-4cy"/>
                 <constraint firstItem="B4A-AP-rV0" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="IPv-VP-A1i"/>
-                <constraint firstItem="kBr-IO-V1K" firstAttribute="leading" secondItem="GgU-MI-k27" secondAttribute="trailing" constant="8" id="Pkk-mf-96D"/>
                 <constraint firstItem="kYX-2y-WNC" firstAttribute="top" secondItem="kBr-IO-V1K" secondAttribute="bottom" constant="12" id="TAE-al-a8K"/>
                 <constraint firstItem="MM8-gI-gfg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="U6b-CX-evJ"/>
-                <constraint firstItem="B4A-AP-rV0" firstAttribute="bottom" secondItem="GgU-MI-k27" secondAttribute="bottom" id="Zlt-YY-BxD"/>
                 <constraint firstItem="kBr-IO-V1K" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="12" id="ark-ZK-wKz"/>
                 <constraint firstItem="kYX-2y-WNC" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="eIx-Ki-0SU"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="B4A-AP-rV0" secondAttribute="trailing" constant="14" id="jD0-sm-jOC"/>
                 <constraint firstItem="kBr-IO-V1K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="83" id="nDD-Wa-iaM"/>
                 <constraint firstItem="MM8-gI-gfg" firstAttribute="top" secondItem="kYX-2y-WNC" secondAttribute="bottom" id="ryQ-af-3Oh"/>
-                <constraint firstItem="MM8-gI-gfg" firstAttribute="leading" secondItem="GgU-MI-k27" secondAttribute="leading" id="tBg-Dg-Ecu"/>
                 <constraint firstItem="MM8-gI-gfg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="z9c-aF-rFH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
@@ -103,7 +105,4 @@
             <point key="canvasLocation" x="-337" y="2"/>
         </textField>
     </objects>
-    <resources>
-        <image name="book.circle" catalog="system" width="64" height="60"/>
-    </resources>
 </document>

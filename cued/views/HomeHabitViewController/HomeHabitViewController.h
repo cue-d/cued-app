@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) HabitTableViewController *habitTableViewController;
 @property (weak, nonatomic) IBOutlet UIButton *AddHabitButton;
 @property (weak, nonatomic) IBOutlet UISearchBar *habitSearchBar;
-@property (weak, nonatomic) IBOutlet UIImageView *profilePhoto;
+@property (weak, nonatomic) IBOutlet UIButton *userProfileButton;
 
 @end
 
