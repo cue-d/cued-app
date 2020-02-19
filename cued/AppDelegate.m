@@ -72,6 +72,10 @@
 
 #pragma mark - Core Data Saving support
 
+- (NSManagedObjectContext *)getContext {
+    return self.persistentContainer.viewContext;
+}
+
 - (void)saveContext {
     NSManagedObjectContext *context = self.persistentContainer.viewContext;
     NSError *error = nil;

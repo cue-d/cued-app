@@ -15,6 +15,7 @@
 
 - (void)saveContext;
 
+- (NSManagedObjectContext *)getContext;
 
 @end
 

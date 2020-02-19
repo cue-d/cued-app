@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11A33EF623FCB3510097892F /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A33EF523FCB3510097892F /* AuthenticationServices.framework */; };
+		11A33EFA23FCB3510097892F /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A33EF923FCB3510097892F /* AuthenticationViewController.m */; };
+		11A33EFD23FCB3510097892F /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A33EFB23FCB3510097892F /* AuthenticationViewController.xib */; };
+		11A33F0123FCB3510097892F /* Auth.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11A33EF323FCB3510097892F /* Auth.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A802B13523E655EB0057BF2E /* ChooseCueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A802B13323E655EA0057BF2E /* ChooseCueViewController.m */; };
 		A802B13623E655EB0057BF2E /* ChooseCueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A802B13423E655EA0057BF2E /* ChooseCueViewController.xib */; };
 		A802B13A23E666E60057BF2E /* ChooseRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A802B13823E666E50057BF2E /* ChooseRewardViewController.m */; };
@@ -34,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		11A33EFF23FCB3510097892F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A89B210223D2950E008B787D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11A33EF223FCB3510097892F;
+			remoteInfo = Auth;
+		};
 		A89B212923D29514008B787D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A89B210223D2950E008B787D /* Project object */;
@@ -50,7 +61,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		11A33F0223FCB3510097892F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				11A33F0123FCB3510097892F /* Auth.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		11A33EF323FCB3510097892F /* Auth.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Auth.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A33EF523FCB3510097892F /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		11A33EF823FCB3510097892F /* AuthenticationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
+		11A33EF923FCB3510097892F /* AuthenticationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
+		11A33EFC23FCB3510097892F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AuthenticationViewController.xib; sourceTree = "<group>"; };
+		11A33EFE23FCB3510097892F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A802B13223E655EA0057BF2E /* ChooseCueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseCueViewController.h; sourceTree = "<group>"; };
 		A802B13323E655EA0057BF2E /* ChooseCueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseCueViewController.m; sourceTree = "<group>"; };
 		A802B13423E655EA0057BF2E /* ChooseCueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCueViewController.xib; sourceTree = "<group>"; };
@@ -95,6 +126,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		11A33EF023FCB3510097892F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A33EF623FCB3510097892F /* AuthenticationServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A89B210723D2950E008B787D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -119,6 +158,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11A33EF423FCB3510097892F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11A33EF523FCB3510097892F /* AuthenticationServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11A33EF723FCB3510097892F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				11A33EF823FCB3510097892F /* AuthenticationViewController.h */,
+				11A33EF923FCB3510097892F /* AuthenticationViewController.m */,
+				11A33EFB23FCB3510097892F /* AuthenticationViewController.xib */,
+				11A33EFE23FCB3510097892F /* Info.plist */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		A802B14123E6697B0057BF2E /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +229,8 @@
 				A89B210C23D2950E008B787D /* cued */,
 				A89B212B23D29514008B787D /* cuedTests */,
 				A89B213623D29514008B787D /* cuedUITests */,
+				11A33EF723FCB3510097892F /* Auth */,
+				11A33EF423FCB3510097892F /* Frameworks */,
 				A89B210B23D2950E008B787D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -181,6 +241,7 @@
 				A89B210A23D2950E008B787D /* cued.app */,
 				A89B212823D29514008B787D /* cuedTests.xctest */,
 				A89B213323D29514008B787D /* cuedUITests.xctest */,
+				11A33EF323FCB3510097892F /* Auth.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +294,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		11A33EF223FCB3510097892F /* Auth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11A33F0523FCB3510097892F /* Build configuration list for PBXNativeTarget "Auth" */;
+			buildPhases = (
+				11A33EEF23FCB3510097892F /* Sources */,
+				11A33EF023FCB3510097892F /* Frameworks */,
+				11A33EF123FCB3510097892F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Auth;
+			productName = Auth;
+			productReference = 11A33EF323FCB3510097892F /* Auth.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		A89B210923D2950E008B787D /* cued */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A89B213C23D29514008B787D /* Build configuration list for PBXNativeTarget "cued" */;
@@ -240,10 +318,12 @@
 				A89B210623D2950E008B787D /* Sources */,
 				A89B210723D2950E008B787D /* Frameworks */,
 				A89B210823D2950E008B787D /* Resources */,
+				11A33F0223FCB3510097892F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				11A33F0023FCB3510097892F /* PBXTargetDependency */,
 			);
 			name = cued;
 			productName = cued;
@@ -295,6 +375,9 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Justin Pezzack";
 				TargetAttributes = {
+					11A33EF223FCB3510097892F = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					A89B210923D2950E008B787D = {
 						CreatedOnToolsVersion = 11.3.1;
 						LastSwiftMigration = 1130;
@@ -325,11 +408,20 @@
 				A89B210923D2950E008B787D /* cued */,
 				A89B212723D29514008B787D /* cuedTests */,
 				A89B213223D29514008B787D /* cuedUITests */,
+				11A33EF223FCB3510097892F /* Auth */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		11A33EF123FCB3510097892F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A33EFD23FCB3510097892F /* AuthenticationViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A89B210823D2950E008B787D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,6 +456,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		11A33EEF23FCB3510097892F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A33EFA23FCB3510097892F /* AuthenticationViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A89B210623D2950E008B787D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,6 +502,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		11A33F0023FCB3510097892F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11A33EF223FCB3510097892F /* Auth */;
+			targetProxy = 11A33EFF23FCB3510097892F /* PBXContainerItemProxy */;
+		};
 		A89B212A23D29514008B787D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A89B210923D2950E008B787D /* cued */;
@@ -415,6 +520,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		11A33EFB23FCB3510097892F /* AuthenticationViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11A33EFC23FCB3510097892F /* Base */,
+			);
+			name = AuthenticationViewController.xib;
+			sourceTree = "<group>";
+		};
 		A89B211623D2950E008B787D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -434,6 +547,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		11A33F0323FCB3510097892F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DH6A3GZTAT;
+				INFOPLIST_FILE = Auth/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cued-app-ios.cued.Auth";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11A33F0423FCB3510097892F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DH6A3GZTAT;
+				INFOPLIST_FILE = Auth/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cued-app-ios.cued.Auth";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A89B213A23D29514008B787D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -670,6 +821,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		11A33F0523FCB3510097892F /* Build configuration list for PBXNativeTarget "Auth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A33F0323FCB3510097892F /* Debug */,
+				11A33F0423FCB3510097892F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A89B210523D2950E008B787D /* Build configuration list for PBXProject "cued" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

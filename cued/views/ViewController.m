@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "ChooseHabitViewController.h"
 #import "HabitTableViewController.h"
+#import "User+CoreDataClass.h"
+#import "AppDelegate.h"
 
 NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
 
@@ -74,37 +76,37 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
     }
 }
 
-- (IBAction)temporaryFakeLogin:(id)sender {
-    BOOL firstTimeSignup = YES;
-    if (firstTimeSignup) {
-        ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
-        [self.navigationController pushViewController:vc animated:YES];
-    } else {
-        UITableViewController * tvc = [[HabitTableViewController alloc]initWithNibName:@"HabitTableViewController" bundle:nil];
-        [self.navigationController pushViewController:tvc animated:YES];
-    }
-}
+//- (IBAction)temporaryFakeLogin:(id)sender {
+//    BOOL firstTimeSignup = YES;
+//    if (firstTimeSignup) {
+//        ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
+//        [self.navigationController pushViewController:vc animated:YES];
+//    } else {
+//        UITableViewController * tvc = [[HabitTableViewController alloc]initWithNibName:@"HabitTableViewController" bundle:nil];
+//        [self.navigationController pushViewController:tvc animated:YES];
+//    }
+//}
 
 - (void)setupUI {
     // Sign In With Apple
 //    appleIDLoginInfoTextView = [[UITextView alloc] initWithFrame:CGRectMake(.0, 40.0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) * 0.4) textContainer:nil];
 //    appleIDLoginInfoTextView.font = [UIFont systemFontOfSize:32.0];
 //    [self.view addSubview:appleIDLoginInfoTextView];
-//
-//
-//    if (@available(iOS 13.0, *)) {
-//        // Sign In With Apple Button
-//        ASAuthorizationAppleIDButton *appleIDButton = [ASAuthorizationAppleIDButton new];
-//        appleIDButton.frame =  CGRectMake(.0, .0, CGRectGetWidth(self.view.frame) - 40.0, 100.0);
-//        CGPoint origin = CGPointMake(20.0, CGRectGetMidY(self.view.frame));
-//        CGRect frame = appleIDButton.frame;
-//        frame.origin = origin;
-//        appleIDButton.frame = frame;
-//        appleIDButton.cornerRadius = CGRectGetHeight(appleIDButton.frame) * 0.25;
-//        [self.view addSubview:appleIDButton];
-//        [appleIDButton addTarget:self action:@selector(handleAuthrization:) forControlEvents:UIControlEventTouchUpInside];
-//    }
-//
+
+
+    if (@available(iOS 13.0, *)) {
+        // Sign In With Apple Button
+        ASAuthorizationAppleIDButton *appleIDButton = [ASAuthorizationAppleIDButton new];
+        appleIDButton.frame =  CGRectMake(.0, .0, CGRectGetWidth(self.view.frame) - 100.0, 50.0);
+        CGPoint origin = CGPointMake(50.0, CGRectGetHeight(self.view.frame) - 100);
+        CGRect frame = appleIDButton.frame;
+        frame.origin = origin;
+        appleIDButton.frame = frame;
+        appleIDButton.cornerRadius = CGRectGetHeight(appleIDButton.frame) * 0.25;
+        [self.view addSubview:appleIDButton];
+        [appleIDButton addTarget:self action:@selector(handleAuthrization:) forControlEvents:UIControlEventTouchUpInside];
+    }
+
 //    NSMutableString *mStr = [NSMutableString string];
 //    [mStr appendString:@"Sign In With Apple \n"];
 //    appleIDLoginInfoTextView.text = [mStr copy];
@@ -136,37 +138,67 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
     
     NSLog(@"authorization.credential：%@", authorization.credential);
     
-    NSMutableString *mStr = [NSMutableString string];
-    mStr = [appleIDLoginInfoTextView.text mutableCopy];
-    
+    BOOL firstTimeSignup = NO;
     if ([authorization.credential isKindOfClass:[ASAuthorizationAppleIDCredential class]]) {
         // ASAuthorizationAppleIDCredential
         ASAuthorizationAppleIDCredential *appleIDCredential = authorization.credential;
         NSString *user = appleIDCredential.user;
         [[NSUserDefaults standardUserDefaults] setValue:user forKey:setCurrentIdentifier];
-        [mStr appendString:user?:@""];
-        NSString *familyName = appleIDCredential.fullName.familyName;
-        [mStr appendString:familyName?:@""];
-        NSString *givenName = appleIDCredential.fullName.givenName;
-        [mStr appendString:givenName?:@""];
-        NSString *email = appleIDCredential.email;
-        [mStr appendString:email?:@""];
-        NSLog(@"mStr：%@", mStr);
-        [mStr appendString:@"\n"];
-        appleIDLoginInfoTextView.text = mStr;
         
-    } else if ([authorization.credential isKindOfClass:[ASPasswordCredential class]]) {
-        ASPasswordCredential *passwordCredential = authorization.credential;
-        NSString *user = passwordCredential.user;
-        NSString *password = passwordCredential.password;
-        [mStr appendString:user?:@""];
-        [mStr appendString:password?:@""];
-        [mStr appendString:@"\n"];
-        NSLog(@"mStr：%@", mStr);
-        appleIDLoginInfoTextView.text = mStr;
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *context = [appDelegate getContext];
+        
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+        
+        [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@", user]];
+
+        NSError *error;
+        NSArray *matches = [context executeFetchRequest:request error:&error];
+        User *userEntity = nil;
+        
+        if ([matches count])
+        {
+            //Returns the existing object
+            userEntity = [matches firstObject];
+        }
+        else
+        {
+            firstTimeSignup = YES;
+            
+            //Create a new Object
+            userEntity = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
+            userEntity.id = user;
+            userEntity.givenName = appleIDCredential.fullName.givenName;
+            userEntity.familyName = appleIDCredential.fullName.familyName;
+            userEntity.email = appleIDCredential.email;
+            NSLog(@"User Email: %@", userEntity.email);
+            
+            NSError *error;
+            if (![context save:&error]) {
+                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+            }
+        }
+        NSLog(@"User Entity: %@", userEntity.debugDescription);
+    }
+//    else if ([authorization.credential isKindOfClass:[ASPasswordCredential class]]) {
+//        ASPasswordCredential *passwordCredential = authorization.credential;
+//        NSString *user = passwordCredential.user;
+//        NSString *password = passwordCredential.password;
+//        [mStr appendString:user?:@""];
+//        [mStr appendString:password?:@""];
+//        [mStr appendString:@"\n"];
+//        NSLog(@"mStr：%@", mStr);
+////        appleIDLoginInfoTextView.text = mStr;
+//    } else {
+//         mStr = [@"check" mutableCopy];
+////        appleIDLoginInfoTextView.text = mStr;
+//    }
+    if (firstTimeSignup) {
+        ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     } else {
-         mStr = [@"check" mutableCopy];
-        appleIDLoginInfoTextView.text = mStr;
+        UITableViewController * tvc = [[HabitTableViewController alloc]initWithNibName:@"HabitTableViewController" bundle:nil];
+        [self.navigationController pushViewController:tvc animated:YES];
     }
 }
  
