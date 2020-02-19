@@ -7,13 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "ChooseHabitViewController.h"
-#import "HabitTableViewController.h"
-#import "CuedUser+CoreDataClass.h"
-#import "AppDelegate.h"
-#import "HomeHabitViewController.h"
 
-NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
+
 
 
 @interface ViewController ()
@@ -36,7 +31,7 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.navigationController.navigationBar setHidden:YES];
-  // [self perfomExistingAccountSetupFlows];
+//    [self perfomExistingAccountSetupFlows];
 }   
 
 - (void)observeAppleSignInState {
@@ -77,24 +72,7 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
     }
 }
 
-//- (IBAction)temporaryFakeLogin:(id)sender {
-//    BOOL firstTimeSignup = YES;
-//    if (firstTimeSignup) {
-//        ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
-//        [self.navigationController pushViewController:vc animated:YES];
-//    } else {
-//        UITableViewController * tvc = [[HabitTableViewController alloc]initWithNibName:@"HabitTableViewController" bundle:nil];
-//        [self.navigationController pushViewController:tvc animated:YES];
-//    }
-//}
-
 - (void)setupUI {
-    // Sign In With Apple
-//    appleIDLoginInfoTextView = [[UITextView alloc] initWithFrame:CGRectMake(.0, 40.0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) * 0.4) textContainer:nil];
-//    appleIDLoginInfoTextView.font = [UIFont systemFontOfSize:32.0];
-//    [self.view addSubview:appleIDLoginInfoTextView];
-
-
     if (@available(iOS 13.0, *)) {
         // Sign In With Apple Button
         ASAuthorizationAppleIDButton *appleIDButton = [ASAuthorizationAppleIDButton new];
@@ -107,10 +85,6 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
         [self.view addSubview:appleIDButton];
         [appleIDButton addTarget:self action:@selector(handleAuthrization:) forControlEvents:UIControlEventTouchUpInside];
     }
-
-//    NSMutableString *mStr = [NSMutableString string];
-//    [mStr appendString:@"Sign In With Apple \n"];
-//    appleIDLoginInfoTextView.text = [mStr copy];
 }
 
 #pragma mark - Actions
@@ -171,6 +145,7 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
             userEntity.email = appleIDCredential.email;
             [appDelegate saveContext];
         }
+        appDelegate.currentUser = userEntity;
         NSLog(@"User Entity: %@", userEntity.debugDescription);
     }
      

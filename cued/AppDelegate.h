@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "CuedUser+CoreDataClass.h"
+
+extern NSString* const setCurrentIdentifier;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (readonly, strong) NSPersistentCloudKitContainer *persistentContainer;
+@property (strong, nonatomic) CuedUser *currentUser;
 
 - (void)saveContext;
 

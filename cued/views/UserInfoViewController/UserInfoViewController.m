@@ -24,24 +24,25 @@
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController.navigationBar setHidden:NO];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [appDelegate getContext];
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"CuedUser"];
-
-    NSError *error;
-    NSArray *matches = [context executeFetchRequest:request error:&error];
-    CuedUser *userEntity = nil;
-    if ([matches count]) {
-       //Returns the existing object
-        userEntity = [matches firstObject];
-    }
-    if (![userEntity.familyName isEqualToString:@""]) {
-        self.familyNameLabel.text = userEntity.familyName;
-    }
+    self.familyNameLabel.text = appDelegate.currentUser.familyName;
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
     [self.navigationController.navigationBar setHidden:YES];
+}
+- (IBAction)backClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)logoutClicked:(id)sender {
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.currentUser = nil;
+    
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:setCurrentIdentifier];
+    NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:domainName];
+
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*

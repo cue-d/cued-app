@@ -14,6 +14,8 @@
 		11A33F0F23FDC3780097892F /* cued.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11A33F0D23FDC3780097892F /* cued.xcdatamodeld */; };
 		11A33F2623FDC6B60097892F /* CuedUser+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A33F2423FDC6B60097892F /* CuedUser+CoreDataClass.m */; };
 		11A33F2723FDC6B60097892F /* CuedUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A33F2523FDC6B60097892F /* CuedUser+CoreDataProperties.m */; };
+		11A33F2B23FDE5D70097892F /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A33F2923FDE5D70097892F /* LandingPageViewController.m */; };
+		11A33F2C23FDE5D70097892F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A33F2A23FDE5D70097892F /* ViewController.xib */; };
 		A802B13523E655EB0057BF2E /* ChooseCueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A802B13323E655EA0057BF2E /* ChooseCueViewController.m */; };
 		A802B13623E655EB0057BF2E /* ChooseCueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A802B13423E655EA0057BF2E /* ChooseCueViewController.xib */; };
 		A802B13A23E666E60057BF2E /* ChooseRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A802B13823E666E50057BF2E /* ChooseRewardViewController.m */; };
@@ -96,6 +98,9 @@
 		11A33F2323FDC6B60097892F /* CuedUser+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CuedUser+CoreDataClass.h"; sourceTree = "<group>"; };
 		11A33F2423FDC6B60097892F /* CuedUser+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CuedUser+CoreDataClass.m"; sourceTree = "<group>"; };
 		11A33F2523FDC6B60097892F /* CuedUser+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CuedUser+CoreDataProperties.m"; sourceTree = "<group>"; };
+		11A33F2823FDE5D70097892F /* LandingPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandingPageViewController.h; sourceTree = "<group>"; };
+		11A33F2923FDE5D70097892F /* LandingPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
+		11A33F2A23FDE5D70097892F /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		A802B13223E655EA0057BF2E /* ChooseCueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseCueViewController.h; sourceTree = "<group>"; };
 		A802B13323E655EA0057BF2E /* ChooseCueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseCueViewController.m; sourceTree = "<group>"; };
 		A802B13423E655EA0057BF2E /* ChooseCueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCueViewController.xib; sourceTree = "<group>"; };
@@ -217,7 +222,10 @@
 			isa = PBXGroup;
 			children = (
 				A89B211323D2950E008B787D /* ViewController.h */,
+				11A33F2823FDE5D70097892F /* LandingPageViewController.h */,
+				11A33F2923FDE5D70097892F /* LandingPageViewController.m */,
 				A89B211423D2950E008B787D /* ViewController.m */,
+				11A33F2A23FDE5D70097892F /* ViewController.xib */,
 				A8B3F40423FDDD99007E2FBF /* UserInfoViewController */,
 				F83899A123FDC5C3001838E8 /* SingleHabitViewController */,
 				F838999923FDC44D001838E8 /* HabitTableViewController */,
@@ -513,6 +521,7 @@
 				A89B211823D2950E008B787D /* Main.storyboard in Resources */,
 				F83899A623FDC5F0001838E8 /* SingleHabitViewController.xib in Resources */,
 				F8F7F3AE23FCAAD700D7F4DE /* HomeHabitViewController.xib in Resources */,
+				11A33F2C23FDE5D70097892F /* ViewController.xib in Resources */,
 				A8B3F40923FDDDB6007E2FBF /* UserInfoViewController.xib in Resources */,
 				A802B13623E655EB0057BF2E /* ChooseCueViewController.xib in Resources */,
 				A89F8B6E23E7889C000F50AC /* HabitTableViewCell.xib in Resources */,
@@ -556,6 +565,7 @@
 				A802B13523E655EB0057BF2E /* ChooseCueViewController.m in Sources */,
 				11A33F2723FDC6B60097892F /* CuedUser+CoreDataProperties.m in Sources */,
 				A802B13A23E666E60057BF2E /* ChooseRewardViewController.m in Sources */,
+				11A33F2B23FDE5D70097892F /* LandingPageViewController.m in Sources */,
 				A802B15423E682550057BF2E /* ConfirmHabitViewController.m in Sources */,
 				A89B211523D2950E008B787D /* ViewController.m in Sources */,
 				11A33F0F23FDC3780097892F /* cued.xcdatamodeld in Sources */,

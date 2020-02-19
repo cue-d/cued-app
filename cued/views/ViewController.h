@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <AuthenticationServices/AuthenticationServices.h>
+#import "ChooseHabitViewController.h"
+#import "HabitTableViewController.h"
+#import "CuedUser+CoreDataClass.h"
+#import "AppDelegate.h"
+#import "HomeHabitViewController.h"
 
-extern NSString* const setCurrentIdentifier;
 
 @interface ViewController : UIViewController<ASAuthorizationControllerDelegate,ASAuthorizationControllerPresentationContextProviding>
 
