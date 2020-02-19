@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HabitTableViewController : UITableViewController
 @property (strong, nonatomic) NSMutableArray *dummyItems;
 @property (strong, nonatomic) NSArray *displayedItems;
+@property (strong, nonatomic) UIViewController *parent;
 @end
 
 NS_ASSUME_NONNULL_END

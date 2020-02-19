@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HabitTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *routineLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rewardLabel;
+
 
 @end
 

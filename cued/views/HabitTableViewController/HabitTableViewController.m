@@ -8,6 +8,7 @@
 
 #import "HabitTableViewController.h"
 #import "HabitTableViewCell.h"
+#import "singleHabitViewController.h"
 
 @interface HabitTableViewController ()
 @end
@@ -21,6 +22,7 @@
     [self.dummyItems addObject:@"Nikola"];
     [self.dummyItems addObject:@"Katherine"];
     self.displayedItems = [[NSArray alloc] initWithArray:self.dummyItems copyItems:YES];
+    self.parent = self;
     return self;
 }
 - (void)viewDidLoad {
@@ -67,9 +69,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 150;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HabitTableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    SingleHabitViewController * shv = [[SingleHabitViewController alloc]initWithNibName:@"SingleHabitViewController" bundle:nil];
+    shv.routineLabel = cell.routineLabel;
+    [self.parent.navigationController pushViewController:shv animated:YES];
 }
 
 

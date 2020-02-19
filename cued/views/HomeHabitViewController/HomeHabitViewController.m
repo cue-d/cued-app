@@ -22,6 +22,9 @@
     [self.habitTableViewController.tableView setShowsHorizontalScrollIndicator:NO];
     [self.habitTableViewController.tableView setShowsVerticalScrollIndicator:NO];
     [self.habitSearchBar setDelegate:self];
+    self.habitTableViewController.parent = self;
+    // pass habitTableView a reference to self
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -29,11 +32,22 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if ([searchText isEqualToString:@""]) {
         self.habitTableViewController.displayedItems = self.habitTableViewController.dummyItems;
+        self.habitTableView.hidden = NO;
     } else {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
-        self.habitTableViewController.displayedItems = [self.habitTableViewController.dummyItems filteredArrayUsingPredicate:predicate];
+        self.habitTableViewController.displayedItems = [self.habitTableViewController.dummyItems filteredArrayUsingPredicate:predicate];    
+        if (self.habitTableViewController.displayedItems.count == 0) {
+            self.habitTableView.hidden = YES;
+        } else {
+            self.habitTableView.hidden = NO;
+        }
     }
     [self.habitTableViewController.tableView reloadData];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
 }
 
 /*
