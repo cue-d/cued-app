@@ -10,33 +10,66 @@
 #import "HabitTableViewCell.h"
 
 @interface HabitTableViewController ()
-
 @end
 
 @implementation HabitTableViewController
 
+- (id)init {
+    self.dummyItems = [[NSMutableArray alloc]initWithCapacity:10];
+    [self.dummyItems addObject:@"Justin"];
+    [self.dummyItems addObject:@"Tyler"];
+    [self.dummyItems addObject:@"Nikola"];
+    [self.dummyItems addObject:@"Katherine"];
+    self.displayedItems = [[NSArray alloc] initWithArray:self.dummyItems copyItems:YES];
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = YES;
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView setDelegate:self];
 }
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1; // dummy for now
+    return self.displayedItems.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5; // dummy for now
+    return 1; // dummy for now
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
+    /* Create custom view to display section header... */
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
+    [label setFont:[UIFont boldSystemFontOfSize:12]];
+    [view setBackgroundColor:[UIColor clearColor]];
+    return view;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    HabitTableViewCell * cell = [[HabitTableViewCell alloc]init];
+    HabitTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.routineLabel.text = [self.displayedItems objectAtIndex:indexPath.section];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 150;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    HabitTableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
 }
 
 

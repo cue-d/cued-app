@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.backgroundView.layer.cornerRadius = 8;
+    self.backgroundView.layer.masksToBounds = YES;
     // Initialization code
 }
 

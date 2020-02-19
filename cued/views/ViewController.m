@@ -11,6 +11,7 @@
 #import "HabitTableViewController.h"
 #import "User+CoreDataClass.h"
 #import "AppDelegate.h"
+#import "HomeHabitViewController.h"
 
 NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
 

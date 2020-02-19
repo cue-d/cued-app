@@ -35,6 +35,8 @@
 		A89F8B6923E78594000F50AC /* HabitTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89F8B6723E78594000F50AC /* HabitTableViewController.xib */; };
 		A89F8B6D23E7889C000F50AC /* HabitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89F8B6B23E7889C000F50AC /* HabitTableViewCell.m */; };
 		A89F8B6E23E7889C000F50AC /* HabitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89F8B6C23E7889C000F50AC /* HabitTableViewCell.xib */; };
+		F8F7F3AD23FCAAD700D7F4DE /* HomeHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F7F3AB23FCAAD700D7F4DE /* HomeHabitViewController.m */; };
+		F8F7F3AE23FCAAD700D7F4DE /* HomeHabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F7F3AC23FCAAD700D7F4DE /* HomeHabitViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,9 @@
 		A89F8B6A23E7889C000F50AC /* HabitTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HabitTableViewCell.h; sourceTree = "<group>"; };
 		A89F8B6B23E7889C000F50AC /* HabitTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HabitTableViewCell.m; sourceTree = "<group>"; };
 		A89F8B6C23E7889C000F50AC /* HabitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitTableViewCell.xib; sourceTree = "<group>"; };
+		F8F7F3AA23FCAAD700D7F4DE /* HomeHabitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHabitViewController.h; sourceTree = "<group>"; };
+		F8F7F3AB23FCAAD700D7F4DE /* HomeHabitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHabitViewController.m; sourceTree = "<group>"; };
+		F8F7F3AC23FCAAD700D7F4DE /* HomeHabitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHabitViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +196,9 @@
 				A89B211423D2950E008B787D /* ViewController.m */,
 				A89F8B6523E78594000F50AC /* HabitTableViewController.h */,
 				A89F8B6623E78594000F50AC /* HabitTableViewController.m */,
+				F8F7F3AC23FCAAD700D7F4DE /* HomeHabitViewController.xib */,
+				F8F7F3AA23FCAAD700D7F4DE /* HomeHabitViewController.h */,
+				F8F7F3AB23FCAAD700D7F4DE /* HomeHabitViewController.m */,
 				A89F8B6723E78594000F50AC /* HabitTableViewController.xib */,
 				A89F8B6A23E7889C000F50AC /* HabitTableViewCell.h */,
 				A89F8B6B23E7889C000F50AC /* HabitTableViewCell.m */,
@@ -433,6 +441,7 @@
 				A89F8B6923E78594000F50AC /* HabitTableViewController.xib in Resources */,
 				A802B15523E682550057BF2E /* ConfirmHabitViewController.xib in Resources */,
 				A89B211823D2950E008B787D /* Main.storyboard in Resources */,
+				F8F7F3AE23FCAAD700D7F4DE /* HomeHabitViewController.xib in Resources */,
 				A802B13623E655EB0057BF2E /* ChooseCueViewController.xib in Resources */,
 				A89F8B6E23E7889C000F50AC /* HabitTableViewCell.xib in Resources */,
 				A82F370523E64890006ED2BB /* ChooseHabitViewController.xib in Resources */,
@@ -475,6 +484,7 @@
 				A802B15423E682550057BF2E /* ConfirmHabitViewController.m in Sources */,
 				A89B211523D2950E008B787D /* ViewController.m in Sources */,
 				A89B210F23D2950E008B787D /* AppDelegate.m in Sources */,
+				F8F7F3AD23FCAAD700D7F4DE /* HomeHabitViewController.m in Sources */,
 				A89F8B6823E78594000F50AC /* HabitTableViewController.m in Sources */,
 				A82F370423E64890006ED2BB /* ChooseHabitViewController.m in Sources */,
 				A89B211B23D2950E008B787D /* cued.xcdatamodeld in Sources */,
