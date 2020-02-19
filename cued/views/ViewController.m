@@ -198,7 +198,7 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
         ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
         [self.navigationController pushViewController:vc animated:YES];
     } else {
-        UITableViewController * tvc = [[HabitTableViewController alloc]initWithNibName:@"HabitTableViewController" bundle:nil];
+        HomeHabitViewController * tvc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];
         [self.navigationController pushViewController:tvc animated:YES];
     }
 }
