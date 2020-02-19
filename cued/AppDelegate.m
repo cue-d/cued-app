@@ -20,7 +20,6 @@
     return YES;
 }
 
-
 #pragma mark - UISceneSession lifecycle
 
 
@@ -61,6 +60,7 @@
 #pragma mark - Core Data Saving support
 
 - (NSManagedObjectContext *)getContext {
+    NSLog(@"Get Context: %@", self.persistentContainer.debugDescription);
     return self.persistentContainer.viewContext;
 }
 
@@ -73,6 +73,7 @@
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }
+    NSLog(@"Saved Something");
 }
 
 @end

@@ -11,6 +11,9 @@
 		11A33EFA23FCB3510097892F /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A33EF923FCB3510097892F /* AuthenticationViewController.m */; };
 		11A33EFD23FCB3510097892F /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A33EFB23FCB3510097892F /* AuthenticationViewController.xib */; };
 		11A33F0123FCB3510097892F /* Auth.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11A33EF323FCB3510097892F /* Auth.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		11A33F0F23FDC3780097892F /* cued.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11A33F0D23FDC3780097892F /* cued.xcdatamodeld */; };
+		11A33F2623FDC6B60097892F /* CuedUser+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A33F2423FDC6B60097892F /* CuedUser+CoreDataClass.m */; };
+		11A33F2723FDC6B60097892F /* CuedUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A33F2523FDC6B60097892F /* CuedUser+CoreDataProperties.m */; };
 		A802B13523E655EB0057BF2E /* ChooseCueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A802B13323E655EA0057BF2E /* ChooseCueViewController.m */; };
 		A802B13623E655EB0057BF2E /* ChooseCueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A802B13423E655EA0057BF2E /* ChooseCueViewController.xib */; };
 		A802B13A23E666E60057BF2E /* ChooseRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A802B13823E666E50057BF2E /* ChooseRewardViewController.m */; };
@@ -26,7 +29,6 @@
 		A89B211223D2950E008B787D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A89B211123D2950E008B787D /* SceneDelegate.m */; };
 		A89B211523D2950E008B787D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89B211423D2950E008B787D /* ViewController.m */; };
 		A89B211823D2950E008B787D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A89B211623D2950E008B787D /* Main.storyboard */; };
-		A89B211B23D2950E008B787D /* cued.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A89B211923D2950E008B787D /* cued.xcdatamodeld */; };
 		A89B211D23D29514008B787D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89B211C23D29514008B787D /* Assets.xcassets */; };
 		A89B212023D29514008B787D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A89B211E23D29514008B787D /* LaunchScreen.storyboard */; };
 		A89B212323D29514008B787D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A89B212223D29514008B787D /* main.m */; };
@@ -85,6 +87,11 @@
 		11A33EF923FCB3510097892F /* AuthenticationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		11A33EFC23FCB3510097892F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AuthenticationViewController.xib; sourceTree = "<group>"; };
 		11A33EFE23FCB3510097892F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A33F0E23FDC3780097892F /* cued.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cued.xcdatamodel; sourceTree = "<group>"; };
+		11A33F2223FDC6B60097892F /* CuedUser+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CuedUser+CoreDataProperties.h"; sourceTree = "<group>"; };
+		11A33F2323FDC6B60097892F /* CuedUser+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CuedUser+CoreDataClass.h"; sourceTree = "<group>"; };
+		11A33F2423FDC6B60097892F /* CuedUser+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CuedUser+CoreDataClass.m"; sourceTree = "<group>"; };
+		11A33F2523FDC6B60097892F /* CuedUser+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CuedUser+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A802B13223E655EA0057BF2E /* ChooseCueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseCueViewController.h; sourceTree = "<group>"; };
 		A802B13323E655EA0057BF2E /* ChooseCueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseCueViewController.m; sourceTree = "<group>"; };
 		A802B13423E655EA0057BF2E /* ChooseCueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCueViewController.xib; sourceTree = "<group>"; };
@@ -109,7 +116,6 @@
 		A89B211323D2950E008B787D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A89B211423D2950E008B787D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A89B211723D2950E008B787D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A89B211A23D2950E008B787D /* cued.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cued.xcdatamodel; sourceTree = "<group>"; };
 		A89B211C23D29514008B787D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A89B211F23D29514008B787D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A89B212123D29514008B787D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -189,6 +195,10 @@
 		A802B14123E6697B0057BF2E /* models */ = {
 			isa = PBXGroup;
 			children = (
+				11A33F2223FDC6B60097892F /* CuedUser+CoreDataProperties.h */,
+				11A33F2323FDC6B60097892F /* CuedUser+CoreDataClass.h */,
+				11A33F2423FDC6B60097892F /* CuedUser+CoreDataClass.m */,
+				11A33F2523FDC6B60097892F /* CuedUser+CoreDataProperties.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -261,6 +271,7 @@
 		A89B210C23D2950E008B787D /* cued */ = {
 			isa = PBXGroup;
 			children = (
+				11A33F0D23FDC3780097892F /* cued.xcdatamodeld */,
 				A89B214523D2959D008B787D /* cued.entitlements */,
 				A89B210D23D2950E008B787D /* AppDelegate.h */,
 				A89B210E23D2950E008B787D /* AppDelegate.m */,
@@ -273,7 +284,6 @@
 				A89B211E23D29514008B787D /* LaunchScreen.storyboard */,
 				A89B212123D29514008B787D /* Info.plist */,
 				A89B212223D29514008B787D /* main.m */,
-				A89B211923D2950E008B787D /* cued.xcdatamodeld */,
 			);
 			path = cued;
 			sourceTree = "<group>";
@@ -482,16 +492,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A802B13F23E6684A0057BF2E /* CueRoutineRewardViewController.m in Sources */,
+				11A33F2623FDC6B60097892F /* CuedUser+CoreDataClass.m in Sources */,
 				A89B212323D29514008B787D /* main.m in Sources */,
 				A802B13523E655EB0057BF2E /* ChooseCueViewController.m in Sources */,
+				11A33F2723FDC6B60097892F /* CuedUser+CoreDataProperties.m in Sources */,
 				A802B13A23E666E60057BF2E /* ChooseRewardViewController.m in Sources */,
 				A802B15423E682550057BF2E /* ConfirmHabitViewController.m in Sources */,
 				A89B211523D2950E008B787D /* ViewController.m in Sources */,
+				11A33F0F23FDC3780097892F /* cued.xcdatamodeld in Sources */,
 				A89B210F23D2950E008B787D /* AppDelegate.m in Sources */,
 				F8F7F3AD23FCAAD700D7F4DE /* HomeHabitViewController.m in Sources */,
 				A89F8B6823E78594000F50AC /* HabitTableViewController.m in Sources */,
 				A82F370423E64890006ED2BB /* ChooseHabitViewController.m in Sources */,
-				A89B211B23D2950E008B787D /* cued.xcdatamodeld in Sources */,
 				A89F8B6D23E7889C000F50AC /* HabitTableViewCell.m in Sources */,
 				A89B211223D2950E008B787D /* SceneDelegate.m in Sources */,
 			);
@@ -883,12 +895,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A89B211923D2950E008B787D /* cued.xcdatamodeld */ = {
+		11A33F0D23FDC3780097892F /* cued.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A89B211A23D2950E008B787D /* cued.xcdatamodel */,
+				11A33F0E23FDC3780097892F /* cued.xcdatamodel */,
 			);
-			currentVersion = A89B211A23D2950E008B787D /* cued.xcdatamodel */;
+			currentVersion = 11A33F0E23FDC3780097892F /* cued.xcdatamodel */;
 			path = cued.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

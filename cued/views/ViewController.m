@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "ChooseHabitViewController.h"
 #import "HabitTableViewController.h"
-#import "User+CoreDataClass.h"
+#import "CuedUser+CoreDataClass.h"
 #import "AppDelegate.h"
 #import "HomeHabitViewController.h"
 
@@ -149,51 +149,31 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         NSManagedObjectContext *context = [appDelegate getContext];
         
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"CuedUser"];
         
         [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@", user]];
 
         NSError *error;
         NSArray *matches = [context executeFetchRequest:request error:&error];
-        User *userEntity = nil;
+        CuedUser *userEntity = nil;
         
-        if ([matches count])
-        {
+        if ([matches count]) {
             //Returns the existing object
             userEntity = [matches firstObject];
-        }
-        else
-        {
+        } else {
             firstTimeSignup = YES;
             
             //Create a new Object
-            userEntity = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
+            userEntity = [NSEntityDescription insertNewObjectForEntityForName:@"CuedUser" inManagedObjectContext:context];
             userEntity.id = user;
             userEntity.givenName = appleIDCredential.fullName.givenName;
             userEntity.familyName = appleIDCredential.fullName.familyName;
             userEntity.email = appleIDCredential.email;
-            NSLog(@"User Email: %@", userEntity.email);
-            
-            NSError *error;
-            if (![context save:&error]) {
-                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-            }
+            [appDelegate saveContext];
         }
         NSLog(@"User Entity: %@", userEntity.debugDescription);
     }
-//    else if ([authorization.credential isKindOfClass:[ASPasswordCredential class]]) {
-//        ASPasswordCredential *passwordCredential = authorization.credential;
-//        NSString *user = passwordCredential.user;
-//        NSString *password = passwordCredential.password;
-//        [mStr appendString:user?:@""];
-//        [mStr appendString:password?:@""];
-//        [mStr appendString:@"\n"];
-//        NSLog(@"mStr：%@", mStr);
-////        appleIDLoginInfoTextView.text = mStr;
-//    } else {
-//         mStr = [@"check" mutableCopy];
-////        appleIDLoginInfoTextView.text = mStr;
-//    }
+     
     if (firstTimeSignup) {
         ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
         [self.navigationController pushViewController:vc animated:YES];
