@@ -21,6 +21,7 @@
 		A802B15523E682550057BF2E /* ConfirmHabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A802B15323E682550057BF2E /* ConfirmHabitViewController.xib */; };
 		A82F370423E64890006ED2BB /* ChooseHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82F370223E64890006ED2BB /* ChooseHabitViewController.m */; };
 		A82F370523E64890006ED2BB /* ChooseHabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82F370323E64890006ED2BB /* ChooseHabitViewController.xib */; };
+		A886B02B23FDB55D0015D351 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A886B02A23FDB55D0015D351 /* CloudKit.framework */; };
 		A89B210F23D2950E008B787D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A89B210E23D2950E008B787D /* AppDelegate.m */; };
 		A89B211223D2950E008B787D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A89B211123D2950E008B787D /* SceneDelegate.m */; };
 		A89B211523D2950E008B787D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89B211423D2950E008B787D /* ViewController.m */; };
@@ -99,6 +100,7 @@
 		A82F370123E64890006ED2BB /* ChooseHabitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseHabitViewController.h; sourceTree = "<group>"; };
 		A82F370223E64890006ED2BB /* ChooseHabitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseHabitViewController.m; sourceTree = "<group>"; };
 		A82F370323E64890006ED2BB /* ChooseHabitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseHabitViewController.xib; sourceTree = "<group>"; };
+		A886B02A23FDB55D0015D351 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A89B210A23D2950E008B787D /* cued.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cued.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A89B210D23D2950E008B787D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A89B210E23D2950E008B787D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A886B02B23FDB55D0015D351 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +169,7 @@
 		11A33EF423FCB3510097892F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A886B02A23FDB55D0015D351 /* CloudKit.framework */,
 				11A33EF523FCB3510097892F /* AuthenticationServices.framework */,
 			);
 			name = Frameworks;

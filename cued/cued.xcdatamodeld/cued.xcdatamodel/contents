@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Habit" representedClassName="Habit" syncable="YES" codeGenerationType="class">
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="cue" optional="YES" attributeType="String"/>
@@ -13,9 +13,14 @@
         <attribute name="givenName" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
     </entity>
+    <configuration name="cued" usedWithCloudKit="YES">
+        <memberEntity name="Habit"/>
+        <memberEntity name="Notification"/>
+        <memberEntity name="User"/>
+    </configuration>
     <elements>
         <element name="Habit" positionX="15.22265625" positionY="74.28515625" width="150.921875" height="103"/>
-        <element name="User" positionX="-308.7890625" positionY="60.01953125" width="128" height="103"/>
         <element name="Notification" positionX="-156.49609375" positionY="329.46484375" width="128" height="43"/>
+        <element name="User" positionX="-308.7890625" positionY="60.01953125" width="128" height="103"/>
     </elements>
 </model>
