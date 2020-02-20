@@ -8,9 +8,6 @@
 
 #import "ViewController.h"
 
-
-
-
 @interface ViewController ()
 @end
 
@@ -107,55 +104,17 @@
 
  - (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithAuthorization:(ASAuthorization *)authorization  API_AVAILABLE(ios(13.0)){
     
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"%@", controller);
-    NSLog(@"%@", authorization);
-    
-    NSLog(@"authorization.credential：%@", authorization.credential);
-    
-    BOOL firstTimeSignup = NO;
     if ([authorization.credential isKindOfClass:[ASAuthorizationAppleIDCredential class]]) {
         // ASAuthorizationAppleIDCredential
         ASAuthorizationAppleIDCredential *appleIDCredential = authorization.credential;
         NSString *user = appleIDCredential.user;
         [[NSUserDefaults standardUserDefaults] setValue:user forKey:setCurrentIdentifier];
-        
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        NSManagedObjectContext *context = [appDelegate getContext];
-        
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"CuedUser"];
-        
-        [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@", user]];
 
-        NSError *error;
-        NSArray *matches = [context executeFetchRequest:request error:&error];
-        CuedUser *userEntity = nil;
-        
-        if ([matches count]) {
-            //Returns the existing object
-            userEntity = [matches firstObject];
-        } else {
-            firstTimeSignup = YES;
-            
-            //Create a new Object
-            userEntity = [NSEntityDescription insertNewObjectForEntityForName:@"CuedUser" inManagedObjectContext:context];
-            userEntity.id = user;
-            userEntity.givenName = appleIDCredential.fullName.givenName;
-            userEntity.familyName = appleIDCredential.fullName.familyName;
-            userEntity.email = appleIDCredential.email;
-            [appDelegate saveContext];
-        }
-        appDelegate.currentUser = userEntity;
-        NSLog(@"User Entity: %@", userEntity.debugDescription);
+        CuedUser *userEntity = [CuedUser createOrGetUserFromDictionary:@{@"id": user, @"givenName": appleIDCredential.fullName.givenName, @"familyName": appleIDCredential.fullName.familyName, @"email": appleIDCredential.email}];
     }
      
-    if (firstTimeSignup) {
-        ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
-        [self.navigationController pushViewController:vc animated:YES];
-    } else {
-        HomeHabitViewController * tvc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];
-        [self.navigationController pushViewController:tvc animated:YES];
-    }
+    ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
  
 

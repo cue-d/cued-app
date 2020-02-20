@@ -7,8 +7,6 @@
 //
 
 #import "UserInfoViewController.h"
-#import "AppDelegate.h"
-#import "CuedUser+CoreDataProperties.h"
 
 @interface UserInfoViewController ()
 
@@ -18,13 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController.navigationBar setHidden:NO];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    self.familyNameLabel.text = appDelegate.currentUser.familyName;
+    self.currentUser = [CuedUser createOrGetUserFromDictionary:@{@"id": appDelegate.currentUserID}];
+    self.familyNameLabel.text = self.currentUser.familyName;
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
@@ -36,7 +34,7 @@
 - (IBAction)logoutClicked:(id)sender {
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    appDelegate.currentUser = nil;
+    appDelegate.currentUserID = @"";
     
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:setCurrentIdentifier];
     NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];

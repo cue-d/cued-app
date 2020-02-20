@@ -23,17 +23,7 @@
     NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:@"setCurrentIdentifier"];
     if (![user isEqualToString:@""]) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        NSManagedObjectContext *context = [appDelegate getContext];
-        
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"CuedUser"];
-        [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@", user]];
-        NSError *error;
-        NSArray *matches = [context executeFetchRequest:request error:&error];
-        if (!error && [matches count]) {
-            appDelegate.currentUser = [matches firstObject];
-        } else {
-            NSLog(@"Failed to get user with id: %@", user);
-        }
+        appDelegate.currentUserID = user;
         HomeHabitViewController * tvc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];
                [self.navigationController pushViewController:tvc animated:NO];
     } else {
