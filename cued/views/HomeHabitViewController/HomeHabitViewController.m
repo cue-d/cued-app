@@ -27,7 +27,7 @@
     self.habitTableViewController.parent = self;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)queryForHabits {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *moc = [appDelegate getContext];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Habit"];
@@ -43,6 +43,10 @@
     } else {
         self.habitTableView.hidden = NO;
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self queryForHabits];
 }
 
 - (IBAction)userImageButtonWasPressed:(id)sender {
