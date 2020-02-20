@@ -18,6 +18,7 @@
 @dynamic id;
 @dynamic cue;
 @dynamic routine;
+@dynamic routine_previous;
 @dynamic reward;
 @dynamic completeCount;
 @dynamic active;

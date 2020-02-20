@@ -13,9 +13,10 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="reward" optional="YES" attributeType="String"/>
         <attribute name="routine" optional="YES" attributeType="String"/>
+        <attribute name="routine_previous" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="CuedUser" positionX="-54" positionY="-9" width="128" height="103"/>
-        <element name="Habit" positionX="-36" positionY="36" width="128" height="133"/>
+        <element name="Habit" positionX="-36" positionY="36" width="128" height="148"/>
     </elements>
 </model>

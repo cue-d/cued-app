@@ -8,6 +8,7 @@
 
 #import "HomeHabitViewController.h"
 #import "UserInfoViewController.h"
+#import "AppDelegate.h"
 
 @interface HomeHabitViewController ()
 
@@ -24,23 +25,38 @@
     [self.habitTableViewController.tableView setShowsVerticalScrollIndicator:NO];
     [self.habitSearchBar setDelegate:self];
     self.habitTableViewController.parent = self;
-    // pass habitTableView a reference to self
-    
-    // Do any additional setup after loading the view from its nib.
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *moc = [appDelegate getContext];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Habit"];
+     
+    NSError *error = nil;
+    self.habitsFromDatabase = [moc executeFetchRequest:request error:&error];
+    if (!self.habitsFromDatabase) {
+        NSLog(@"Error fetching Habit objects: %@\n%@", [error localizedDescription], [error userInfo]);
+    }
+    
+    if (self.habitsFromDatabase.count == 0) {
+        self.habitTableView.hidden = YES;
+    } else {
+        self.habitTableView.hidden = NO;
+    }
+}
+
 - (IBAction)userImageButtonWasPressed:(id)sender {
      UserInfoViewController * vc = [[UserInfoViewController alloc]initWithNibName:@"UserInfoViewController" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if ([searchText isEqualToString:@""]) {
-        self.habitTableViewController.displayedItems = self.habitTableViewController.dummyItems;
+        self.habitTableViewController.displayedItems = self.habitsFromDatabase;
         self.habitTableView.hidden = NO;
     } else {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
-        self.habitTableViewController.displayedItems = [self.habitTableViewController.dummyItems filteredArrayUsingPredicate:predicate];    
+        self.habitTableViewController.displayedItems = [self.habitsFromDatabase filteredArrayUsingPredicate:predicate];
         if (self.habitTableViewController.displayedItems.count == 0) {
             self.habitTableView.hidden = YES;
         } else {

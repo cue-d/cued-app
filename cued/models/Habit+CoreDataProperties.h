@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSUUID *id;
 @property (nullable, nonatomic, copy) NSString *cue;
 @property (nullable, nonatomic, copy) NSString *routine;
+@property (nullable, nonatomic, copy) NSString *routine_previous;
 @property (nullable, nonatomic, copy) NSString *reward;
 @property (nonatomic) int16_t completeCount;
 @property (nonatomic) BOOL active;
