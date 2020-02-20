@@ -7,7 +7,7 @@
 //
 //
 
-#import "CuedUser+CoreDataClass.h"
+#import "CuedUser+CoreDataProperties.h"
 
 @implementation CuedUser
 

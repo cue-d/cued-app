@@ -45,6 +45,7 @@
     } else {
         self.habitTableView.hidden = NO;
     }
+    [self.habitTableViewController.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -61,6 +62,7 @@
     habitEntity.routine = @"TEST ROUTINE";
     [appDelegate saveContext];
     NSLog(@"FAKE DATA ADDED");
+    [self queryForHabits];
 }
 
 - (IBAction)userImageButtonWasPressed:(id)sender {

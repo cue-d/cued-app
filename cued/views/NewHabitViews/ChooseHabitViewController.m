@@ -8,6 +8,7 @@
 
 #import "ChooseHabitViewController.h"
 #import "ChooseCueViewController.h"
+#import "HomeHabitViewController.h"
 
 @interface ChooseHabitViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -28,6 +29,10 @@
     ChooseCueViewController * fc = [[ChooseCueViewController alloc]initWithNibName:@"ChooseCueViewController" bundle:nil];
     [self.navigationController pushViewController:fc animated:YES];
     return NO;
+}
+- (IBAction)skipButtonPressed:(id)sender {
+    HomeHabitViewController * fc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];
+    [self.navigationController pushViewController:fc animated:YES];
 }
 
 @end
