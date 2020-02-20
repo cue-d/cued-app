@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HabitTableViewController.h"
+#import "Habit+CoreDataProperties.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

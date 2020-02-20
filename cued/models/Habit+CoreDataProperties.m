@@ -14,8 +14,6 @@
 + (NSFetchRequest<Habit *> *)fetchRequest {
 	return [NSFetchRequest fetchRequestWithEntityName:@"Habit"];
 }
-
-@dynamic id;
 @dynamic cue;
 @dynamic routine;
 @dynamic routine_previous;

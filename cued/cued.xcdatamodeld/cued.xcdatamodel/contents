@@ -10,7 +10,7 @@
         <attribute name="active" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="completeCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="cue" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="reward" optional="YES" attributeType="String"/>
         <attribute name="routine" optional="YES" attributeType="String"/>
         <attribute name="routine_previous" optional="YES" attributeType="String"/>

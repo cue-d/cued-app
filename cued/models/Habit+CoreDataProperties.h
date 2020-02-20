@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Habit (CoreDataProperties)
 
 + (NSFetchRequest<Habit *> *)fetchRequest;
-
-@property (nullable, nonatomic, copy) NSUUID *id;
 @property (nullable, nonatomic, copy) NSString *cue;
 @property (nullable, nonatomic, copy) NSString *routine;
 @property (nullable, nonatomic, copy) NSString *routine_previous;

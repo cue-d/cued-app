@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view from its nib.
     [self.navigationController setNavigationBarHidden:YES];
     NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:@"setCurrentIdentifier"];
-    if (![user isEqualToString:@""]) {
+    if (user != nil && ![user isEqualToString:@""]) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         appDelegate.currentUserID = user;
         HomeHabitViewController * tvc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];

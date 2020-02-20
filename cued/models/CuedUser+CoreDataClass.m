@@ -11,8 +11,7 @@
 
 @implementation CuedUser
 
-+ (CuedUser *) createOrGetUserFromDictionary:(NSDictionary *)userInfo
-{
++ (CuedUser *)createOrGetUserFromDictionary:(NSDictionary *)userInfo {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate getContext];
     

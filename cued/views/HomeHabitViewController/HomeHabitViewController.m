@@ -26,7 +26,9 @@
     [self.habitSearchBar setDelegate:self];
     self.habitTableViewController.parent = self;
 }
-
+- (void)addHabit {
+    
+}
 - (void)queryForHabits {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *moc = [appDelegate getContext];
@@ -47,6 +49,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self queryForHabits];
+}
+- (IBAction)addHabitButtonPressed:(id)sender {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate getContext];
+    Habit *habitEntity = nil;
+    habitEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Habit" inManagedObjectContext:context];
+    habitEntity.cue = @"TEST CUE";
+    habitEntity.reward = @"TEST REWARD";
+    habitEntity.routine_previous = @"TEST ROUTINE PREVIOUS";
+    habitEntity.routine = @"TEST ROUTINE";
+    [appDelegate saveContext];
+    NSLog(@"FAKE DATA ADDED");
 }
 
 - (IBAction)userImageButtonWasPressed:(id)sender {
@@ -70,19 +84,8 @@
     [self.habitTableViewController.tableView reloadData];
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

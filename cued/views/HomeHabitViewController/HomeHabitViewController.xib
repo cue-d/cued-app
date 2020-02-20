@@ -65,6 +65,9 @@
                             <integer key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addHabitButtonPressed:" destination="-1" eventType="touchUpInside" id="LIC-XV-IIi"/>
+                    </connections>
                 </button>
                 <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translatesAutoresizingMaskIntoConstraints="NO" id="kYX-2y-WNC">
                     <rect key="frame" x="10" y="106" width="394" height="44"/>
