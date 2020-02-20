@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "CuedUser+CoreDataClass.h"
+#import <UserNotifications/UserNotifications.h>
 
 extern NSString* const setCurrentIdentifier;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate>
 
 @property (readonly, strong) NSPersistentCloudKitContainer *persistentContainer;
 @property (strong, nonatomic) CuedUser *currentUser;

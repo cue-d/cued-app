@@ -19,7 +19,32 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+    [center requestAuthorizationWithOptions:
+             (UNAuthorizationOptionAlert +
+              UNAuthorizationOptionSound)
+       completionHandler:^(BOOL granted, NSError * _Nullable error) {
+          // Enable or disable features based on authorization.
+    }];
     
+    UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
+    content.title = [NSString localizedUserNotificationStringForKey:@"Test Notification!" arguments:nil];
+    content.body = [NSString localizedUserNotificationStringForKey:@"This is a test notification!"
+            arguments:nil];
+     
+    UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger
+                                                  triggerWithTimeInterval:5 repeats:NO];
+     
+    // Create the request object.
+    UNNotificationRequest* request = [UNNotificationRequest
+           requestWithIdentifier:@"MorningAlarm" content:content trigger:trigger];
+    
+    [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+       if (error != nil) {
+           NSLog(@"%@", error.localizedDescription);
+       }
+    }];
+
     return YES;
 }
 
