@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *AddHabitButton;
 @property (weak, nonatomic) IBOutlet UISearchBar *habitSearchBar;
 @property (weak, nonatomic) IBOutlet UIButton *userProfileButton;
+@property (strong, nonatomic) NSArray * habitsFromDatabase;
 
-@end
+@end;
 
 NS_ASSUME_NONNULL_END

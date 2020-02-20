@@ -9,6 +9,7 @@
 #import "HabitTableViewController.h"
 #import "HabitTableViewCell.h"
 #import "singleHabitViewController.h"
+#import "AppDelegate.h"
 
 @interface HabitTableViewController ()
 @end
@@ -16,13 +17,7 @@
 @implementation HabitTableViewController
 
 - (id)init {
-    self.dummyItems = [[NSMutableArray alloc]initWithCapacity:10];
-    [self.dummyItems addObject:@"Justin"];
-    [self.dummyItems addObject:@"Tyler"];
-    [self.dummyItems addObject:@"Nikola"];
-    [self.dummyItems addObject:@"Katherine"];
-    self.displayedItems = [[NSArray alloc] initWithArray:self.dummyItems copyItems:YES];
-    self.parent = self;
+    self.displayedItems = [[NSArray alloc] init];
     return self;
 }
 - (void)viewDidLoad {
@@ -43,7 +38,6 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
-    /* Create custom view to display section header... */
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
     [label setFont:[UIFont boldSystemFontOfSize:12]];
     [view setBackgroundColor:[UIColor clearColor]];
