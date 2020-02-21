@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Habit+CoreDataProperties.h"
+#import "HomeHabitViewController.h"
+#import "CueRoutineRewardViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ChooseRewardViewController : UIViewController<UITextFieldDelegate>
 
-@property (strong, nonatomic) Habit *habitEntity;
+@property (strong, nonatomic) NSMutableDictionary *habitInfo;
 
 @end
 

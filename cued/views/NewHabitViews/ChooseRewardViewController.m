@@ -7,7 +7,6 @@
 //
 
 #import "ChooseRewardViewController.h"
-#import "CueRoutineRewardViewController.h"
 
 @interface ChooseRewardViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -23,16 +22,16 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    if (self.habitEntity != nil) {
-        self.textField.text = self.habitEntity.reward;
+    if (self.habitInfo != nil) {
+        self.textField.text = [self.habitInfo valueForKey:REWARD];
     }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     CueRoutineRewardViewController * fc = [[CueRoutineRewardViewController alloc]initWithNibName:@"CueRoutineRewardViewController" bundle:nil];
-    self.habitEntity.reward = textField.text;
-    fc.habitEntity = self.habitEntity;
+    [self.habitInfo setValue:textField.text forKey:REWARD];
+    fc.habitInfo = self.habitInfo;
     [self.navigationController pushViewController:fc animated:YES];
     return NO;
 }

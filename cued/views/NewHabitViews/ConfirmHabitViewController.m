@@ -7,7 +7,6 @@
 //
 
 #import "ConfirmHabitViewController.h"
-#import "HomeHabitViewController.h"
 
 @interface ConfirmHabitViewController ()
 
@@ -22,17 +21,16 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    if (self.habitEntity != nil) {
-        self.cueTextfield.text = [NSString stringWithFormat:@"Cue: %@",self.habitEntity.cue];
-        self.routineTextfield.text = [NSString stringWithFormat:@"New Routine: %@",self.habitEntity.routine];
-        self.previousRoutineTextfield.text = [NSString stringWithFormat:@"Old Routine: %@",self.habitEntity.routine_previous];
-        self.rewardTextfield.text = [NSString stringWithFormat:@"Reward: %@",self.habitEntity.reward];
+    if (self.habitInfo != nil) {
+        self.cueTextfield.text = [NSString stringWithFormat:@"Cue: %@",[self.habitInfo valueForKey:CUE]];
+        self.routineTextfield.text = [NSString stringWithFormat:@"New Routine: %@",[self.habitInfo valueForKey:ROUTINE]];
+        self.previousRoutineTextfield.text = [NSString stringWithFormat:@"Old Routine: %@",[self.habitInfo valueForKey:ROUTINE_PREVIOUS]];
+        self.rewardTextfield.text = [NSString stringWithFormat:@"Reward: %@",[self.habitInfo valueForKey:REWARD]];
     }
 }
 
 - (IBAction)saveHabit:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate saveContext];
+    [Habit createHabitFromDictionary:@{CUE: [self.habitInfo valueForKey:CUE], ROUTINE: [self.habitInfo valueForKey:ROUTINE], ROUTINE_PREVIOUS: [self.habitInfo valueForKey:ROUTINE_PREVIOUS], REWARD: [self.habitInfo valueForKey:REWARD]}];
     NSLog(@"REAL DATA ADDED");
     self.navigationController.navigationBarHidden = YES;
     [self.navigationController popToRootViewControllerAnimated:YES];

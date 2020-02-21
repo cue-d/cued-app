@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Habit+CoreDataProperties.h"
+#import "HomeHabitViewController.h"
 #import "AppDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -17,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *routineTextfield;
 @property (weak, nonatomic) IBOutlet UILabel *previousRoutineTextfield;
 @property (weak, nonatomic) IBOutlet UILabel *rewardTextfield;
-@property (strong, nonatomic) Habit *habitEntity;
+@property (strong, nonatomic) NSMutableDictionary *habitInfo;
 
 @end
 

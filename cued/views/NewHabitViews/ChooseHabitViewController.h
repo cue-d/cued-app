@@ -9,13 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ChooseCueViewController.h"
 #import "HomeHabitViewController.h"
-#import "Habit+CoreDataProperties.h"
 #import "AppDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ChooseHabitViewController : UIViewController<UITextFieldDelegate>
-@property (strong, nonatomic) Habit *habitEntity;
+@property (strong, nonatomic) NSMutableDictionary *habitInfo;
 
 @end
 

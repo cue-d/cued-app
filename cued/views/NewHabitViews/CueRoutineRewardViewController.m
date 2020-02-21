@@ -7,7 +7,6 @@
 //
 
 #import "CueRoutineRewardViewController.h"
-#import "ConfirmHabitViewController.h"
 
 @interface CueRoutineRewardViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -24,16 +23,16 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    if (self.habitEntity != nil) {
-        self.textField.text = self.habitEntity.routine;
+    if (self.habitInfo != nil) {
+        self.textField.text = [self.habitInfo valueForKey:ROUTINE];
     }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     ConfirmHabitViewController * fc = [[ConfirmHabitViewController alloc]initWithNibName:@"ConfirmHabitViewController" bundle:nil];
-    self.habitEntity.routine = textField.text;
-    fc.habitEntity = self.habitEntity;
+    [self.habitInfo setValue:textField.text forKey:ROUTINE];
+    fc.habitInfo = self.habitInfo;
     [self.navigationController pushViewController:fc animated:YES];
     return NO;
 }

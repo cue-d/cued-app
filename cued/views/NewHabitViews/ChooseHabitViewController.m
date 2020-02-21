@@ -17,38 +17,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.habitEntity == nil) {
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        NSManagedObjectContext *context = [appDelegate getContext];
-        self.habitEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Habit" inManagedObjectContext:context];
-    }
     [self.textField setDelegate:self];
     [self.textField becomeFirstResponder];
+    self.habitInfo = [NSMutableDictionary new];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = YES;
-    if (self.habitEntity != nil) {
-        self.textField.text = self.habitEntity.routine_previous;
+    if (self.habitInfo != nil) {
+        self.textField.text = [self.habitInfo valueForKey:ROUTINE_PREVIOUS];
     }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     ChooseCueViewController * fc = [[ChooseCueViewController alloc]initWithNibName:@"ChooseCueViewController" bundle:nil];
-    self.habitEntity.routine_previous = textField.text;
-    fc.habitEntity = self.habitEntity;
+    [self.habitInfo setValue:textField.text forKey:ROUTINE_PREVIOUS];
+    fc.habitInfo = self.habitInfo;
     [self.navigationController pushViewController:fc animated:YES];
     return NO;
 }
 - (IBAction)skipButtonPressed:(id)sender {
-    if (self.habitEntity == nil) {
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        NSManagedObjectContext *context = [appDelegate getContext];
-        [context deleteObject: self.habitEntity];
-    }
-    
     HomeHabitViewController * fc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];
     [self.navigationController pushViewController:fc animated:YES];
 }

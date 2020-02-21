@@ -7,7 +7,6 @@
 //
 
 #import "ChooseCueViewController.h"
-#import "ChooseRewardViewController.h"
 
 @interface ChooseCueViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -32,16 +31,16 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-    if (self.habitEntity != nil) {
-        self.textField.text = self.habitEntity.cue;
+    if (self.habitInfo != nil) {
+        self.textField.text = [self.habitInfo valueForKey:CUE];
     }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     ChooseRewardViewController * fc = [[ChooseRewardViewController alloc]initWithNibName:@"ChooseRewardViewController" bundle:nil];
-    self.habitEntity.cue = textField.text;
-    fc.habitEntity = self.habitEntity;
+    [self.habitInfo setValue:textField.text forKey:CUE];
+    fc.habitInfo = self.habitInfo;
     [self.navigationController pushViewController:fc animated:YES];
     return NO;
 }

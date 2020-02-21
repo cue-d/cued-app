@@ -14,6 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Habit : NSManagedObject
 + (NSArray *) getAllHabits;
++ (Habit *) createHabitFromDictionary:(NSDictionary *) habitInfo;
+
+extern NSString * const ROUTINE_PREVIOUS;
+extern NSString * const CUE;
+extern NSString * const REWARD;
+extern NSString * const ROUTINE;
+
 @end
 
 NS_ASSUME_NONNULL_END
