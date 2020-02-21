@@ -26,16 +26,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UserTableCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"userCell"];
     if (!cell) {
-        cell = [[UserTableCellController alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"userCell"];
+        cell = [[UserTableCellController alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"userCell"];
     }
     switch (indexPath.section) {
         case 0: {
             cell.textLabel.text = @"Email";
             cell.detailTextLabel.text = @"katherine@me.com";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             break;
         }
         case 1: {
             cell.textLabel.text = @"Reminders";
+            UISwitch *reminderSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
+            cell.accessoryView = reminderSwitch;
+            [reminderSwitch setOn:NO];
             break;
         }
         default: {
@@ -49,24 +53,19 @@
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return 40;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UINavigationBar* navbar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, 50)];
-
-    UINavigationItem* navItem = [[UINavigationItem alloc] initWithTitle:@"Profile"];
-    navItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(onTapBack:)];
-    
-    [navbar setItems:@[navItem]];
-    [self.view addSubview:navbar];
-    
     [self.profileImage setImage:[UIImage imageNamed:@"IMG_2226.jpg"]];
     self.profileImage.layer.cornerRadius = (self.profileImage.frame.size.width / 2);
     self.profileImage.clipsToBounds = YES;
-    
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
 }
 
 -(void)onTapBack:(UIBarButtonItem*)item{
@@ -75,14 +74,16 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController.navigationBar setHidden:NO];
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                         forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.tintColor = [UIColor systemBlueColor];
+
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.currentUser = [CuedUser createOrGetUserFromDictionary:@{@"id": appDelegate.currentUserID}];
     self.familyNameLabel.text = [NSString stringWithFormat:@"%@ %@", self.currentUser.givenName, self.currentUser.familyName];
-}
-
-- (void) viewWillDisappear:(BOOL)animated {
-    [self.navigationController.navigationBar setHidden:YES];
 }
 
 - (IBAction)logoutClicked:(id)sender {

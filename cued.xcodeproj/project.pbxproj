@@ -46,6 +46,7 @@
 		A8B42D7223FF7645004D8166 /* EditHabitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B42D7023FF7645004D8166 /* EditHabitTableViewController.m */; };
 		A8B42D7723FF77CF004D8166 /* EditHabitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B42D7523FF77CF004D8166 /* EditHabitTableViewCell.m */; };
 		A8B42D7823FF77CF004D8166 /* EditHabitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B42D7623FF77CF004D8166 /* EditHabitTableViewCell.xib */; };
+		A8C1B44524006A5E0080E8BD /* EditHabitPropertyController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C1B44324006A5E0080E8BD /* EditHabitPropertyController.m */; };
 		F83899A523FDC5F0001838E8 /* SingleHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83899A323FDC5F0001838E8 /* SingleHabitViewController.m */; };
 		F83899A623FDC5F0001838E8 /* SingleHabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83899A423FDC5F0001838E8 /* SingleHabitViewController.xib */; };
 		F8739B0623FF6509007B2CF5 /* IMG_2226.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8739B0523FF6509007B2CF5 /* IMG_2226.jpg */; };
@@ -160,6 +161,8 @@
 		A8B42D7423FF77CF004D8166 /* EditHabitTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditHabitTableViewCell.h; sourceTree = "<group>"; };
 		A8B42D7523FF77CF004D8166 /* EditHabitTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditHabitTableViewCell.m; sourceTree = "<group>"; };
 		A8B42D7623FF77CF004D8166 /* EditHabitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditHabitTableViewCell.xib; sourceTree = "<group>"; };
+		A8C1B44224006A5E0080E8BD /* EditHabitPropertyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditHabitPropertyController.h; sourceTree = "<group>"; };
+		A8C1B44324006A5E0080E8BD /* EditHabitPropertyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditHabitPropertyController.m; sourceTree = "<group>"; };
 		F83899A223FDC5F0001838E8 /* SingleHabitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleHabitViewController.h; sourceTree = "<group>"; };
 		F83899A323FDC5F0001838E8 /* SingleHabitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleHabitViewController.m; sourceTree = "<group>"; };
 		F83899A423FDC5F0001838E8 /* SingleHabitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleHabitViewController.xib; sourceTree = "<group>"; };
@@ -396,6 +399,8 @@
 				A8B42D7623FF77CF004D8166 /* EditHabitTableViewCell.xib */,
 				A8B42D6F23FF7645004D8166 /* EditHabitTableViewController.h */,
 				A8B42D7023FF7645004D8166 /* EditHabitTableViewController.m */,
+				A8C1B44224006A5E0080E8BD /* EditHabitPropertyController.h */,
+				A8C1B44324006A5E0080E8BD /* EditHabitPropertyController.m */,
 			);
 			path = SingleHabitViewController;
 			sourceTree = "<group>";
@@ -606,6 +611,7 @@
 				A82F370423E64890006ED2BB /* ChooseHabitViewController.m in Sources */,
 				A89F8B6D23E7889C000F50AC /* HabitTableViewCell.m in Sources */,
 				A89B211223D2950E008B787D /* SceneDelegate.m in Sources */,
+				A8C1B44524006A5E0080E8BD /* EditHabitPropertyController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
