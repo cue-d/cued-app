@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <AuthenticationServices/AuthenticationServices.h>
+#import "AppDelegate.h"
+#import "CuedUser+CoreDataClass.h"
+#import "Habit+CoreDataClass.h"
 #import "ChooseHabitViewController.h"
 #import "HabitTableViewController.h"
-#import "CuedUser+CoreDataClass.h"
-#import "AppDelegate.h"
 #import "HomeHabitViewController.h"
 
 

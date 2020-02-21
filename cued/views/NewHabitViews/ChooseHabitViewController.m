@@ -28,6 +28,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
     if (self.habitEntity != nil) {
         self.textField.text = self.habitEntity.routine_previous;
     }
@@ -42,6 +43,12 @@
     return NO;
 }
 - (IBAction)skipButtonPressed:(id)sender {
+    if (self.habitEntity == nil) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *context = [appDelegate getContext];
+        [context deleteObject: self.habitEntity];
+    }
+    
     HomeHabitViewController * fc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];
     [self.navigationController pushViewController:fc animated:YES];
 }

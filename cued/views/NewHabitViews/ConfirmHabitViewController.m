@@ -21,6 +21,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     if (self.habitEntity != nil) {
         self.cueTextfield.text = [NSString stringWithFormat:@"Cue: %@",self.habitEntity.cue];
         self.routineTextfield.text = [NSString stringWithFormat:@"New Routine: %@",self.habitEntity.routine];
@@ -33,6 +34,7 @@
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate saveContext];
     NSLog(@"REAL DATA ADDED");
+    self.navigationController.navigationBarHidden = YES;
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

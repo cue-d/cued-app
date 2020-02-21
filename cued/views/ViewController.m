@@ -111,11 +111,20 @@
         NSString *user = appleIDCredential.user;
         [[NSUserDefaults standardUserDefaults] setValue:user forKey:setCurrentIdentifier];
 
-        CuedUser *userEntity = [CuedUser createOrGetUserFromDictionary:@{@"id": user, @"givenName": appleIDCredential.fullName.givenName, @"familyName": appleIDCredential.fullName.familyName, @"email": appleIDCredential.email}];
+        [CuedUser createOrGetUserFromDictionary:@{@"id": user, @"givenName": appleIDCredential.fullName.givenName, @"familyName": appleIDCredential.fullName.familyName, @"email": appleIDCredential.email}];
+        
+        NSArray *habits = [Habit getAllHabits];
+        
+        if ([habits count]) {
+            HomeHabitViewController * tvc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];
+            [self.navigationController pushViewController:tvc animated:YES];
+        } else {
+            ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    } else {
+        NSLog(@"Invalid authorization credential kind");
     }
-     
-    ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
-    [self.navigationController pushViewController:vc animated:YES];
 }
  
 

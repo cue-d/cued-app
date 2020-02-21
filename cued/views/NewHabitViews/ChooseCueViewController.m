@@ -24,6 +24,14 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                         forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
     if (self.habitEntity != nil) {
         self.textField.text = self.habitEntity.cue;
     }
