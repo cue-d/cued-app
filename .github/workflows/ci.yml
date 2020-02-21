@@ -23,7 +23,7 @@ jobs:
       - name: Bundle Install
         run: bundle install
         env:
-          BUNDLE_GITHUB__COM: x-access-token:${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}
+          BUNDLE_GITHUB__COM: x-access-token:daf627394f3de406f6beef6230098c518b77f61
       - name: Dependencies
         run: |
           carthage bootstrap --no-use-binaries --platform iOS --cache-builds
