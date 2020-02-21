@@ -16,7 +16,7 @@
 @implementation UserInfoViewController
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -26,13 +26,30 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UserTableCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"userCell"];
     if (!cell) {
-        [tableView registerNib:[UINib nibWithNibName:@"UserTableCellController" bundle:nil] forCellReuseIdentifier:@"userCell"];
-        cell = [tableView dequeueReusableCellWithIdentifier:@"userCell"];
+        cell = [[UserTableCellController alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"userCell"];
     }
-    cell.textLabel.text = @"Routine";
-    cell.detailTextLabel.text = @"Make my bed";
+    switch (indexPath.section) {
+        case 0: {
+            cell.textLabel.text = @"Email";
+            cell.detailTextLabel.text = @"katherine@me.com";
+            break;
+        }
+        case 1: {
+            cell.textLabel.text = @"Reminders";
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+    
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
 }
 
 - (void)viewDidLoad {
