@@ -1,50 +1,81 @@
 //
-//  EditHabitTableViewController.m
+//  HabitTableViewController.m
 //  cued
 //
-//  Created by Katherine Lu on 2020-02-19.
+//  Created by Justin Pezzack on 2/2/20.
 //  Copyright © 2020 Justin Pezzack. All rights reserved.
 //
 
 #import "EditHabitTableViewController.h"
+#import "EditHabitTableViewCell.h"
 
 @interface EditHabitTableViewController ()
-
 @end
 
 @implementation EditHabitTableViewController
 
+- (id) init {
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.clearsSelectionOnViewWillAppear = YES;
+    [self.tableView setDelegate:self];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 3;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 1;
 }
 
-/*
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
+    [label setFont:[UIFont boldSystemFontOfSize:12]];
+    [view setBackgroundColor:[UIColor clearColor]];
+    return view;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    EditHabitTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"editHabitViewCell" forIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    switch (indexPath.row) {
+        case 0: {
+            cell.mainLabel.text = @"Cue";
+            break;
+        }
+        case 1: {
+            cell.mainLabel.text = @"Reward";
+            break;
+        }
+        case 2: {
+            cell.mainLabel.text = @"Streak";
+            break;
+        }
+        case 4: {
+            cell.mainLabel.text = @"Reminder";
+            break;
+        }
+        case 5: {
+            cell.mainLabel.text = @"Integration";
+            break;
+        }
+        default:
+            break;
+    }
     return cell;
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 88;
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -62,7 +93,7 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 */
 

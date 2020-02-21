@@ -17,17 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.routineLabel.text = self.routine;
-
-//    self.editHabitTableViewController = [[EditHabitTableViewController alloc]init];
-//    self.editHabitTableViewController.tableView = self.singleHabitInfoView;
-//    [self.editHabitTableViewController.tableView registerNib:[UINib nibWithNibName:@"EditHabitTableViewController" bundle:nil] forCellReuseIdentifier:@"cell"];
-//    [self.editHabitTableViewController.tableView setShowsHorizontalScrollIndicator:NO];
-//    [self.editHabitTableViewController.tableView setShowsVerticalScrollIndicator:NO];
-//    self.editHabitTableViewController.parent = self;
-    
-    // Do any additional setup after loading the view from its nib.
+    self.editHabitTableViewController = [[EditHabitTableViewController alloc]init];
+    self.editHabitTableViewController.tableView = self.singleHabitInfoView;
+    [self.editHabitTableViewController.tableView registerNib:[UINib nibWithNibName:@"EditHabitTableViewCell" bundle:nil] forCellReuseIdentifier:@"editHabitViewCell"];
 }
 
 /*

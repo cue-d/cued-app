@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EditHabitTableViewController.h"
+#import "Habit+CoreDataProperties.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) NSString *routine;
 @property (strong, nonatomic) EditHabitTableViewController *editHabitTableViewController;
 @property (weak, nonatomic) IBOutlet UITableView *singleHabitInfoView;
+@property (weak, nonatomic) Habit * habit;
 
 
 
