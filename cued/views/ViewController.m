@@ -73,8 +73,9 @@
     if (@available(iOS 13.0, *)) {
         // Sign In With Apple Button
         ASAuthorizationAppleIDButton *appleIDButton = [ASAuthorizationAppleIDButton new];
-        appleIDButton.frame =  CGRectMake(.0, .0, CGRectGetWidth(self.view.frame) - 100.0, 50.0);
-        CGPoint origin = CGPointMake(50.0, CGRectGetHeight(self.view.frame) - 100);
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        appleIDButton.frame =  CGRectMake(.0, .0, screenRect.size.width - 100.0, 50.0);
+        CGPoint origin = CGPointMake(50.0, screenRect.size.height - 100.0);
         CGRect frame = appleIDButton.frame;
         frame.origin = origin;
         appleIDButton.frame = frame;

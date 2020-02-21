@@ -29,7 +29,7 @@
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         appDelegate.currentUserID = user;
         HomeHabitViewController * tvc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];
-               [self.navigationController pushViewController:tvc animated:NO];
+        [self.navigationController pushViewController:tvc animated:NO];
     } else {
         ViewController * vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
         [self.navigationController pushViewController:vc animated:NO];
