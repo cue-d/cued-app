@@ -52,21 +52,27 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UINavigationBar* navbar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, 50)];
+//    UINavigationBar* navbar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, 50)];
 
-    UINavigationItem* navItem = [[UINavigationItem alloc] initWithTitle:@"Profile"];
-    navItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(onTapBack:)];
+//    UINavigationItem* navItem = [[UINavigationItem alloc] initWithTitle:@"Profile"];
+//    navItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItem target:self action:@selector(onTapBack:)];
+//
+//    [navbar setItems:@[navItem]];
+//    [self.view addSubview:navbar];
     
-    [navbar setItems:@[navItem]];
-    [self.view addSubview:navbar];
     
     [self.profileImage setImage:[UIImage imageNamed:@"IMG_2226.jpg"]];
     self.profileImage.layer.cornerRadius = (self.profileImage.frame.size.width / 2);
     self.profileImage.clipsToBounds = YES;
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
 }
 
 -(void)onTapBack:(UIBarButtonItem*)item{
@@ -75,14 +81,15 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController.navigationBar setHidden:NO];
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                         forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.currentUser = [CuedUser createOrGetUserFromDictionary:@{@"id": appDelegate.currentUserID}];
     self.familyNameLabel.text = [NSString stringWithFormat:@"%@ %@", self.currentUser.givenName, self.currentUser.familyName];
-}
-
-- (void) viewWillDisappear:(BOOL)animated {
-    [self.navigationController.navigationBar setHidden:YES];
 }
 
 - (IBAction)logoutClicked:(id)sender {
