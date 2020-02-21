@@ -17,10 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.routineLabel.text = self.routine;
-
-    // Do any additional setup after loading the view from its nib.
+    self.editHabitTableViewController = [[EditHabitTableViewController alloc]init];
+    self.editHabitTableViewController.tableView = self.singleHabitInfoView;
+    [self.editHabitTableViewController.tableView registerNib:[UINib nibWithNibName:@"EditHabitTableViewCell" bundle:nil] forCellReuseIdentifier:@"editHabitViewCell"];
+    self.editHabitTableViewController.habit = self.habit;
 }
 
 /*
