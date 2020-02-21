@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EditHabitTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SingleHabitViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *routineLabel;
+@property (weak, nonatomic) NSString *routine;
+@property (strong, nonatomic) EditHabitTableViewController *editHabitTableViewController;
+@property (weak, nonatomic) IBOutlet UITableView *singleHabitInfoView;
+
+
 
 @end
 

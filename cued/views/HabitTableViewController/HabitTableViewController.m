@@ -94,7 +94,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HabitTableViewCell * cell = [self.tableView cellForRowAtIndexPath:indexPath];
     SingleHabitViewController * shv = [[SingleHabitViewController alloc]initWithNibName:@"SingleHabitViewController" bundle:nil];
-    shv.routineLabel = cell.routineLabel;
+    shv.routine = cell.routineLabel.text;
     [self.parent.navigationController pushViewController:shv animated:YES];
 }
 

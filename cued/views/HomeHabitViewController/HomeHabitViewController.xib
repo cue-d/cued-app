@@ -49,15 +49,13 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4A-AP-rV0">
-                    <rect key="frame" x="315" y="54" width="85" height="43"/>
-                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4A-AP-rV0">
+                    <rect key="frame" x="324" y="65" width="67" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="85" id="G3E-IQ-qkC"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
-                    <state key="normal" title="+ Add">
-                        <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                    <state key="normal" title="Add" image="plus" catalog="system">
+                        <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -73,10 +71,12 @@
                     <rect key="frame" x="10" y="106" width="394" height="44"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FP7-Bb-nMf">
-                    <rect key="frame" x="31" y="60" width="42" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FP7-Bb-nMf">
+                    <rect key="frame" x="34" y="60" width="35" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Image"/>
+                    <state key="normal" image="person.circle.fill" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                    </state>
                     <connections>
                         <action selector="userImageButtonWasPressed:" destination="-1" eventType="touchUpInside" id="Zig-ey-s9l"/>
                     </connections>
@@ -108,4 +108,8 @@
             <point key="canvasLocation" x="-337" y="2"/>
         </textField>
     </objects>
+    <resources>
+        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

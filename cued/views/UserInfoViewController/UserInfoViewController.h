@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) CuedUser *currentUser;
 @property (weak, nonatomic) IBOutlet UILabel *familyNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 
 @end
 

@@ -16,21 +16,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UINavigationBar* navbar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, 50)];
+
+    UINavigationItem* navItem = [[UINavigationItem alloc] initWithTitle:@"Profile"];
+    navItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(onTapBack:)];
+    
+    [navbar setItems:@[navItem]];
+    [self.view addSubview:navbar];
+    
+    [self.profileImage setImage:[UIImage imageNamed:@"IMG_2227.jpg"]];
+//    self.profileImage.layer.masksToBounds = true;
+    self.profileImage.layer.cornerRadius = (self.profileImage.frame.size.width / 2);
+    self.profileImage.clipsToBounds = YES;
+    
+}
+
+-(void)onTapBack:(UIBarButtonItem*)item{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController.navigationBar setHidden:NO];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.currentUser = [CuedUser createOrGetUserFromDictionary:@{@"id": appDelegate.currentUserID}];
-    self.familyNameLabel.text = self.currentUser.familyName;
+    self.familyNameLabel.text = [NSString stringWithFormat:@"%@ %@", self.currentUser.givenName, self.currentUser.familyName];
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
     [self.navigationController.navigationBar setHidden:YES];
 }
-- (IBAction)backClicked:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 - (IBAction)logoutClicked:(id)sender {
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];

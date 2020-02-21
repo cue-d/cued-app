@@ -46,6 +46,11 @@
 		A8B3F40923FDDDB6007E2FBF /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B3F40723FDDDB6007E2FBF /* UserInfoViewController.xib */; };
 		F83899A523FDC5F0001838E8 /* SingleHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83899A323FDC5F0001838E8 /* SingleHabitViewController.m */; };
 		F83899A623FDC5F0001838E8 /* SingleHabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83899A423FDC5F0001838E8 /* SingleHabitViewController.xib */; };
+		F83899B723FE0933001838E8 /* EditHabitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83899B523FE0933001838E8 /* EditHabitTableViewController.m */; };
+		F83899B823FE0933001838E8 /* EditHabitTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83899B623FE0933001838E8 /* EditHabitTableViewController.xib */; };
+		F83899BC23FE103F001838E8 /* EditSingleHabitCellViewControllerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F83899BA23FE103F001838E8 /* EditSingleHabitCellViewControllerTableViewCell.m */; };
+		F83899BD23FE103F001838E8 /* EditSingleHabitCellViewControllerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83899BB23FE103F001838E8 /* EditSingleHabitCellViewControllerTableViewCell.xib */; };
+		F8739B0423FF510F007B2CF5 /* IMG_2227.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8739B0323FF510E007B2CF5 /* IMG_2227.jpg */; };
 		F8F7F3AD23FCAAD700D7F4DE /* HomeHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F7F3AB23FCAAD700D7F4DE /* HomeHabitViewController.m */; };
 		F8F7F3AE23FCAAD700D7F4DE /* HomeHabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F7F3AC23FCAAD700D7F4DE /* HomeHabitViewController.xib */; };
 /* End PBXBuildFile section */
@@ -154,6 +159,13 @@
 		F83899A223FDC5F0001838E8 /* SingleHabitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleHabitViewController.h; sourceTree = "<group>"; };
 		F83899A323FDC5F0001838E8 /* SingleHabitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleHabitViewController.m; sourceTree = "<group>"; };
 		F83899A423FDC5F0001838E8 /* SingleHabitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleHabitViewController.xib; sourceTree = "<group>"; };
+		F83899B423FE0933001838E8 /* EditHabitTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EditHabitTableViewController.h; path = EditHabitTableViewController/EditHabitTableViewController.h; sourceTree = "<group>"; };
+		F83899B523FE0933001838E8 /* EditHabitTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EditHabitTableViewController.m; path = EditHabitTableViewController/EditHabitTableViewController.m; sourceTree = "<group>"; };
+		F83899B623FE0933001838E8 /* EditHabitTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EditHabitTableViewController.xib; path = EditHabitTableViewController/EditHabitTableViewController.xib; sourceTree = "<group>"; };
+		F83899B923FE103F001838E8 /* EditSingleHabitCellViewControllerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditSingleHabitCellViewControllerTableViewCell.h; sourceTree = "<group>"; };
+		F83899BA23FE103F001838E8 /* EditSingleHabitCellViewControllerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditSingleHabitCellViewControllerTableViewCell.m; sourceTree = "<group>"; };
+		F83899BB23FE103F001838E8 /* EditSingleHabitCellViewControllerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditSingleHabitCellViewControllerTableViewCell.xib; sourceTree = "<group>"; };
+		F8739B0323FF510E007B2CF5 /* IMG_2227.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_2227.jpg; path = ../../../../../../../Dropbox/IMG_2227.jpg; sourceTree = "<group>"; };
 		F8F7F3AA23FCAAD700D7F4DE /* HomeHabitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHabitViewController.h; sourceTree = "<group>"; };
 		F8F7F3AB23FCAAD700D7F4DE /* HomeHabitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHabitViewController.m; sourceTree = "<group>"; };
 		F8F7F3AC23FCAAD700D7F4DE /* HomeHabitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHabitViewController.xib; sourceTree = "<group>"; };
@@ -231,17 +243,22 @@
 		A82F36FF23E64837006ED2BB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				F83899A123FDC5C3001838E8 /* SingleHabitViewController */,
+				F83899B423FE0933001838E8 /* EditHabitTableViewController.h */,
+				F83899B523FE0933001838E8 /* EditHabitTableViewController.m */,
+				F83899B623FE0933001838E8 /* EditHabitTableViewController.xib */,
+				F83899B923FE103F001838E8 /* EditSingleHabitCellViewControllerTableViewCell.h */,
+				F83899BA23FE103F001838E8 /* EditSingleHabitCellViewControllerTableViewCell.m */,
+				F83899BB23FE103F001838E8 /* EditSingleHabitCellViewControllerTableViewCell.xib */,
+				F838999A23FDC474001838E8 /* HomeHabitViewController */,
+				F838999923FDC44D001838E8 /* HabitTableViewController */,
+				F838999B23FDC48B001838E8 /* HabitTableViewCell */,
 				A89B211323D2950E008B787D /* ViewController.h */,
 				A89B211423D2950E008B787D /* ViewController.m */,
 				11A33F2A23FDE5D70097892F /* ViewController.xib */,
 				11A33F2823FDE5D70097892F /* LandingPageViewController.h */,
 				11A33F2923FDE5D70097892F /* LandingPageViewController.m */,
 				A8B3F40423FDDD99007E2FBF /* UserInfoViewController */,
-				F83899A123FDC5C3001838E8 /* SingleHabitViewController */,
-				F838999923FDC44D001838E8 /* HabitTableViewController */,
-				F838999A23FDC474001838E8 /* HomeHabitViewController */,
-				F838999B23FDC48B001838E8 /* HabitTableViewCell */,
-				A89F8B6423E78569000F50AC /* EditHabitViews */,
 				A82F370023E6483F006ED2BB /* NewHabitViews */,
 			);
 			path = views;
@@ -330,16 +347,10 @@
 			path = cuedUITests;
 			sourceTree = "<group>";
 		};
-		A89F8B6423E78569000F50AC /* EditHabitViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EditHabitViews;
-			sourceTree = "<group>";
-		};
 		A8B3F40423FDDD99007E2FBF /* UserInfoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F8739B0323FF510E007B2CF5 /* IMG_2227.jpg */,
 				A8B3F40523FDDDB6007E2FBF /* UserInfoViewController.h */,
 				A8B3F40623FDDDB6007E2FBF /* UserInfoViewController.m */,
 				A8B3F40723FDDDB6007E2FBF /* UserInfoViewController.xib */,
@@ -522,12 +533,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F83899B823FE0933001838E8 /* EditHabitTableViewController.xib in Resources */,
 				A802B14023E6684A0057BF2E /* CueRoutineRewardViewController.xib in Resources */,
 				A89B212023D29514008B787D /* LaunchScreen.storyboard in Resources */,
 				A89B211D23D29514008B787D /* Assets.xcassets in Resources */,
 				A802B13B23E666E60057BF2E /* ChooseRewardViewController.xib in Resources */,
+				F83899BD23FE103F001838E8 /* EditSingleHabitCellViewControllerTableViewCell.xib in Resources */,
 				A89F8B6923E78594000F50AC /* HabitTableViewController.xib in Resources */,
 				A802B15523E682550057BF2E /* ConfirmHabitViewController.xib in Resources */,
+				F8739B0423FF510F007B2CF5 /* IMG_2227.jpg in Resources */,
 				A89B211823D2950E008B787D /* Main.storyboard in Resources */,
 				F83899A623FDC5F0001838E8 /* SingleHabitViewController.xib in Resources */,
 				F8F7F3AE23FCAAD700D7F4DE /* HomeHabitViewController.xib in Resources */,
@@ -579,11 +593,13 @@
 				11A33F3223FE0A670097892F /* Habit+CoreDataProperties.m in Sources */,
 				11A33F2B23FDE5D70097892F /* LandingPageViewController.m in Sources */,
 				A802B15423E682550057BF2E /* ConfirmHabitViewController.m in Sources */,
+				F83899BC23FE103F001838E8 /* EditSingleHabitCellViewControllerTableViewCell.m in Sources */,
 				A89B211523D2950E008B787D /* ViewController.m in Sources */,
 				11A33F0F23FDC3780097892F /* cued.xcdatamodeld in Sources */,
 				A89B210F23D2950E008B787D /* AppDelegate.m in Sources */,
 				F83899A523FDC5F0001838E8 /* SingleHabitViewController.m in Sources */,
 				F8F7F3AD23FCAAD700D7F4DE /* HomeHabitViewController.m in Sources */,
+				F83899B723FE0933001838E8 /* EditHabitTableViewController.m in Sources */,
 				A89F8B6823E78594000F50AC /* HabitTableViewController.m in Sources */,
 				A82F370423E64890006ED2BB /* ChooseHabitViewController.m in Sources */,
 				A89F8B6D23E7889C000F50AC /* HabitTableViewCell.m in Sources */,
