@@ -7,8 +7,6 @@
 //
 
 #import "ChooseHabitViewController.h"
-#import "ChooseCueViewController.h"
-#import "HomeHabitViewController.h"
 
 @interface ChooseHabitViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -19,14 +17,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (self.habitEntity == nil) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *context = [appDelegate getContext];
+        self.habitEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Habit" inManagedObjectContext:context];
+    }
     [self.textField setDelegate:self];
     [self.textField becomeFirstResponder];
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    if (self.habitEntity != nil) {
+        self.textField.text = self.habitEntity.routine_previous;
+    }
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     ChooseCueViewController * fc = [[ChooseCueViewController alloc]initWithNibName:@"ChooseCueViewController" bundle:nil];
+    self.habitEntity.routine_previous = textField.text;
+    fc.habitEntity = self.habitEntity;
     [self.navigationController pushViewController:fc animated:YES];
     return NO;
 }

@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Habit+CoreDataProperties.h"
+#import "AppDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ConfirmHabitViewController : UIViewController
+@interface ConfirmHabitViewController : UIViewController<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *cueTextfield;
+@property (weak, nonatomic) IBOutlet UILabel *routineTextfield;
+@property (weak, nonatomic) IBOutlet UILabel *previousRoutineTextfield;
+@property (weak, nonatomic) IBOutlet UILabel *rewardTextfield;
+@property (strong, nonatomic) Habit *habitEntity;
 
 @end
 

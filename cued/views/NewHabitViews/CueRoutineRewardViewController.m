@@ -23,10 +23,17 @@
         // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    if (self.habitEntity != nil) {
+        self.textField.text = self.habitEntity.routine;
+    }
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     ConfirmHabitViewController * fc = [[ConfirmHabitViewController alloc]initWithNibName:@"ConfirmHabitViewController" bundle:nil];
+    self.habitEntity.routine = textField.text;
+    fc.habitEntity = self.habitEntity;
     [self.navigationController pushViewController:fc animated:YES];
     return NO;
 }

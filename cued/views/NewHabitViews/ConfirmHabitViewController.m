@@ -7,7 +7,7 @@
 //
 
 #import "ConfirmHabitViewController.h"
-#import "HabitTableViewController.h"
+#import "HomeHabitViewController.h"
 
 @interface ConfirmHabitViewController ()
 
@@ -20,10 +20,20 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    if (self.habitEntity != nil) {
+        self.cueTextfield.text = [NSString stringWithFormat:@"Cue: %@",self.habitEntity.cue];
+        self.routineTextfield.text = [NSString stringWithFormat:@"New Routine: %@",self.habitEntity.routine];
+        self.previousRoutineTextfield.text = [NSString stringWithFormat:@"Old Routine: %@",self.habitEntity.routine_previous];
+        self.rewardTextfield.text = [NSString stringWithFormat:@"Reward: %@",self.habitEntity.reward];
+    }
+}
+
 - (IBAction)saveHabit:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:NO];
-    HabitTableViewController * tvc = [[HabitTableViewController alloc] initWithNibName:@"HabitTableViewController" bundle:nil];
-    [self.navigationController pushViewController:tvc animated:YES];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate saveContext];
+    NSLog(@"REAL DATA ADDED");
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*

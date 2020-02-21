@@ -20,7 +20,7 @@
     [super viewDidLoad];
     self.habitTableViewController = [[HabitTableViewController alloc]init];
     self.habitTableViewController.tableView = self.habitTableView;
-    [self.habitTableViewController.tableView registerNib:[UINib nibWithNibName:@"HabitTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    [self.habitTableView registerNib:[UINib nibWithNibName:@"HabitTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     [self.habitTableViewController.tableView setShowsHorizontalScrollIndicator:NO];
     [self.habitTableViewController.tableView setShowsVerticalScrollIndicator:NO];
     [self.habitSearchBar setDelegate:self];
@@ -30,6 +30,7 @@
 - (void)addHabit {
     
 }
+
 - (IBAction)addHabitButtonPressed:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate getContext];

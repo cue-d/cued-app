@@ -20,6 +20,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.navigationController setNavigationBarHidden:YES];
+    
+}
+
+- (void) viewWillAppear:(BOOL)animated {
     NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:@"setCurrentIdentifier"];
     if (user != nil && ![user isEqualToString:@""]) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -30,12 +34,6 @@
         ViewController * vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
         [self.navigationController pushViewController:vc animated:NO];
     }
-}
-
-- (void) viewDidAppear:(BOOL)animated {
-    NSLog(@"Back to landing");
-    ViewController * vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
-    [self.navigationController pushViewController:vc animated:NO];
 }
 
 /*

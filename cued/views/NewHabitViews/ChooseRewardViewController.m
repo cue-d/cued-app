@@ -20,13 +20,19 @@
     [super viewDidLoad];
     [self.textField setDelegate:self];
     [self.textField becomeFirstResponder];
-    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (self.habitEntity != nil) {
+        self.textField.text = self.habitEntity.reward;
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-//    self.habit.reward = textField.text;
     [textField resignFirstResponder];
     CueRoutineRewardViewController * fc = [[CueRoutineRewardViewController alloc]initWithNibName:@"CueRoutineRewardViewController" bundle:nil];
+    self.habitEntity.reward = textField.text;
+    fc.habitEntity = self.habitEntity;
     [self.navigationController pushViewController:fc animated:YES];
     return NO;
 }

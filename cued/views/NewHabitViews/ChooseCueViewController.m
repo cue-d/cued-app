@@ -23,9 +23,17 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    if (self.habitEntity != nil) {
+        self.textField.text = self.habitEntity.cue;
+    }
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     ChooseRewardViewController * fc = [[ChooseRewardViewController alloc]initWithNibName:@"ChooseRewardViewController" bundle:nil];
+    self.habitEntity.cue = textField.text;
+    fc.habitEntity = self.habitEntity;
     [self.navigationController pushViewController:fc animated:YES];
     return NO;
 }
