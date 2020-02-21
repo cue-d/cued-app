@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Habit+CoreDataProperties.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EditHabitTableViewController : UITableViewController
 
+@interface EditHabitTableViewController : UITableViewController
+@property (weak, nonatomic) Habit * habit;
 @end
 
 NS_ASSUME_NONNULL_END

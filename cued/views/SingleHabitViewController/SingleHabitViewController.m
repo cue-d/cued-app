@@ -21,6 +21,7 @@
     self.editHabitTableViewController = [[EditHabitTableViewController alloc]init];
     self.editHabitTableViewController.tableView = self.singleHabitInfoView;
     [self.editHabitTableViewController.tableView registerNib:[UINib nibWithNibName:@"EditHabitTableViewCell" bundle:nil] forCellReuseIdentifier:@"editHabitViewCell"];
+    self.editHabitTableViewController.habit = self.habit;
 }
 
 /*

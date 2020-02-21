@@ -48,21 +48,24 @@
     switch (indexPath.row) {
         case 0: {
             cell.mainLabel.text = @"Cue";
+            cell.subLabel.text = self.habit.cue;
             break;
         }
         case 1: {
             cell.mainLabel.text = @"Reward";
+            cell.subLabel.text = self.habit.reward;
             break;
         }
         case 2: {
             cell.mainLabel.text = @"Streak";
+            cell.subLabel.text = [NSString stringWithFormat:@"%d", self.habit.completeCount];
             break;
         }
-        case 4: {
+        case 3: {
             cell.mainLabel.text = @"Reminder";
             break;
         }
-        case 5: {
+        case 4: {
             cell.mainLabel.text = @"Integration";
             break;
         }
