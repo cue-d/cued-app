@@ -8,6 +8,7 @@
 
 #import "EditHabitTableViewController.h"
 #import "EditHabitTableViewCell.h"
+#import "EditHabitPropertyController.h"
 
 @interface EditHabitTableViewController ()
 @end
@@ -116,21 +117,37 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 */
 
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    EditHabitPropertyController* alert = [EditHabitPropertyController alertControllerWithTitle:@"My Alert"
+                                message:@"This is an alert."
+                                preferredStyle:UIAlertControllerStyleAlert];
+    alert.parent = self;
+     switch (indexPath.row) {
+           case 0: {
+               alert.key = @"cue";
+               alert.habit = self.habit;
+               [self presentViewController:alert animated:YES completion:nil];
+               break;
+           }
+           case 1: {
+               alert.key = @"reward";
+               alert.habit = self.habit;
+               [self presentViewController:alert animated:YES completion:nil];
+               break;
+           }
+           case 2: {
+               break;
+           }
+           case 3: {
+               break;
+           }
+           case 4: {
+               break;
+           }
+           default:
+               break;
+       }
 }
-*/
 
 /*
 #pragma mark - Navigation
