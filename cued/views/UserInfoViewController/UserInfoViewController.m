@@ -26,16 +26,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UserTableCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"userCell"];
     if (!cell) {
-        cell = [[UserTableCellController alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"userCell"];
+        cell = [[UserTableCellController alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"userCell"];
     }
     switch (indexPath.section) {
         case 0: {
             cell.textLabel.text = @"Email";
             cell.detailTextLabel.text = @"katherine@me.com";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             break;
         }
         case 1: {
             cell.textLabel.text = @"Reminders";
+            UISwitch *reminderSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
+            cell.accessoryView = reminderSwitch;
+            [reminderSwitch setOn:NO];
             break;
         }
         default: {
@@ -49,26 +53,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return 40;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    UINavigationBar* navbar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, 50)];
-
-//    UINavigationItem* navItem = [[UINavigationItem alloc] initWithTitle:@"Profile"];
-//    navItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItem target:self action:@selector(onTapBack:)];
-//
-//    [navbar setItems:@[navItem]];
-//    [self.view addSubview:navbar];
-    
-    
     [self.profileImage setImage:[UIImage imageNamed:@"IMG_2226.jpg"]];
     self.profileImage.layer.cornerRadius = (self.profileImage.frame.size.width / 2);
     self.profileImage.clipsToBounds = YES;
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
