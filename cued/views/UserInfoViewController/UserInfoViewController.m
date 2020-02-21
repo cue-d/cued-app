@@ -7,12 +7,50 @@
 //
 
 #import "UserInfoViewController.h"
+#import "UserTableCellController.h"
 
 @interface UserInfoViewController ()
 
 @end
 
 @implementation UserInfoViewController
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UserTableCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"userCell"];
+    if (!cell) {
+        cell = [[UserTableCellController alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"userCell"];
+    }
+    switch (indexPath.section) {
+        case 0: {
+            cell.textLabel.text = @"Email";
+            cell.detailTextLabel.text = @"katherine@me.com";
+            break;
+        }
+        case 1: {
+            cell.textLabel.text = @"Reminders";
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+    
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,8 +63,7 @@
     [navbar setItems:@[navItem]];
     [self.view addSubview:navbar];
     
-    [self.profileImage setImage:[UIImage imageNamed:@"IMG_2227.jpg"]];
-//    self.profileImage.layer.masksToBounds = true;
+    [self.profileImage setImage:[UIImage imageNamed:@"IMG_2226.jpg"]];
     self.profileImage.layer.cornerRadius = (self.profileImage.frame.size.width / 2);
     self.profileImage.clipsToBounds = YES;
     
@@ -35,6 +72,7 @@
 -(void)onTapBack:(UIBarButtonItem*)item{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController.navigationBar setHidden:NO];
