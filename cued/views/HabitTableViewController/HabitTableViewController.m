@@ -17,14 +17,14 @@
 
 @implementation HabitTableViewController
 
-- (id)init {
-   // self.displayedItems = [[NSArray alloc] init];
+- (id) init {
+    [self queryForHabits];
     return self;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = YES;
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView setDelegate:self];
 }
 
@@ -44,14 +44,12 @@
     } else {
         self.tableView.hidden = NO;
     }
+    self.displayedItems = [[NSArray alloc]initWithArray:self.habitsFromDatabase];
     [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self queryForHabits];
-    self.displayedItems = [[NSArray alloc]initWithArray:self.habitsFromDatabase];
-    [self.tableView reloadData];
-    NSLog(@"appear");
 }
 
 #pragma mark - Table view data source
@@ -61,7 +59,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1; // dummy for now
+    return 1;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -71,7 +69,6 @@
     [view setBackgroundColor:[UIColor clearColor]];
     return view;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HabitTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
