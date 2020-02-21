@@ -29,15 +29,7 @@
 }
 
 - (void)queryForHabits {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *moc = [appDelegate getContext];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Habit"];
-     
-    NSError *error = nil;
-    self.habitsFromDatabase = [moc executeFetchRequest:request error:&error];
-    if (!self.habitsFromDatabase) {
-        NSLog(@"Error fetching Habit objects: %@\n%@", [error localizedDescription], [error userInfo]);
-    }
+    self.habitsFromDatabase = [Habit getAllHabits];
     
     if (self.habitsFromDatabase.count == 0) {
         self.tableView.hidden = YES;

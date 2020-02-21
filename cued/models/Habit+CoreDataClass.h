@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Habit : NSManagedObject
-
++ (NSArray *) getAllHabits;
 @end
 
 NS_ASSUME_NONNULL_END
