@@ -79,6 +79,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
                          forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.tintColor = [UIColor systemBlueColor];
 
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.currentUser = [CuedUser createOrGetUserFromDictionary:@{@"id": appDelegate.currentUserID}];
