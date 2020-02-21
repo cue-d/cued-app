@@ -72,7 +72,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HabitTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.routineLabel.text = ((Habit *)[self.displayedItems objectAtIndex:indexPath.section]).cue;
+    cell.routineLabel.text = ((Habit *)[self.displayedItems objectAtIndex:indexPath.section]).routine;
     return cell;
 }
 
