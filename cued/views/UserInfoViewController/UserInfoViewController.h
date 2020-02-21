@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UserInfoViewController : UIViewController
+@interface UserInfoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) CuedUser *currentUser;
 @property (weak, nonatomic) IBOutlet UILabel *familyNameLabel;

@@ -7,12 +7,33 @@
 //
 
 #import "UserInfoViewController.h"
+#import "UserTableCellController.h"
 
 @interface UserInfoViewController ()
 
 @end
 
 @implementation UserInfoViewController
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UserTableCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"userCell"];
+    if (!cell) {
+        [tableView registerNib:[UINib nibWithNibName:@"UserTableCellController" bundle:nil] forCellReuseIdentifier:@"userCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"userCell"];
+    }
+    cell.textLabel.text = @"Routine";
+    cell.detailTextLabel.text = @"Make my bed";
+    
+    return cell;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,8 +46,7 @@
     [navbar setItems:@[navItem]];
     [self.view addSubview:navbar];
     
-    [self.profileImage setImage:[UIImage imageNamed:@"IMG_2227.jpg"]];
-//    self.profileImage.layer.masksToBounds = true;
+    [self.profileImage setImage:[UIImage imageNamed:@"IMG_2226.jpg"]];
     self.profileImage.layer.cornerRadius = (self.profileImage.frame.size.width / 2);
     self.profileImage.clipsToBounds = YES;
     
@@ -35,6 +55,7 @@
 -(void)onTapBack:(UIBarButtonItem*)item{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController.navigationBar setHidden:NO];
