@@ -23,7 +23,19 @@
     [self.editHabitTableViewController.tableView registerNib:[UINib nibWithNibName:@"EditHabitTableViewCell" bundle:nil] forCellReuseIdentifier:@"editHabitViewCell"];
     self.editHabitTableViewController.habit = self.habit;
 }
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                         forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+}
 
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
+}
 /*
 #pragma mark - Navigation
 
