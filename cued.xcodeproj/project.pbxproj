@@ -350,9 +350,9 @@
 		F838999923FDC44D001838E8 /* HabitTableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A89F8B6723E78594000F50AC /* HabitTableViewController.xib */,
 				A89F8B6523E78594000F50AC /* HabitTableViewController.h */,
 				A89F8B6623E78594000F50AC /* HabitTableViewController.m */,
-				A89F8B6723E78594000F50AC /* HabitTableViewController.xib */,
 			);
 			path = HabitTableViewController;
 			sourceTree = "<group>";

@@ -10,6 +10,7 @@
 #import "HabitTableViewCell.h"
 #import "singleHabitViewController.h"
 #import "AppDelegate.h"
+#import "Habit+CoreDataProperties.h"
 
 @interface HabitTableViewController ()
 @end
@@ -17,7 +18,7 @@
 @implementation HabitTableViewController
 
 - (id)init {
-    self.displayedItems = [[NSArray alloc] init];
+   // self.displayedItems = [[NSArray alloc] init];
     return self;
 }
 - (void)viewDidLoad {
@@ -26,6 +27,33 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView setDelegate:self];
 }
+
+- (void)queryForHabits {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *moc = [appDelegate getContext];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Habit"];
+     
+    NSError *error = nil;
+    self.habitsFromDatabase = [moc executeFetchRequest:request error:&error];
+    if (!self.habitsFromDatabase) {
+        NSLog(@"Error fetching Habit objects: %@\n%@", [error localizedDescription], [error userInfo]);
+    }
+    
+    if (self.habitsFromDatabase.count == 0) {
+        self.tableView.hidden = YES;
+    } else {
+        self.tableView.hidden = NO;
+    }
+    [self.tableView reloadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self queryForHabits];
+    self.displayedItems = [[NSArray alloc]initWithArray:self.habitsFromDatabase];
+    [self.tableView reloadData];
+    NSLog(@"appear");
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -47,7 +75,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HabitTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.routineLabel.text = [self.displayedItems objectAtIndex:indexPath.section];
+    cell.routineLabel.text = ((Habit *)[self.displayedItems objectAtIndex:indexPath.section]).cue;
     return cell;
 }
 

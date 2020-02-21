@@ -18,8 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *AddHabitButton;
 @property (weak, nonatomic) IBOutlet UISearchBar *habitSearchBar;
 @property (weak, nonatomic) IBOutlet UIButton *userProfileButton;
-@property (strong, nonatomic) NSArray * habitsFromDatabase;
-
+- (void)filterTable:(NSString *)searchText;
 @end;
 
 NS_ASSUME_NONNULL_END

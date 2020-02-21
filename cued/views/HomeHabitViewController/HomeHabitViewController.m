@@ -26,30 +26,9 @@
     [self.habitSearchBar setDelegate:self];
     self.habitTableViewController.parent = self;
 }
+
 - (void)addHabit {
     
-}
-- (void)queryForHabits {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *moc = [appDelegate getContext];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Habit"];
-     
-    NSError *error = nil;
-    self.habitsFromDatabase = [moc executeFetchRequest:request error:&error];
-    if (!self.habitsFromDatabase) {
-        NSLog(@"Error fetching Habit objects: %@\n%@", [error localizedDescription], [error userInfo]);
-    }
-    
-    if (self.habitsFromDatabase.count == 0) {
-        self.habitTableView.hidden = YES;
-    } else {
-        self.habitTableView.hidden = NO;
-    }
-    [self.habitTableViewController.tableView reloadData];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self queryForHabits];
 }
 - (IBAction)addHabitButtonPressed:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -62,7 +41,8 @@
     habitEntity.routine = @"TEST ROUTINE";
     [appDelegate saveContext];
     NSLog(@"FAKE DATA ADDED");
-    [self queryForHabits];
+    [self.habitTableViewController queryForHabits];
+    [self filterTable:self.habitSearchBar.text];
 }
 
 - (IBAction)userImageButtonWasPressed:(id)sender {
@@ -70,20 +50,26 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+- (void)filterTable:(NSString *)searchText {
     if ([searchText isEqualToString:@""]) {
-        self.habitTableViewController.displayedItems = self.habitsFromDatabase;
         self.habitTableView.hidden = NO;
+        self.habitTableViewController.displayedItems = self.habitTableViewController.habitsFromDatabase;
     } else {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
-        self.habitTableViewController.displayedItems = [self.habitsFromDatabase filteredArrayUsingPredicate:predicate];
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.routine contains[c] %@", searchText];
+        self.habitTableViewController.displayedItems = [self.habitTableViewController.
+                                                        habitsFromDatabase filteredArrayUsingPredicate:predicate];
         if (self.habitTableViewController.displayedItems.count == 0) {
             self.habitTableView.hidden = YES;
         } else {
             self.habitTableView.hidden = NO;
         }
     }
-    [self.habitTableViewController.tableView reloadData];
+     [self.habitTableViewController.tableView reloadData];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [self filterTable:searchText];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
