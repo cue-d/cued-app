@@ -22,6 +22,8 @@
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = YES;
     [self.tableView setDelegate:self];
+    self.tableView.alwaysBounceVertical = NO;
+    self.tableView.scrollEnabled = NO;
 }
 
 #pragma mark - Table view data source
