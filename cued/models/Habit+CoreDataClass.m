@@ -42,4 +42,12 @@ NSString * const ROUTINE = @"routine";
     return habitEntity;
 }
 
+- (NSSet<__kindof NSManagedObject *> *)deleteFromCoreData {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate getContext];
+    [context deleteObject:self];
+    [appDelegate saveContext];
+    return [context deletedObjects];
+}
+
 @end

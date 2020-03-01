@@ -31,8 +31,27 @@
     self.navigationController.navigationBar.translucent = YES;
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Delete" style:UIBarButtonItemStylePlain target:self action:@selector(deleteObject:)];
+    self.navigationItem.rightBarButtonItem = anotherButton;
+    
 }
 
+- (void)deleteObject:(UIButton *)sender {
+    UIAlertController * alert = [[UIAlertController alloc]init];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+                                      handler:^(UIAlertAction * action) {
+    }];
+    
+    UIAlertAction* saveAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction * action)  {
+        [self.habit deleteFromCoreData];
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    [alert addAction:saveAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
 - (void)viewWillDisappear:(BOOL)animated {
     self.navigationController.navigationBarHidden = YES;
 }
