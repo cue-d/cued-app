@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Habit : NSManagedObject
 + (NSArray *) getAllHabits;
 + (Habit *) createHabitFromDictionary:(NSDictionary *) habitInfo;
+- (NSSet<__kindof NSManagedObject *> *)deleteFromCoreData;
 
 extern NSString * const ROUTINE_PREVIOUS;
 extern NSString * const CUE;
