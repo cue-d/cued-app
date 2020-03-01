@@ -22,10 +22,31 @@
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     if (self.habitInfo != nil) {
-        self.cueTextfield.text = [NSString stringWithFormat:@"Cue: %@",[self.habitInfo valueForKey:CUE]];
-        self.routineTextfield.text = [NSString stringWithFormat:@"New Routine: %@",[self.habitInfo valueForKey:ROUTINE]];
-        self.previousRoutineTextfield.text = [NSString stringWithFormat:@"Old Routine: %@",[self.habitInfo valueForKey:ROUTINE_PREVIOUS]];
-        self.rewardTextfield.text = [NSString stringWithFormat:@"Reward: %@",[self.habitInfo valueForKey:REWARD]];
+        NSMutableAttributedString *whenString = [[NSMutableAttributedString alloc] initWithString:@"When "];
+        NSMutableAttributedString *cueString = [[NSMutableAttributedString alloc] initWithString:[self.habitInfo valueForKey:CUE]];
+        [cueString addAttribute:NSUnderlineStyleAttributeName
+                                value:[NSNumber numberWithInt:1]
+                                range:(NSRange){0,[cueString length]}];
+        [whenString appendAttributedString:cueString];
+        NSMutableAttributedString *willString = [[NSMutableAttributedString alloc] initWithString:@", I will "];
+        [whenString appendAttributedString:willString];
+        NSMutableAttributedString *routineString = [[NSMutableAttributedString alloc] initWithString:[self.habitInfo valueForKey:ROUTINE]];
+        [routineString addAttribute:NSUnderlineStyleAttributeName
+                                value:[NSNumber numberWithInt:1]
+                                range:(NSRange){0,[routineString length]}];
+        [whenString appendAttributedString:routineString];
+        NSMutableAttributedString *becauseString = [[NSMutableAttributedString alloc] initWithString:@" because it provides me with  "];
+        [whenString appendAttributedString:becauseString];
+        NSMutableAttributedString *rewardString = [[NSMutableAttributedString alloc] initWithString:[self.habitInfo valueForKey:REWARD]];
+        [rewardString addAttribute:NSUnderlineStyleAttributeName
+                                value:[NSNumber numberWithInt:1]
+                                range:(NSRange){0,[rewardString length]}];
+        [whenString appendAttributedString:rewardString];
+        self.habitLabel.attributedText = whenString;
+//        self.cueTextfield.text = [NSString stringWithFormat:@"Cue: %@",[self.habitInfo valueForKey:CUE]];
+//        self.routineTextfield.text = [NSString stringWithFormat:@"New Routine: %@",[self.habitInfo valueForKey:ROUTINE]];
+//        self.previousRoutineTextfield.text = [NSString stringWithFormat:@"Old Routine: %@",[self.habitInfo valueForKey:ROUTINE_PREVIOUS]];
+//        self.rewardTextfield.text = [NSString stringWithFormat:@"Reward: %@",[self.habitInfo valueForKey:REWARD]];
     }
 }
 

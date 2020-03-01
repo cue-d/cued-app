@@ -14,11 +14,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ConfirmHabitViewController : UIViewController<UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *cueTextfield;
-@property (weak, nonatomic) IBOutlet UILabel *routineTextfield;
-@property (weak, nonatomic) IBOutlet UILabel *previousRoutineTextfield;
-@property (weak, nonatomic) IBOutlet UILabel *rewardTextfield;
 @property (strong, nonatomic) NSMutableDictionary *habitInfo;
+@property (weak, nonatomic) IBOutlet UILabel *habitLabel;
 
 @end
 
