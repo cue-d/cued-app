@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KkF-he-TZE">
-                    <rect key="frame" x="160.5" y="714" width="93" height="58"/>
+                    <rect key="frame" x="160.5" y="714" width="93" height="68"/>
                     <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="35"/>
                     <state key="normal" title="Save"/>
                     <connections>
@@ -58,6 +58,7 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="4bS-Ks-6MD" secondAttribute="trailing" constant="25" id="BJe-3S-20C"/>
                 <constraint firstItem="KkF-he-TZE" firstAttribute="top" secondItem="4bS-Ks-6MD" secondAttribute="bottom" constant="215.5" id="BwY-Zc-ppK"/>
                 <constraint firstItem="7hL-9t-DdR" firstAttribute="top" secondItem="JD2-zs-vCV" secondAttribute="bottom" constant="100" id="SrX-D5-NAs"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="KkF-he-TZE" secondAttribute="bottom" constant="80" id="Wp1-Ar-LNC"/>
                 <constraint firstItem="JD2-zs-vCV" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="YoE-ew-kn5"/>
                 <constraint firstItem="JD2-zs-vCV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zfq-VI-iY2"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="7hL-9t-DdR" secondAttribute="trailing" constant="25" id="aXM-6d-wRa"/>
