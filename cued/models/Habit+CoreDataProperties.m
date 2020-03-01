@@ -2,7 +2,7 @@
 //  Habit+CoreDataProperties.m
 //  cued
 //
-//  Created by Tyler Zhang on 2020-02-19.
+//  Created by Justin Pezzack on 3/1/20.
 //  Copyright © 2020 Justin Pezzack. All rights reserved.
 //
 //
@@ -14,11 +14,14 @@
 + (NSFetchRequest<Habit *> *)fetchRequest {
 	return [NSFetchRequest fetchRequestWithEntityName:@"Habit"];
 }
+
+@dynamic active;
+@dynamic completeCount;
 @dynamic cue;
+@dynamic id;
+@dynamic reward;
 @dynamic routine;
 @dynamic routine_previous;
-@dynamic reward;
-@dynamic completeCount;
-@dynamic active;
+@dynamic habitToReminder;
 
 @end

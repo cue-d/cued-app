@@ -2,7 +2,7 @@
 //  CuedUser+CoreDataProperties.h
 //  cued
 //
-//  Created by Tyler Zhang on 2020-02-19.
+//  Created by Justin Pezzack on 3/1/20.
 //  Copyright © 2020 Justin Pezzack. All rights reserved.
 //
 //
@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<CuedUser *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSString *id;
 @property (nullable, nonatomic, copy) NSString *email;
-@property (nullable, nonatomic, copy) NSString *givenName;
 @property (nullable, nonatomic, copy) NSString *familyName;
+@property (nullable, nonatomic, copy) NSString *givenName;
+@property (nullable, nonatomic, copy) NSString *id;
 
 @end
 

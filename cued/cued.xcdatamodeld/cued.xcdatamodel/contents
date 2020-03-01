@@ -16,7 +16,7 @@
         <attribute name="routine_previous" optional="YES" attributeType="String"/>
         <relationship name="habitToReminder" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reminder" inverseName="reminderToHabit" inverseEntity="Reminder"/>
     </entity>
-    <entity name="Reminder" representedClassName="Reminder" syncable="YES" codeGenerationType="class">
+    <entity name="Reminder" representedClassName="Reminder" syncable="YES">
         <attribute name="dateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="text" optional="YES" attributeType="String"/>
         <relationship name="reminderToHabit" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Habit" inverseName="habitToReminder" inverseEntity="Habit"/>

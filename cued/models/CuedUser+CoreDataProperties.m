@@ -2,7 +2,7 @@
 //  CuedUser+CoreDataProperties.m
 //  cued
 //
-//  Created by Tyler Zhang on 2020-02-19.
+//  Created by Justin Pezzack on 3/1/20.
 //  Copyright © 2020 Justin Pezzack. All rights reserved.
 //
 //
@@ -15,9 +15,9 @@
 	return [NSFetchRequest fetchRequestWithEntityName:@"CuedUser"];
 }
 
-@dynamic id;
 @dynamic email;
-@dynamic givenName;
 @dynamic familyName;
+@dynamic givenName;
+@dynamic id;
 
 @end
