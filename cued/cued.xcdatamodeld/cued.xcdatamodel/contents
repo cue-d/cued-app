@@ -14,9 +14,16 @@
         <attribute name="reward" optional="YES" attributeType="String"/>
         <attribute name="routine" optional="YES" attributeType="String"/>
         <attribute name="routine_previous" optional="YES" attributeType="String"/>
+        <relationship name="habitToReminder" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reminder" inverseName="reminderToHabit" inverseEntity="Reminder"/>
+    </entity>
+    <entity name="Reminder" representedClassName="Reminder" syncable="YES" codeGenerationType="class">
+        <attribute name="dateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="reminderToHabit" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Habit" inverseName="habitToReminder" inverseEntity="Habit"/>
     </entity>
     <elements>
         <element name="CuedUser" positionX="-54" positionY="-9" width="128" height="103"/>
-        <element name="Habit" positionX="-36" positionY="36" width="128" height="148"/>
+        <element name="Habit" positionX="-501.0546875" positionY="-94.515625" width="128" height="163"/>
+        <element name="Reminder" positionX="-255.72265625" positionY="233.80859375" width="128" height="88"/>
     </elements>
 </model>
