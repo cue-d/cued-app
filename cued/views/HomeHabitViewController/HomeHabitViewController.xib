@@ -22,10 +22,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No habits to display" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEK-Dy-PJ5">
-                    <rect key="frame" x="129" y="162" width="157" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="26"/>
+                <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No habits to display" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEK-Dy-PJ5">
+                    <rect key="frame" x="20" y="162" width="374" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="374" id="B9Z-iZ-1oF"/>
+                        <constraint firstAttribute="width" secondItem="TEK-Dy-PJ5" secondAttribute="height" multiplier="187:27" id="NR6-DR-ZGU"/>
+                        <constraint firstAttribute="height" constant="54" id="hba-eX-Dx5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -80,13 +84,16 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="TEK-Dy-PJ5" firstAttribute="top" secondItem="MM8-gI-gfg" secondAttribute="top" id="4ak-0i-LBf"/>
                 <constraint firstItem="kBr-IO-V1K" firstAttribute="centerY" secondItem="B4A-AP-rV0" secondAttribute="centerY" id="6Lh-J7-CZa"/>
                 <constraint firstItem="kYX-2y-WNC" firstAttribute="top" secondItem="kBr-IO-V1K" secondAttribute="bottom" constant="10" id="A7F-we-Bfi"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="B4A-AP-rV0" secondAttribute="trailing" constant="23" id="CyN-Ro-Jzi"/>
                 <constraint firstItem="kYX-2y-WNC" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="D8I-HD-1eG"/>
                 <constraint firstAttribute="bottom" secondItem="MM8-gI-gfg" secondAttribute="bottom" constant="27" id="Hhd-Zo-qaV"/>
                 <constraint firstItem="MM8-gI-gfg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LJ0-4o-aTG"/>
+                <constraint firstItem="TEK-Dy-PJ5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PYq-7a-vVK"/>
                 <constraint firstItem="B4A-AP-rV0" firstAttribute="centerY" secondItem="kBr-IO-V1K" secondAttribute="centerY" id="QNU-8v-Xh5"/>
+                <constraint firstItem="TEK-Dy-PJ5" firstAttribute="leading" secondItem="FP7-Bb-nMf" secondAttribute="leading" id="SVP-hB-KUU"/>
                 <constraint firstItem="FP7-Bb-nMf" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="So5-qA-SAh"/>
                 <constraint firstItem="kYX-2y-WNC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XVO-UT-IXc"/>
                 <constraint firstItem="kBr-IO-V1K" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="12" id="ark-ZK-wKz"/>

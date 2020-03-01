@@ -33,18 +33,6 @@
 }
 
 - (IBAction)addHabitButtonPressed:(id)sender {
-//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    NSManagedObjectContext *context = [appDelegate getContext];
-//    Habit *habitEntity = nil;
-//    habitEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Habit" inManagedObjectContext:context];
-//    habitEntity.cue = @"TEST CUE";
-//    habitEntity.reward = @"TEST REWARD";
-//    habitEntity.routine_previous = @"TEST ROUTINE PREVIOUS";
-//    habitEntity.routine = @"TEST ROUTINE";
-//    [appDelegate saveContext];
-//    NSLog(@"FAKE DATA ADDED");
-//    [self.habitTableViewController queryForHabits];
-//    [self filterTable:self.habitSearchBar.text];
     ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
