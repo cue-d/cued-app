@@ -18,5 +18,6 @@
 @dynamic dateTime;
 @dynamic text;
 @dynamic reminderToHabit;
+@dynamic identifier;
 
 @end

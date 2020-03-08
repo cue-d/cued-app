@@ -10,7 +10,6 @@
 #import "Habit+CoreDataClass.h"
 #import "Reminder+CoreDataClass.h"
 
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Habit (CoreDataProperties)
@@ -29,7 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface Habit (CoreDataGeneratedAccessors)
-
 - (void)addHabitToReminderObject:(Reminder *)value;
 - (void)removeHabitToReminderObject:(Reminder *)value;
 - (void)addHabitToReminder:(NSSet<Reminder *> *)values;
