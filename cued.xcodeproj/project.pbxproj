@@ -41,12 +41,16 @@
 		A89F8B6823E78594000F50AC /* HabitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89F8B6623E78594000F50AC /* HabitTableViewController.m */; };
 		A89F8B6D23E7889C000F50AC /* HabitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89F8B6B23E7889C000F50AC /* HabitTableViewCell.m */; };
 		A89F8B6E23E7889C000F50AC /* HabitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89F8B6C23E7889C000F50AC /* HabitTableViewCell.xib */; };
+		A89FC24C24149ED000903B3B /* ManageRemindersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FC24A24149ED000903B3B /* ManageRemindersTableViewController.m */; };
+		A89FC24D24149ED000903B3B /* ManageRemindersTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89FC24B24149ED000903B3B /* ManageRemindersTableViewController.xib */; };
 		A8B3F40823FDDDB6007E2FBF /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3F40623FDDDB6007E2FBF /* UserInfoViewController.m */; };
 		A8B3F40923FDDDB6007E2FBF /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B3F40723FDDDB6007E2FBF /* UserInfoViewController.xib */; };
 		A8B42D7223FF7645004D8166 /* EditHabitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B42D7023FF7645004D8166 /* EditHabitTableViewController.m */; };
 		A8B42D7723FF77CF004D8166 /* EditHabitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B42D7523FF77CF004D8166 /* EditHabitTableViewCell.m */; };
 		A8B42D7823FF77CF004D8166 /* EditHabitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B42D7623FF77CF004D8166 /* EditHabitTableViewCell.xib */; };
 		A8C1B44524006A5E0080E8BD /* EditHabitPropertyController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C1B44324006A5E0080E8BD /* EditHabitPropertyController.m */; };
+		A8CD365E24229352009D7646 /* ReminderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CD365C24229352009D7646 /* ReminderTableViewController.m */; };
+		A8CD365F24229352009D7646 /* ReminderTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8CD365D24229352009D7646 /* ReminderTableViewController.xib */; };
 		A8F9037F240C6E1B0042246A /* Reminder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F9037B240C6E1B0042246A /* Reminder+CoreDataClass.m */; };
 		A8F90380240C6E1B0042246A /* Reminder+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F9037C240C6E1B0042246A /* Reminder+CoreDataProperties.m */; };
 		F83899A523FDC5F0001838E8 /* SingleHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83899A323FDC5F0001838E8 /* SingleHabitViewController.m */; };
@@ -155,6 +159,9 @@
 		A89F8B6A23E7889C000F50AC /* HabitTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HabitTableViewCell.h; sourceTree = "<group>"; };
 		A89F8B6B23E7889C000F50AC /* HabitTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HabitTableViewCell.m; sourceTree = "<group>"; };
 		A89F8B6C23E7889C000F50AC /* HabitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitTableViewCell.xib; sourceTree = "<group>"; };
+		A89FC24924149ED000903B3B /* ManageRemindersTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManageRemindersTableViewController.h; sourceTree = "<group>"; };
+		A89FC24A24149ED000903B3B /* ManageRemindersTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManageRemindersTableViewController.m; sourceTree = "<group>"; };
+		A89FC24B24149ED000903B3B /* ManageRemindersTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageRemindersTableViewController.xib; sourceTree = "<group>"; };
 		A8B3F40523FDDDB6007E2FBF /* UserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		A8B3F40623FDDDB6007E2FBF /* UserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		A8B3F40723FDDDB6007E2FBF /* UserInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
@@ -165,6 +172,9 @@
 		A8B42D7623FF77CF004D8166 /* EditHabitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditHabitTableViewCell.xib; sourceTree = "<group>"; };
 		A8C1B44224006A5E0080E8BD /* EditHabitPropertyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditHabitPropertyController.h; sourceTree = "<group>"; };
 		A8C1B44324006A5E0080E8BD /* EditHabitPropertyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditHabitPropertyController.m; sourceTree = "<group>"; };
+		A8CD365B24229352009D7646 /* ReminderTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReminderTableViewController.h; sourceTree = "<group>"; };
+		A8CD365C24229352009D7646 /* ReminderTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReminderTableViewController.m; sourceTree = "<group>"; };
+		A8CD365D24229352009D7646 /* ReminderTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderTableViewController.xib; sourceTree = "<group>"; };
 		A8F90379240C6E1B0042246A /* Reminder+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reminder+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A8F9037A240C6E1B0042246A /* Reminder+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reminder+CoreDataClass.h"; sourceTree = "<group>"; };
 		A8F9037B240C6E1B0042246A /* Reminder+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Reminder+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -262,6 +272,7 @@
 				F838999923FDC44D001838E8 /* HabitTableViewController */,
 				F838999B23FDC48B001838E8 /* HabitTableViewCell */,
 				A89B211323D2950E008B787D /* ViewController.h */,
+				A89FC24E24149ED500903B3B /* ManageRemindersTableViewController */,
 				A89B211423D2950E008B787D /* ViewController.m */,
 				11A33F2A23FDE5D70097892F /* ViewController.xib */,
 				11A33F2823FDE5D70097892F /* LandingPageViewController.h */,
@@ -355,6 +366,16 @@
 			path = cuedUITests;
 			sourceTree = "<group>";
 		};
+		A89FC24E24149ED500903B3B /* ManageRemindersTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A89FC24924149ED000903B3B /* ManageRemindersTableViewController.h */,
+				A89FC24A24149ED000903B3B /* ManageRemindersTableViewController.m */,
+				A89FC24B24149ED000903B3B /* ManageRemindersTableViewController.xib */,
+			);
+			path = ManageRemindersTableViewController;
+			sourceTree = "<group>";
+		};
 		A8B3F40423FDDD99007E2FBF /* UserInfoViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +432,9 @@
 				A8B42D7023FF7645004D8166 /* EditHabitTableViewController.m */,
 				A8C1B44224006A5E0080E8BD /* EditHabitPropertyController.h */,
 				A8C1B44324006A5E0080E8BD /* EditHabitPropertyController.m */,
+				A8CD365B24229352009D7646 /* ReminderTableViewController.h */,
+				A8CD365C24229352009D7646 /* ReminderTableViewController.m */,
+				A8CD365D24229352009D7646 /* ReminderTableViewController.xib */,
 			);
 			path = SingleHabitViewController;
 			sourceTree = "<group>";
@@ -551,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A802B14023E6684A0057BF2E /* CueRoutineRewardViewController.xib in Resources */,
+				A8CD365F24229352009D7646 /* ReminderTableViewController.xib in Resources */,
 				A89B212023D29514008B787D /* LaunchScreen.storyboard in Resources */,
 				A89B211D23D29514008B787D /* Assets.xcassets in Resources */,
 				A802B13B23E666E60057BF2E /* ChooseRewardViewController.xib in Resources */,
@@ -558,6 +583,7 @@
 				A89B211823D2950E008B787D /* Main.storyboard in Resources */,
 				A8B42D7823FF77CF004D8166 /* EditHabitTableViewCell.xib in Resources */,
 				F83899A623FDC5F0001838E8 /* SingleHabitViewController.xib in Resources */,
+				A89FC24D24149ED000903B3B /* ManageRemindersTableViewController.xib in Resources */,
 				F8F7F3AE23FCAAD700D7F4DE /* HomeHabitViewController.xib in Resources */,
 				11A33F2C23FDE5D70097892F /* ViewController.xib in Resources */,
 				A8B3F40923FDDDB6007E2FBF /* UserInfoViewController.xib in Resources */,
@@ -602,6 +628,7 @@
 				A802B13F23E6684A0057BF2E /* CueRoutineRewardViewController.m in Sources */,
 				11A33F3123FE0A670097892F /* Habit+CoreDataClass.m in Sources */,
 				11A33F2623FDC6B60097892F /* CuedUser+CoreDataClass.m in Sources */,
+				A89FC24C24149ED000903B3B /* ManageRemindersTableViewController.m in Sources */,
 				A89B212323D29514008B787D /* main.m in Sources */,
 				A8B42D7223FF7645004D8166 /* EditHabitTableViewController.m in Sources */,
 				A8B3F40823FDDDB6007E2FBF /* UserInfoViewController.m in Sources */,
@@ -614,6 +641,7 @@
 				A8F9037F240C6E1B0042246A /* Reminder+CoreDataClass.m in Sources */,
 				A89B211523D2950E008B787D /* ViewController.m in Sources */,
 				11A33F0F23FDC3780097892F /* cued.xcdatamodeld in Sources */,
+				A8CD365E24229352009D7646 /* ReminderTableViewController.m in Sources */,
 				A89B210F23D2950E008B787D /* AppDelegate.m in Sources */,
 				F83899A523FDC5F0001838E8 /* SingleHabitViewController.m in Sources */,
 				A8B42D7723FF77CF004D8166 /* EditHabitTableViewCell.m in Sources */,

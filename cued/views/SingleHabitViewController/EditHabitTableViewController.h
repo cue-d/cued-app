@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Habit+CoreDataProperties.h"
+#import "SingleHabitViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
 
 @interface EditHabitTableViewController : UITableViewController
 @property (weak, nonatomic) Habit * habit;
+@property (weak, nonatomic) NSArray * reminders;
+@property (weak, nonatomic) SingleHabitViewController * parent;
 @end
 
 NS_ASSUME_NONNULL_END

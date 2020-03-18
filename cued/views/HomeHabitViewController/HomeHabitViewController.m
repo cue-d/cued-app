@@ -57,7 +57,7 @@
             self.habitTableView.hidden = NO;
         }
     }
-     [self.habitTableViewController.tableView reloadData];
+    [self.habitTableViewController.tableView reloadData];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {

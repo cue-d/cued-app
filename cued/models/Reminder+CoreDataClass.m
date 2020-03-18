@@ -45,6 +45,7 @@
          // Enable or disable features based on authorization.
        
     }];
+    
     UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
     content.title = [NSString localizedUserNotificationStringForKey:self.text arguments:nil];
     

@@ -37,7 +37,7 @@
     [self addAction:cancelAction];
     [self addAction:saveAction];
     
-    [self addTextFieldWithConfigurationHandler:^(UITextField *textField){
+    [self addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         self.textField = textField;
         self.textField.text = [self.habit valueForKey:self.key];
     }];

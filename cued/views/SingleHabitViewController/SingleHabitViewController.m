@@ -22,6 +22,7 @@
     self.editHabitTableViewController.tableView = self.singleHabitInfoView;
     [self.editHabitTableViewController.tableView registerNib:[UINib nibWithNibName:@"EditHabitTableViewCell" bundle:nil] forCellReuseIdentifier:@"editHabitViewCell"];
     self.editHabitTableViewController.habit = self.habit;
+    self.editHabitTableViewController.parent = self;
 }
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = NO;

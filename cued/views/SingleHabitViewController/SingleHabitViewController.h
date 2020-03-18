@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EditHabitTableViewController.h"
 #import "Habit+CoreDataProperties.h"
+@class EditHabitTableViewController;
 
 NS_ASSUME_NONNULL_BEGIN
 
