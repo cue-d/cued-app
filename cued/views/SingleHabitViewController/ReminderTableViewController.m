@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.showPicker = NO;
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
@@ -28,10 +29,15 @@
     self.navigationController.navigationBar.tintColor = [UIColor systemBlueColor];
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveReminder)];
     self.navigationItem.rightBarButtonItem = anotherButton;
-
 }
 
 -(void) saveReminder{
+    NSMutableDictionary * args = [[NSMutableDictionary alloc]init];
+    args[@"dateTime"] = self.datePicker.date;
+    args[@"habit"] = self.habit;
+    args[@"text"] = self.habit.routine;
+    Reminder * r = [Reminder createReminderFromDictionary:args];
+    self.habit.habitToReminder = [self.habit.habitToReminder setByAddingObject:r];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -45,10 +51,21 @@
         return 1;
     return 7;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 200;
+    }
+    
+    return 44;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell * cell = [[UITableViewCell alloc]init];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.section == 0) {
-        
+        self.datePicker= [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 216)];
+        self.datePicker.datePickerMode = UIDatePickerModeTime;
+        [cell.contentView addSubview:self.datePicker];
     } else if (indexPath.section == 1) {
         switch (indexPath.row) {
         case 0:
@@ -104,16 +121,6 @@
     [headerView setBackgroundColor:[UIColor systemFillColor]];
     return headerView;
 }
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
 
 /*
 // Override to support conditional editing of the table view.

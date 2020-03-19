@@ -23,11 +23,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.reminders = [Reminder getAllReminders];
+    self.reminders = [[NSMutableArray alloc]initWithCapacity:16];
     self.clearsSelectionOnViewWillAppear = YES;
     [self.tableView setDelegate:self];
     self.tableView.alwaysBounceVertical = YES;
     self.tableView.scrollEnabled = YES;
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    self.reminders = [Reminder getAllReminders];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view dwata source
@@ -63,6 +68,25 @@
     [headerView addSubview:label];
     [headerView setBackgroundColor:[UIColor systemFillColor]];
     return headerView;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1 && indexPath.row != [self.reminders count]) {
+        return UITableViewCellEditingStyleDelete;
+    }
+    return UITableViewCellEditingStyleNone;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1 && indexPath.row != [self.reminders count]) {
+        Reminder * r = [self.reminders objectAtIndex: indexPath.row];
+        NSMutableArray * localCopy = (NSMutableArray *)[self.reminders mutableCopy];
+        [localCopy removeObjectAtIndex:indexPath.row];
+        self.reminders = localCopy;
+        [r deleteFromCoreData];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView reloadData];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -101,8 +125,8 @@
     return cell;
 }
 - (void)transitionToNewReminder {
-    NSLog(@"BLESSED");
     ReminderTableViewController * st = [[ReminderTableViewController alloc]initWithNibName:@"ReminderTableViewController" bundle:nil];
+    st.habit = self.habit;
     [self.parent.navigationController pushViewController:st animated:YES];
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

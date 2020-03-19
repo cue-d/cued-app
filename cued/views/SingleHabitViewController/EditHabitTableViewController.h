@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EditHabitTableViewController : UITableViewController
 @property (weak, nonatomic) Habit * habit;
-@property (weak, nonatomic) NSArray * reminders;
+@property (strong, nonatomic) NSArray * reminders;
 @property (weak, nonatomic) SingleHabitViewController * parent;
 @end
 
