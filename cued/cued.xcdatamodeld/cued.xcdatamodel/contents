@@ -20,7 +20,7 @@
         <attribute name="dateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="notifId" optional="YES" attributeType="String"/>
         <attribute name="text" optional="YES" attributeType="String"/>
-        <relationship name="reminderToHabit" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Habit" inverseName="habitToReminder" inverseEntity="Habit"/>
+        <relationship name="reminderToHabit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Habit" inverseName="habitToReminder" inverseEntity="Habit"/>
     </entity>
     <elements>
         <element name="CuedUser" positionX="-54" positionY="-9" width="128" height="103"/>
