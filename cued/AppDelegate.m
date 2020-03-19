@@ -36,7 +36,7 @@ NSString* const setCurrentIdentifier = @"setCurrentIdentifier";
                 bool isRegistered = NO;
                 for (id r in requests) {
                     UNNotificationRequest * request = (UNNotificationRequest *) r;
-                    if (request.identifier == thisReminder.identifier) {
+                    if (request.identifier == thisReminder.notifId) {
                         isRegistered = YES;
                         break;
                     }

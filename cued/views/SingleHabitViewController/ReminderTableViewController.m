@@ -37,7 +37,7 @@
     args[@"habit"] = self.habit;
     args[@"text"] = self.habit.routine;
     Reminder * r = [Reminder createReminderFromDictionary:args];
-    self.habit.habitToReminder = [self.habit.habitToReminder setByAddingObject:r];
+    [self.habit addHabitToReminderObject:r];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -65,6 +65,7 @@
     if (indexPath.section == 0) {
         self.datePicker= [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, 216)];
         self.datePicker.datePickerMode = UIDatePickerModeTime;
+        self.datePicker.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:[NSTimeZone localTimeZone].secondsFromGMT];
         [cell.contentView addSubview:self.datePicker];
     } else if (indexPath.section == 1) {
         switch (indexPath.row) {

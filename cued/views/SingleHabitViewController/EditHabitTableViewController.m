@@ -90,22 +90,22 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    EditHabitTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"editHabitViewCell" forIndexPath:indexPath];
+    EditHabitTableViewCell *cell = [[EditHabitTableViewCell alloc]init];
     if (indexPath.section == 0) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         switch (indexPath.row) {
                case 0: {
-                   cell.mainLabel.text = @"Cue";
+                   cell.textLabel.text = @"Cue";
                    cell.subLabel.text = self.habit.cue;
                    break;
                }
                case 1: {
-                   cell.mainLabel.text = @"Reward";
+                   cell.textLabel.text = @"Reward";
                    cell.subLabel.text = self.habit.reward;
                    break;
                }
                case 2: {
-                   cell.mainLabel.text = @"Streak";
+                   cell.textLabel.text = @"Streak";
                    cell.subLabel.text = [NSString stringWithFormat:@"%d", self.habit.completeCount];
                    break;
                }
@@ -113,11 +113,17 @@
                    break;
            }
     } else if (indexPath.section == 1) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (indexPath.row == [self.reminders count]) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
             [button addTarget:self action:@selector(transitionToNewReminder) forControlEvents:UIControlEventTouchUpInside];
             cell.accessoryView  = button;
             [cell.mainLabel setHidden:YES];
+        } else {
+            Reminder * r = [self.reminders objectAtIndex:indexPath.row];
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"HH:mm"];
+            cell.textLabel.text = [formatter stringFromDate:r.dateTime];
         }
         [cell.subLabel setHidden:YES];
     }

@@ -18,12 +18,13 @@
     </entity>
     <entity name="Reminder" representedClassName="Reminder" syncable="YES">
         <attribute name="dateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="notifId" optional="YES" attributeType="String"/>
         <attribute name="text" optional="YES" attributeType="String"/>
         <relationship name="reminderToHabit" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Habit" inverseName="habitToReminder" inverseEntity="Habit"/>
     </entity>
     <elements>
         <element name="CuedUser" positionX="-54" positionY="-9" width="128" height="103"/>
         <element name="Habit" positionX="-501.0546875" positionY="-94.515625" width="128" height="163"/>
-        <element name="Reminder" positionX="-255.72265625" positionY="233.80859375" width="128" height="88"/>
+        <element name="Reminder" positionX="-255.72265625" positionY="233.80859375" width="128" height="103"/>
     </elements>
 </model>
