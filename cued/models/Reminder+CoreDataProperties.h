@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSDate *dateTime;
 @property (nullable, nonatomic, copy) NSString *text;
 @property (nullable, nonatomic, retain) Habit *reminderToHabit;
-@property (nullable, nonatomic, copy) NSString * identifier;
+@property (nullable, nonatomic, copy) NSString * notifId;
 
 @end
 

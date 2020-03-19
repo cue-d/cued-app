@@ -15,7 +15,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Reminder : NSManagedObject
-+ (NSArray *) getAllReminders;
++ (NSMutableArray *) getAllReminders;
 - (NSSet<__kindof NSManagedObject *> *)deleteFromCoreData;
 + (Reminder *) createReminderFromDictionary:(NSDictionary *) reminderInfo;
 - (void) registerWithNotificationCenter;

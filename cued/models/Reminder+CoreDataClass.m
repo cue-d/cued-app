@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 @implementation Reminder
 
-+ (NSArray *) getAllReminders {
++ (NSMutableArray *) getAllReminders {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *moc = [appDelegate getContext];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reminder"];
@@ -31,10 +31,11 @@
     reminderEntity.dateTime = [reminderInfo valueForKey:@"dateTime"];
     reminderEntity.reminderToHabit = [reminderInfo valueForKey:@"habit"];
     reminderEntity.text = [reminderInfo valueForKey:@"text"];
-    [reminderEntity registerWithNotificationCenter];
     [appDelegate saveContext];
+    [reminderEntity registerWithNotificationCenter];
     return reminderEntity;
 }
+
 
 - (void) registerWithNotificationCenter {
     UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
@@ -63,12 +64,22 @@
           NSLog(@"%@", error.localizedDescription);
        }
     }];
-    self.identifier = request.identifier;
+    self.notifId = request.identifier;
 }
 
 - (NSSet<__kindof NSManagedObject *> *)deleteFromCoreData {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate getContext];
+    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+    [center requestAuthorizationWithOptions:
+            (UNAuthorizationOptionAlert +
+             UNAuthorizationOptionSound)
+      completionHandler:^(BOOL granted, NSError * _Nullable error) {
+         // Enable or disable features based on authorization.
+       
+    }];
+    NSArray * toDelete = @[self.notifId];
+    [center removePendingNotificationRequestsWithIdentifiers:toDelete];
     [context deleteObject:self];
     [appDelegate saveContext];
     return [context deletedObjects];
