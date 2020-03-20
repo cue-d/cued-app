@@ -40,7 +40,7 @@
 }
 - (IBAction)skipButtonPressed:(id)sender {
     HomeHabitViewController * fc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];
-    [self.navigationController pushViewController:fc animated:YES];
+    [self.navigationController pushViewController:fc animated:NO];
 }
 
 @end

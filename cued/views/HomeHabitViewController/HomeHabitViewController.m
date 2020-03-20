@@ -9,6 +9,7 @@
 #import "HomeHabitViewController.h"
 #import "UserInfoViewController.h"
 #import "ChooseHabitViewController.h"
+#import "OnboardingViewController.h"
 #import "AppDelegate.h"
 
 @interface HomeHabitViewController ()
@@ -33,8 +34,13 @@
 }
 
 - (IBAction)addHabitButtonPressed:(id)sender {
-    ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
-    [self.navigationController pushViewController:vc animated:YES];
+    if (self.habitTableViewController.displayedItems.count == 0) {
+        OnboardingViewController * vc = [[OnboardingViewController alloc]initWithNibName:@"OnboardingViewController" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (IBAction)userImageButtonWasPressed:(id)sender {

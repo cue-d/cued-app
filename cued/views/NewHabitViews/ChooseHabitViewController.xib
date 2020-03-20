@@ -38,7 +38,7 @@ you want to change?</string>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" returnKeyType="continue"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeC-hE-36v">
-                    <rect key="frame" x="346" y="64" width="48" height="30"/>
+                    <rect key="frame" x="20" y="64" width="48" height="30"/>
                     <state key="normal" title="Cancel"/>
                     <connections>
                         <action selector="skipButtonPressed:" destination="-1" eventType="touchUpInside" id="RqF-cX-KdG"/>
@@ -49,12 +49,13 @@ you want to change?</string>
             <constraints>
                 <constraint firstItem="kw7-EA-j2b" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="67E-K7-HSF"/>
                 <constraint firstItem="HeC-hE-36v" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="D6Q-SC-4Mi"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="HeC-hE-36v" secondAttribute="trailing" constant="20" id="L6W-ha-NUT"/>
                 <constraint firstItem="kw7-EA-j2b" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="centerY" constant="-100" id="Pe0-ui-nfn"/>
+                <constraint firstItem="HeC-hE-36v" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="RFj-zd-ead"/>
                 <constraint firstItem="OaM-ha-X6o" firstAttribute="top" secondItem="kw7-EA-j2b" secondAttribute="bottom" constant="20" id="Y9Q-Nj-Fz9" userLabel="Text Field.top = What habit do  you want to change?.bottom + 8"/>
                 <constraint firstItem="OaM-ha-X6o" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="cn5-DO-g4e"/>
                 <constraint firstItem="OaM-ha-X6o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ij8-nD-7FR"/>
                 <constraint firstItem="kw7-EA-j2b" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="qB8-Pf-z3w"/>
+                <constraint firstItem="HeC-hE-36v" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="wY4-hg-lXl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
