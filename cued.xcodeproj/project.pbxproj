@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1186336C241485D600F6458D /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1186336A241485D600F6458D /* OnboardingViewController.m */; };
+		1186336D241485D600F6458D /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1186336B241485D600F6458D /* OnboardingViewController.xib */; };
+		1186337624148CC500F6458D /* OnboardingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1186337424148CC500F6458D /* OnboardingPageViewController.m */; };
+		1186337B2414911A00F6458D /* OnboardingContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118633792414911A00F6458D /* OnboardingContentViewController.m */; };
+		1186337C2414911A00F6458D /* OnboardingContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1186337A2414911A00F6458D /* OnboardingContentViewController.xib */; };
+		118633802414A9F900F6458D /* onboarding1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1186337D2414A9F900F6458D /* onboarding1.jpg */; };
+		118633812414A9F900F6458D /* onboarding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1186337E2414A9F900F6458D /* onboarding2.png */; };
+		118633822414A9F900F6458D /* onboarding3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1186337F2414A9F900F6458D /* onboarding3.png */; };
 		11A33EF623FCB3510097892F /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A33EF523FCB3510097892F /* AuthenticationServices.framework */; };
 		11A33EFA23FCB3510097892F /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A33EF923FCB3510097892F /* AuthenticationViewController.m */; };
 		11A33EFD23FCB3510097892F /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A33EFB23FCB3510097892F /* AuthenticationViewController.xib */; };
@@ -101,6 +109,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11863369241485D600F6458D /* OnboardingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnboardingViewController.h; sourceTree = "<group>"; };
+		1186336A241485D600F6458D /* OnboardingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnboardingViewController.m; sourceTree = "<group>"; };
+		1186336B241485D600F6458D /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		1186337324148CC500F6458D /* OnboardingPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnboardingPageViewController.h; sourceTree = "<group>"; };
+		1186337424148CC500F6458D /* OnboardingPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnboardingPageViewController.m; sourceTree = "<group>"; };
+		118633782414911A00F6458D /* OnboardingContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnboardingContentViewController.h; sourceTree = "<group>"; };
+		118633792414911A00F6458D /* OnboardingContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnboardingContentViewController.m; sourceTree = "<group>"; };
+		1186337A2414911A00F6458D /* OnboardingContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingContentViewController.xib; sourceTree = "<group>"; };
+		1186337D2414A9F900F6458D /* onboarding1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = onboarding1.jpg; sourceTree = "<group>"; };
+		1186337E2414A9F900F6458D /* onboarding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding2.png; sourceTree = "<group>"; };
+		1186337F2414A9F900F6458D /* onboarding3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding3.png; sourceTree = "<group>"; };
 		11A33EF323FCB3510097892F /* Auth.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Auth.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A33EF523FCB3510097892F /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		11A33EF823FCB3510097892F /* AuthenticationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
@@ -225,6 +244,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		118633652414841900F6458D /* OnboardingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1186337D2414A9F900F6458D /* onboarding1.jpg */,
+				1186337E2414A9F900F6458D /* onboarding2.png */,
+				1186337F2414A9F900F6458D /* onboarding3.png */,
+				11863369241485D600F6458D /* OnboardingViewController.h */,
+				1186336A241485D600F6458D /* OnboardingViewController.m */,
+				1186336B241485D600F6458D /* OnboardingViewController.xib */,
+				1186337324148CC500F6458D /* OnboardingPageViewController.h */,
+				1186337424148CC500F6458D /* OnboardingPageViewController.m */,
+				118633782414911A00F6458D /* OnboardingContentViewController.h */,
+				118633792414911A00F6458D /* OnboardingContentViewController.m */,
+				1186337A2414911A00F6458D /* OnboardingContentViewController.xib */,
+			);
+			path = OnboardingViewController;
+			sourceTree = "<group>";
+		};
 		11A33EF423FCB3510097892F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +314,7 @@
 				11A33F2A23FDE5D70097892F /* ViewController.xib */,
 				11A33F2823FDE5D70097892F /* LandingPageViewController.h */,
 				11A33F2923FDE5D70097892F /* LandingPageViewController.m */,
+				118633652414841900F6458D /* OnboardingViewController */,
 				A8B3F40423FDDD99007E2FBF /* UserInfoViewController */,
 				A82F370023E6483F006ED2BB /* NewHabitViews */,
 			);
@@ -576,14 +614,19 @@
 			files = (
 				A802B14023E6684A0057BF2E /* CueRoutineRewardViewController.xib in Resources */,
 				A8CD365F24229352009D7646 /* ReminderTableViewController.xib in Resources */,
+				1186336D241485D600F6458D /* OnboardingViewController.xib in Resources */,
+				118633802414A9F900F6458D /* onboarding1.jpg in Resources */,
 				A89B212023D29514008B787D /* LaunchScreen.storyboard in Resources */,
 				A89B211D23D29514008B787D /* Assets.xcassets in Resources */,
 				A802B13B23E666E60057BF2E /* ChooseRewardViewController.xib in Resources */,
+				118633822414A9F900F6458D /* onboarding3.png in Resources */,
 				A802B15523E682550057BF2E /* ConfirmHabitViewController.xib in Resources */,
 				A89B211823D2950E008B787D /* Main.storyboard in Resources */,
+				1186337C2414911A00F6458D /* OnboardingContentViewController.xib in Resources */,
 				A8B42D7823FF77CF004D8166 /* EditHabitTableViewCell.xib in Resources */,
 				F83899A623FDC5F0001838E8 /* SingleHabitViewController.xib in Resources */,
 				A89FC24D24149ED000903B3B /* ManageRemindersTableViewController.xib in Resources */,
+				118633812414A9F900F6458D /* onboarding2.png in Resources */,
 				F8F7F3AE23FCAAD700D7F4DE /* HomeHabitViewController.xib in Resources */,
 				11A33F2C23FDE5D70097892F /* ViewController.xib in Resources */,
 				A8B3F40923FDDDB6007E2FBF /* UserInfoViewController.xib in Resources */,
@@ -624,14 +667,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1186337B2414911A00F6458D /* OnboardingContentViewController.m in Sources */,
 				F8739B0A23FF79F8007B2CF5 /* UserTableCellController.m in Sources */,
 				A802B13F23E6684A0057BF2E /* CueRoutineRewardViewController.m in Sources */,
 				11A33F3123FE0A670097892F /* Habit+CoreDataClass.m in Sources */,
 				11A33F2623FDC6B60097892F /* CuedUser+CoreDataClass.m in Sources */,
 				A89FC24C24149ED000903B3B /* ManageRemindersTableViewController.m in Sources */,
+				1186337624148CC500F6458D /* OnboardingPageViewController.m in Sources */,
 				A89B212323D29514008B787D /* main.m in Sources */,
 				A8B42D7223FF7645004D8166 /* EditHabitTableViewController.m in Sources */,
 				A8B3F40823FDDDB6007E2FBF /* UserInfoViewController.m in Sources */,
+				1186336C241485D600F6458D /* OnboardingViewController.m in Sources */,
 				A802B13523E655EB0057BF2E /* ChooseCueViewController.m in Sources */,
 				11A33F2723FDC6B60097892F /* CuedUser+CoreDataProperties.m in Sources */,
 				A802B13A23E666E60057BF2E /* ChooseRewardViewController.m in Sources */,
