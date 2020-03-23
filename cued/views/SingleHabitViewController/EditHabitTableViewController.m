@@ -118,7 +118,6 @@
                    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
                    [button addTarget:self action:@selector(incrementStreak) forControlEvents:UIControlEventTouchUpInside];
                    cell.accessoryView  = button;
-                   [cell.mainLabel setHidden:YES];
                    break;
                }
                 default:
