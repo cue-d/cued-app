@@ -11,6 +11,7 @@
 #import "EditHabitPropertyController.h"
 #import "Reminder+CoreDataClass.h"
 #import "ReminderTableViewController.h"
+#import "AppDelegate.h"
 
 @interface EditHabitTableViewController ()
 @end
@@ -89,24 +90,34 @@
     }
 }
 
+-(void) incrementStreak {
+    self.habit.completeCount += 1;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate saveContext];
+    [self.tableView reloadData];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EditHabitTableViewCell *cell = [[EditHabitTableViewCell alloc]init];
     if (indexPath.section == 0) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         switch (indexPath.row) {
                case 0: {
-                   cell.textLabel.text = @"Cue";
+                   cell.textLabel.text = [@"Cue - " stringByAppendingString:self.habit.cue];
                    cell.subLabel.text = self.habit.cue;
                    break;
                }
                case 1: {
-                   cell.textLabel.text = @"Reward";
+                   cell.textLabel.text = [@"Reward - " stringByAppendingString:self.habit.reward];
                    cell.subLabel.text = self.habit.reward;
                    break;
                }
                case 2: {
-                   cell.textLabel.text = @"Streak";
+                   cell.textLabel.text = [@"Streak - " stringByAppendingString:[NSString stringWithFormat:@"%d", self.habit.completeCount]];
                    cell.subLabel.text = [NSString stringWithFormat:@"%d", self.habit.completeCount];
+                   UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
+                   [button addTarget:self action:@selector(incrementStreak) forControlEvents:UIControlEventTouchUpInside];
+                   cell.accessoryView  = button;
                    break;
                }
                 default:
