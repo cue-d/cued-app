@@ -19,34 +19,60 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kw7-EA-j2b">
-                    <rect key="frame" x="20" y="353" width="374" height="83.5"/>
+                    <rect key="frame" x="20" y="253" width="374" height="78"/>
                     <string key="text">What else can
 provide that reward?</string>
-                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
+                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Going for a walk..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OaM-ha-X6o">
-                    <rect key="frame" x="82" y="456.5" width="250" height="34"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Go for a walk..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OaM-ha-X6o">
+                    <rect key="frame" x="50" y="411" width="314" height="34"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="250" id="mwG-hr-YhE"/>
                         <constraint firstAttribute="height" constant="34" id="x8E-Lg-IeJ"/>
                     </constraints>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" returnKeyType="continue"/>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next time when I feel the craving, instead of my usual habit, I will" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRo-Ti-728">
+                    <rect key="frame" x="50" y="351" width="314" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="YJh-Wd-DcW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xst-fw-gGl">
+                    <rect key="frame" x="146" y="465" width="122" height="37"/>
+                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
+                    <state key="normal" title="Continue &gt;&gt;">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="continueButtonPressed:" destination="-1" eventType="touchUpInside" id="dan-Ta-WGs"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="kw7-EA-j2b" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="centerY" constant="-100" id="Pe0-ui-nfn"/>
-                <constraint firstItem="OaM-ha-X6o" firstAttribute="top" secondItem="kw7-EA-j2b" secondAttribute="bottom" constant="20" id="Y9Q-Nj-Fz9"/>
+                <constraint firstItem="OaM-ha-X6o" firstAttribute="trailing" secondItem="fRo-Ti-728" secondAttribute="trailing" id="733-Vs-CeT"/>
+                <constraint firstItem="xst-fw-gGl" firstAttribute="top" secondItem="OaM-ha-X6o" secondAttribute="bottom" constant="20" id="8IP-Hg-nLG"/>
+                <constraint firstItem="OaM-ha-X6o" firstAttribute="leading" secondItem="fRo-Ti-728" secondAttribute="leading" id="ABo-LN-lAZ"/>
+                <constraint firstItem="OaM-ha-X6o" firstAttribute="top" secondItem="fRo-Ti-728" secondAttribute="bottom" constant="10" id="APb-YZ-Emt"/>
+                <constraint firstAttribute="trailing" secondItem="OaM-ha-X6o" secondAttribute="trailing" constant="50" id="ExX-Hi-l9I"/>
+                <constraint firstItem="xst-fw-gGl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="N5c-vp-b8O"/>
+                <constraint firstItem="kw7-EA-j2b" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="centerY" constant="-200" id="Pe0-ui-nfn"/>
+                <constraint firstItem="fRo-Ti-728" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="50" id="SI2-o7-cJD"/>
+                <constraint firstItem="fRo-Ti-728" firstAttribute="top" secondItem="kw7-EA-j2b" secondAttribute="bottom" constant="20" id="Y9Q-Nj-Fz9"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="kw7-EA-j2b" secondAttribute="trailing" constant="20" id="cRY-Lm-gfl"/>
                 <constraint firstItem="OaM-ha-X6o" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="cn5-DO-g4e"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="fRo-Ti-728" secondAttribute="trailing" constant="50" id="iFj-26-QzF"/>
                 <constraint firstItem="OaM-ha-X6o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ij8-nD-7FR"/>
                 <constraint firstItem="kw7-EA-j2b" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="qB8-Pf-z3w"/>
                 <constraint firstItem="kw7-EA-j2b" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="qJI-hw-ubr"/>
+                <constraint firstItem="OaM-ha-X6o" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="50" id="wWD-bc-OBP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>

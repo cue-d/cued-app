@@ -19,6 +19,13 @@
     [super viewDidLoad];
     [self.textField setDelegate:self];
     [self.textField becomeFirstResponder];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard
+{
+    [self.textField resignFirstResponder];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -27,12 +34,20 @@
     }
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
+- (void)nextScreen {
+    [self dismissKeyboard];
     CueRoutineRewardViewController * fc = [[CueRoutineRewardViewController alloc]initWithNibName:@"CueRoutineRewardViewController" bundle:nil];
-    [self.habitInfo setValue:textField.text forKey:REWARD];
+    [self.habitInfo setValue:self.textField.text forKey:REWARD];
     fc.habitInfo = self.habitInfo;
     [self.navigationController pushViewController:fc animated:YES];
+}
+
+- (IBAction)continueButtonPressed:(id)sender {
+    [self nextScreen];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self nextScreen];
     return NO;
 }
 

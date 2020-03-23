@@ -34,7 +34,7 @@
     if (([remainingPage integerValue] == 0) != isLastPage) {
         isLastPage = ([remainingPage integerValue] == 0);
         [UIView setAnimationsEnabled:NO];
-        [self.skipButton setTitle:isLastPage ? @"Continue" : @"Skip" forState:UIControlStateNormal];
+        [self.skipButton setTitle:isLastPage ? @"Let's add a new habit!" : @"Skip intro" forState:UIControlStateNormal];
         [self.skipButton layoutIfNeeded];
         [UIView setAnimationsEnabled:YES];
     }

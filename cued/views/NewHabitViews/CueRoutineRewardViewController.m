@@ -20,6 +20,13 @@
     [self.textField setDelegate:self];
     [self.textField becomeFirstResponder];
         // Do any additional setup after loading the view from its nib.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard
+{
+    [self.textField resignFirstResponder];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -28,12 +35,20 @@
     }
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
+- (void)nextScreen {
+    [self dismissKeyboard];
     ConfirmHabitViewController * fc = [[ConfirmHabitViewController alloc]initWithNibName:@"ConfirmHabitViewController" bundle:nil];
-    [self.habitInfo setValue:textField.text forKey:ROUTINE];
+    [self.habitInfo setValue:self.textField.text forKey:ROUTINE];
     fc.habitInfo = self.habitInfo;
     [self.navigationController pushViewController:fc animated:YES];
+}
+
+- (IBAction)continueButtonPressed:(id)sender {
+    [self nextScreen];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self nextScreen];
     return NO;
 }
 

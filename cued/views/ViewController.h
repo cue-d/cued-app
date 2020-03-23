@@ -13,6 +13,7 @@
 #import "Habit+CoreDataClass.h"
 #import "ChooseHabitViewController.h"
 #import "HabitTableViewController.h"
+#import "OnboardingViewController.h"
 #import "HomeHabitViewController.h"
 
 

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		115D3B092429025A0007A91D /* onboarding7.png in Resources */ = {isa = PBXBuildFile; fileRef = 115D3B00242902590007A91D /* onboarding7.png */; };
+		115D3B0A2429025A0007A91D /* onboarding11.png in Resources */ = {isa = PBXBuildFile; fileRef = 115D3B01242902590007A91D /* onboarding11.png */; };
+		115D3B0B2429025A0007A91D /* onboarding6.png in Resources */ = {isa = PBXBuildFile; fileRef = 115D3B02242902590007A91D /* onboarding6.png */; };
+		115D3B0C2429025A0007A91D /* onboarding5.png in Resources */ = {isa = PBXBuildFile; fileRef = 115D3B03242902590007A91D /* onboarding5.png */; };
+		115D3B0D2429025A0007A91D /* onboarding12.png in Resources */ = {isa = PBXBuildFile; fileRef = 115D3B04242902590007A91D /* onboarding12.png */; };
+		115D3B0E2429025A0007A91D /* onboarding10.png in Resources */ = {isa = PBXBuildFile; fileRef = 115D3B05242902590007A91D /* onboarding10.png */; };
+		115D3B0F2429025A0007A91D /* onboarding4.png in Resources */ = {isa = PBXBuildFile; fileRef = 115D3B06242902590007A91D /* onboarding4.png */; };
+		115D3B102429025A0007A91D /* onboarding8.png in Resources */ = {isa = PBXBuildFile; fileRef = 115D3B07242902590007A91D /* onboarding8.png */; };
+		115D3B112429025A0007A91D /* onboarding9.png in Resources */ = {isa = PBXBuildFile; fileRef = 115D3B08242902590007A91D /* onboarding9.png */; };
 		1186336C241485D600F6458D /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1186336A241485D600F6458D /* OnboardingViewController.m */; };
 		1186336D241485D600F6458D /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1186336B241485D600F6458D /* OnboardingViewController.xib */; };
 		1186337624148CC500F6458D /* OnboardingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1186337424148CC500F6458D /* OnboardingPageViewController.m */; };
@@ -109,6 +118,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		115D3B00242902590007A91D /* onboarding7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding7.png; sourceTree = "<group>"; };
+		115D3B01242902590007A91D /* onboarding11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding11.png; sourceTree = "<group>"; };
+		115D3B02242902590007A91D /* onboarding6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding6.png; sourceTree = "<group>"; };
+		115D3B03242902590007A91D /* onboarding5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding5.png; sourceTree = "<group>"; };
+		115D3B04242902590007A91D /* onboarding12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding12.png; sourceTree = "<group>"; };
+		115D3B05242902590007A91D /* onboarding10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding10.png; sourceTree = "<group>"; };
+		115D3B06242902590007A91D /* onboarding4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding4.png; sourceTree = "<group>"; };
+		115D3B07242902590007A91D /* onboarding8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding8.png; sourceTree = "<group>"; };
+		115D3B08242902590007A91D /* onboarding9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding9.png; sourceTree = "<group>"; };
 		11863369241485D600F6458D /* OnboardingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnboardingViewController.h; sourceTree = "<group>"; };
 		1186336A241485D600F6458D /* OnboardingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnboardingViewController.m; sourceTree = "<group>"; };
 		1186336B241485D600F6458D /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
@@ -250,6 +268,15 @@
 				1186337D2414A9F900F6458D /* onboarding1.jpg */,
 				1186337E2414A9F900F6458D /* onboarding2.png */,
 				1186337F2414A9F900F6458D /* onboarding3.png */,
+				115D3B06242902590007A91D /* onboarding4.png */,
+				115D3B03242902590007A91D /* onboarding5.png */,
+				115D3B02242902590007A91D /* onboarding6.png */,
+				115D3B00242902590007A91D /* onboarding7.png */,
+				115D3B07242902590007A91D /* onboarding8.png */,
+				115D3B08242902590007A91D /* onboarding9.png */,
+				115D3B05242902590007A91D /* onboarding10.png */,
+				115D3B01242902590007A91D /* onboarding11.png */,
+				115D3B04242902590007A91D /* onboarding12.png */,
 				11863369241485D600F6458D /* OnboardingViewController.h */,
 				1186336A241485D600F6458D /* OnboardingViewController.m */,
 				1186336B241485D600F6458D /* OnboardingViewController.xib */,
@@ -617,23 +644,32 @@
 				1186336D241485D600F6458D /* OnboardingViewController.xib in Resources */,
 				118633802414A9F900F6458D /* onboarding1.jpg in Resources */,
 				A89B212023D29514008B787D /* LaunchScreen.storyboard in Resources */,
+				115D3B0D2429025A0007A91D /* onboarding12.png in Resources */,
 				A89B211D23D29514008B787D /* Assets.xcassets in Resources */,
+				115D3B0A2429025A0007A91D /* onboarding11.png in Resources */,
 				A802B13B23E666E60057BF2E /* ChooseRewardViewController.xib in Resources */,
+				115D3B0F2429025A0007A91D /* onboarding4.png in Resources */,
 				118633822414A9F900F6458D /* onboarding3.png in Resources */,
 				A802B15523E682550057BF2E /* ConfirmHabitViewController.xib in Resources */,
 				A89B211823D2950E008B787D /* Main.storyboard in Resources */,
 				1186337C2414911A00F6458D /* OnboardingContentViewController.xib in Resources */,
+				115D3B102429025A0007A91D /* onboarding8.png in Resources */,
 				A8B42D7823FF77CF004D8166 /* EditHabitTableViewCell.xib in Resources */,
+				115D3B092429025A0007A91D /* onboarding7.png in Resources */,
 				F83899A623FDC5F0001838E8 /* SingleHabitViewController.xib in Resources */,
 				A89FC24D24149ED000903B3B /* ManageRemindersTableViewController.xib in Resources */,
 				118633812414A9F900F6458D /* onboarding2.png in Resources */,
 				F8F7F3AE23FCAAD700D7F4DE /* HomeHabitViewController.xib in Resources */,
 				11A33F2C23FDE5D70097892F /* ViewController.xib in Resources */,
+				115D3B0B2429025A0007A91D /* onboarding6.png in Resources */,
 				A8B3F40923FDDDB6007E2FBF /* UserInfoViewController.xib in Resources */,
+				115D3B0C2429025A0007A91D /* onboarding5.png in Resources */,
 				A802B13623E655EB0057BF2E /* ChooseCueViewController.xib in Resources */,
 				F8739B0623FF6509007B2CF5 /* IMG_2226.jpg in Resources */,
 				F8739B0B23FF79F8007B2CF5 /* UserTableCellController.xib in Resources */,
+				115D3B0E2429025A0007A91D /* onboarding10.png in Resources */,
 				A89F8B6E23E7889C000F50AC /* HabitTableViewCell.xib in Resources */,
+				115D3B112429025A0007A91D /* onboarding9.png in Resources */,
 				A82F370523E64890006ED2BB /* ChooseHabitViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

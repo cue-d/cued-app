@@ -19,51 +19,46 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KkF-he-TZE">
-                    <rect key="frame" x="160.5" y="714" width="93" height="68"/>
+                    <rect key="frame" x="160.5" y="724" width="93" height="58"/>
                     <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="35"/>
                     <state key="normal" title="Save"/>
                     <connections>
                         <action selector="saveHabit:" destination="-1" eventType="touchUpInside" id="PdX-Oe-LGX"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JD2-zs-vCV">
-                    <rect key="frame" x="72.5" y="144" width="269" height="32.5"/>
-                    <attributedString key="attributedText">
-                        <fragment content="Your New Habit Loop!">
-                            <attributes>
-                                <font key="NSFont" metaFont="system" size="29"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hL-9t-DdR">
-                    <rect key="frame" x="25" y="276.5" width="364" height="172"/>
-                    <string key="text">Your new habit loop is ready to go! Next steps are to employ and evaluate the effectiveness of your new routine. If your new routine is now providing you with your previous reward, congratulations! You've found a new habit. If not, that's okay too. Continue to try out new routines here until you achieve your goal.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great! You're all set to figure out the ideal habit loop for your habit " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JD2-zs-vCV">
+                    <rect key="frame" x="50" y="144" width="314" height="93.5"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bS-Ks-6MD">
-                    <rect key="frame" x="25" y="498.5" width="364" height="0.0"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hL-9t-DdR">
+                    <rect key="frame" x="20" y="387.5" width="374" height="125"/>
+                    <string key="text">Next steps are to employ and evaluate the effectiveness of your new routine. If your new routine is now providing you with your previous reward, congratulations! You've found a new habit. If not, that's okay too. Continue to try out new routines here until you achieve your goal.</string>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bS-Ks-6MD">
+                    <rect key="frame" x="25" y="337.5" width="364" height="0.0"/>
                     <attributedString key="attributedText"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="4bS-Ks-6MD" firstAttribute="top" secondItem="JD2-zs-vCV" secondAttribute="bottom" constant="100" id="1z5-C3-Urz"/>
                 <constraint firstItem="4bS-Ks-6MD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3hf-uq-eFB"/>
                 <constraint firstItem="4bS-Ks-6MD" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="25" id="68l-CW-uZ7"/>
+                <constraint firstItem="JD2-zs-vCV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="A0T-FH-dLg"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="4bS-Ks-6MD" secondAttribute="trailing" constant="25" id="BJe-3S-20C"/>
-                <constraint firstItem="KkF-he-TZE" firstAttribute="top" secondItem="4bS-Ks-6MD" secondAttribute="bottom" constant="215.5" id="BwY-Zc-ppK"/>
-                <constraint firstItem="7hL-9t-DdR" firstAttribute="top" secondItem="JD2-zs-vCV" secondAttribute="bottom" constant="100" id="SrX-D5-NAs"/>
+                <constraint firstAttribute="trailing" secondItem="JD2-zs-vCV" secondAttribute="trailing" constant="50" id="EDp-Go-415"/>
+                <constraint firstItem="7hL-9t-DdR" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="KSZ-C6-cv4"/>
+                <constraint firstAttribute="trailing" secondItem="7hL-9t-DdR" secondAttribute="trailing" constant="20" id="Vda-pO-ZE0"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="KkF-he-TZE" secondAttribute="bottom" constant="80" id="Wp1-Ar-LNC"/>
                 <constraint firstItem="JD2-zs-vCV" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="YoE-ew-kn5"/>
                 <constraint firstItem="JD2-zs-vCV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zfq-VI-iY2"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="7hL-9t-DdR" secondAttribute="trailing" constant="25" id="aXM-6d-wRa"/>
-                <constraint firstItem="4bS-Ks-6MD" firstAttribute="top" secondItem="7hL-9t-DdR" secondAttribute="bottom" constant="50" id="cJE-kM-9VW"/>
-                <constraint firstItem="7hL-9t-DdR" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="25" id="ovG-O2-p0N"/>
+                <constraint firstItem="7hL-9t-DdR" firstAttribute="top" secondItem="4bS-Ks-6MD" secondAttribute="bottom" constant="50" id="cJE-kM-9VW"/>
                 <constraint firstItem="KkF-he-TZE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="w2e-8L-wTd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>

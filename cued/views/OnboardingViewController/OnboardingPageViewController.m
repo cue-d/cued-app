@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    screens = @[@"onboarding1.jpg", @"onboarding2.png", @"onboarding3.png"];
+    screens = @[@"onboarding1.jpg", @"onboarding2.png", @"onboarding3.png", @"onboarding4.png", @"onboarding5.png", @"onboarding6.png", @"onboarding7.png", @"onboarding8.png", @"onboarding9.png", @"onboarding10.png", @"onboarding11.png", @"onboarding12.png"];
     self.dataSource = self;
     OnboardingContentViewController *initialVC = (OnboardingContentViewController *)[self viewControllerAtIndex:0];
     NSArray *vcs = [NSArray arrayWithObject:initialVC];

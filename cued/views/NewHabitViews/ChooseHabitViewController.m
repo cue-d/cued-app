@@ -20,7 +20,13 @@
     [self.textField setDelegate:self];
     [self.textField becomeFirstResponder];
     self.habitInfo = [NSMutableDictionary new];
-    // Do any additional setup after loading the view from its nib.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard
+{
+    [self.textField resignFirstResponder];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -30,14 +36,23 @@
     }
 }
 
+- (IBAction)continueButtonPressed:(id)sender {
+    [self nextScreen];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    ChooseCueViewController * fc = [[ChooseCueViewController alloc]initWithNibName:@"ChooseCueViewController" bundle:nil];
-    [self.habitInfo setValue:textField.text forKey:ROUTINE_PREVIOUS];
-    fc.habitInfo = self.habitInfo;
-    [self.navigationController pushViewController:fc animated:YES];
+    [self nextScreen];
     return NO;
 }
+
+- (void)nextScreen {
+    [self dismissKeyboard];
+    ChooseCueViewController * fc = [[ChooseCueViewController alloc]initWithNibName:@"ChooseCueViewController" bundle:nil];
+    [self.habitInfo setValue:self.textField.text forKey:ROUTINE_PREVIOUS];
+    fc.habitInfo = self.habitInfo;
+    [self.navigationController pushViewController:fc animated:YES];
+}
+
 - (IBAction)skipButtonPressed:(id)sender {
     HomeHabitViewController * fc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];
     [self.navigationController pushViewController:fc animated:NO];

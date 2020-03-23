@@ -25,7 +25,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSUInteger remainingPage = 2 - self.pageIndex;
+    NSUInteger remainingPage = 11 - self.pageIndex;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"switchPage" object:nil userInfo:@{@"remainingPage": @(remainingPage)}];
 //    [self.imageView setImage:[UIImage imageNamed:self.strImage]];
 //    [self.view setBackgroundColor:[UIColor redColor]];

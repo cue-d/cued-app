@@ -115,13 +115,15 @@
         
         NSArray *habits = [Habit getAllHabits];
         
-        if ([habits count]) {
-            HomeHabitViewController * tvc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];
-            [self.navigationController pushViewController:tvc animated:YES];
-        } else {
-            ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
+        OnboardingViewController * vc = [[OnboardingViewController alloc]initWithNibName:@"OnboardingViewController" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+//        if ([habits count]) {
+//            HomeHabitViewController * tvc = [[HomeHabitViewController alloc]initWithNibName:@"HomeHabitViewController" bundle:nil];
+//            [self.navigationController pushViewController:tvc animated:YES];
+//        } else {
+//            ChooseHabitViewController * vc = [[ChooseHabitViewController alloc]initWithNibName:@"ChooseHabitViewController" bundle:nil];
+//            [self.navigationController pushViewController:vc animated:YES];
+//        }
     } else {
         NSLog(@"Invalid authorization credential kind");
     }

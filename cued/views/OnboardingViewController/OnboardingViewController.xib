@@ -24,8 +24,8 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzF-rW-jrI">
-                    <rect key="frame" x="192" y="841" width="30" height="30"/>
-                    <state key="normal" title="Skip">
+                    <rect key="frame" x="174.5" y="841" width="65" height="30"/>
+                    <state key="normal" title="Skip Intro">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
